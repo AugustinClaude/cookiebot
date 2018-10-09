@@ -1,0 +1,23 @@
+const Discord = require("discord.js");
+const request = require("request");
+
+module.exports.run = async (bot, message, args) => {
+  const regex = /<p class=\"block hidden-xs\">\n<a href=\".*\">\n(.*) VDM/;
+  request("https://www.viedemerde.fr/aleatoire", (error, response, body) => {
+    if (error) {
+      return console.error(error);
+    }
+    const vdm = regex.exec(body);
+    message.reply(`${vdm[1]} VDM.`);
+  });};
+
+module.exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+module.exports.help = {
+  name: "vdm"
+};

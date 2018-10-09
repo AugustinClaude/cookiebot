@@ -1,0 +1,33 @@
+{
+  "name": "cookie",
+  "version": "1.0.0",
+  "description": "I'm a cookie. I love cookies. Yum!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spokloo",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite-pool": "^0.1.2",
+    "discord.js": "^11.4.2",
+    "enmap": "^4.3.0",
+    "google": "^2.1.0",
+    "got": "^9.2.2",
+    "kawaii-kitsune": "^1.0.2",
+    "mal-api": "^2.0.0",
+    "mal-scraper": "^2.4.5",
+    "mal-scraper-node": "^1.0.0",
+    "moment": "^2.22.2",
+    "ms": "^2.1.1",
+    "myanimelists": "^1.0.1",
+    "nodemon": "^1.18.4",
+    "opus": "0.0.0",
+    "opusscript": "0.0.6",
+    "random-anime-wallpapers": "^1.1.0",
+    "request": "^2.88.0",
+    "superagent": "^3.8.3",
+    "util": "^0.11.0",
+    "ytdl-core": "^0.26.0"
+  }
+}

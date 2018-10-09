@@ -1,0 +1,21 @@
+const Discord = require("discord.js");
+const moment = require("moment");
+
+module.exports.run = async (bot, message, args) => {
+    /*let start 
+    
+    if (!args[0]) return message.reply("Syntaxe incorrecte : <roulette start -> <roulette join")
+    if (args[0] == 'start') message.channel.send("🎲 Une partie de roulette russe à été lancée ! Pour la rejoindre utilisez ``<rr join`` ! Minimum 2 joueurs sont requis")
+    if (args[0] == 'join') message.reply("✌ Vous avez rejoins la partie de roulette russe !")*/
+}
+
+module.exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ["rr"],
+    permLevel: 0
+};
+
+module.exports.help = {
+    name: "roulette"
+}
