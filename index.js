@@ -3,8 +3,7 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const bot = new Discord.Client();
 
-bot.config = require("./config.json");
-require("./modules/functions")(bot);
+bot.config = require("./modules/functions")(bot);
 
 const Enmap = require("enmap");
 bot.points = new Enmap({ name: "points" });
