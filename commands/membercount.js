@@ -19,9 +19,6 @@ module.exports.run = async (bot, message, args) => {
   const online =
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
-  const botonline = message.guild.members.filter(
-    member => member.user.bot && member.presence.status === "online"
-  ).size;
   let botoffline = message.guild.members.filter(
     member => member.user.bot && member.presence.status === "offline"
   ).size;

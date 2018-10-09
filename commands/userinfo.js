@@ -99,9 +99,19 @@ module.exports.run = async (bot, message, args) => {
       `${mentionned.bannable ? "✅ Oui" : "❌ Non"}`,
       true
     )
-    .addBlankField();
+    .addBlankField()
+    .addField(
+      "test crash",
+      message.guild.roles.size + message.guild.emojis.size
+    );
 
-  return message.channel.send(userEmbed);
+  try {
+    await message.channel.send(userEmbed);
+  } catch (e) {
+    message.channel.send(
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Il est possible que vous ayez trop de rôles par rapport au nombre de caractères maximum que demande un embed (<google / <ggl Qu'est ce qu'un embed Discord ?)"
+    );
+  }
 };
 
 module.exports.conf = {
