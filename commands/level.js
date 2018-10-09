@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
-const exp = require("../exp.json");
 
 module.exports.run = async (bot, message, args) => {
-  /*const key = `${message.guild.id}-${message.author.id}`;
+  const key = `${message.guild.id}-${message.author.id}`;
   const currentLvl = bot.points.get(key, "level");
   const Exp = bot.points.get(key, "points");
   const XpOfNextLvl = 500;
@@ -21,9 +20,9 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(message.author.displayAvatarURL)
     .setTimestamp();
 
-  return message.channel.send(lvlEmbed);*/
+  return message.channel.send(lvlEmbed);
 
-  if (!exp[message.author.id]) {
+  /*if (!exp[message.author.id]) {
     exp[message.author.id] = {
       exp: 0,
       niveau: 1
@@ -48,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(message.author.displayAvatarURL)
     .setTimestamp();
 
-  return message.channel.send(nivEmbed);
+  return message.channel.send(nivEmbed);*/
 };
 
 module.exports.conf = {
