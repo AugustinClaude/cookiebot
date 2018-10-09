@@ -41,74 +41,71 @@ module.exports.run = async (bot, message, args) => {
     var status = "<:streaming:492994618942685214> Streaming";
   }
 
-  const userEmbed = new Discord.RichEmbed()
-    .setColor("#b7db24")
-    .setThumbnail(message.member.displayAvatarURL)
-    .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
-    .setThumbnail(mentionnedbot.displayAvatarURL)
-    .setTimestamp()
-    .addField("👤 Pseudo", `${mentionnedbot}`, true)
-    .addField("👥 #", `#${mentionnedbot.discriminator}`, true)
-    .addBlankField()
-    .addField("✏️ ID", `${mentionned.id}`, true)
-    .addField("🕵 Type", checkbot, true)
-    .addBlankField()
-    .addField("🔘 Status", status, true)
-    .addField(
-      "🎮 Jeu",
-      `${
-        mentionned.presence.game
-          ? `${mentionned.presence.game.name}`
-          : "Ne joue à rien"
-      }`,
-      true
-    )
-    .addBlankField()
-    .addField(
-      `<:bing_slime:477106597756141569> Rôle(s) [${
-        mentionned.roles.size
-      } rôle(s)]`,
-      `- ${mentionned.roles
-        .array()
-        .sort()
-        .map(g => g)
-        .join("\n- ")}`,
-      true
-    )
-    .addBlankField()
-    .addField("⬆ Plus haut rôle", mentionned.highestRole, true)
-    .addBlankField()
-    .addField(
-      "🚪 Arrivée sur le serveur",
-      moment(mentionned.joinedAt).format("Do MMMM YYYY, LTS"),
-      true
-    )
-    .addField(
-      "🛠 Compte créé le",
-      moment(mentionnedbot.createdAt).format("Do MMMM YYYY, LTS"),
-      true
-    )
-    .addBlankField()
-    .addField(
-      "⭕ Kickable",
-      `${mentionned.kickable ? "✅ Oui" : "❌ Non"}`,
-      true
-    )
-    .addField(
-      "⭕ Bannable",
-      `${mentionned.bannable ? "✅ Oui" : "❌ Non"}`,
-      true
-    )
-    .addBlankField()
-    .addField(
-      "test crash",
-      message.guild.roles.array() + message.guild.emojis.array()
-    );
-
   try {
-    await message.channel.send(userEmbed);
+    const userEmbed = new Discord.RichEmbed()
+      .setColor("#b7db24")
+      .setThumbnail(message.member.displayAvatarURL)
+      .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
+      .setThumbnail(mentionnedbot.displayAvatarURL)
+      .setTimestamp()
+      .addField("👤 Pseudo", `${mentionnedbot}`, true)
+      .addField("👥 #", `#${mentionnedbot.discriminator}`, true)
+      .addBlankField()
+      .addField("✏️ ID", `${mentionned.id}`, true)
+      .addField("🕵 Type", checkbot, true)
+      .addBlankField()
+      .addField("🔘 Status", status, true)
+      .addField(
+        "🎮 Jeu",
+        `${
+          mentionned.presence.game
+            ? `${mentionned.presence.game.name}`
+            : "Ne joue à rien"
+        }`,
+        true
+      )
+      .addBlankField()
+      .addField(
+        `<:bing_slime:477106597756141569> Rôle(s) [${
+          mentionned.roles.size
+        } rôle(s)]`,
+        `- ${mentionned.roles
+          .array()
+          .sort()
+          .map(g => g)
+          .join("\n- ")}`,
+        true
+      )
+      .addBlankField()
+      .addField("⬆ Plus haut rôle", mentionned.highestRole, true)
+      .addBlankField()
+      .addField(
+        "🚪 Arrivée sur le serveur",
+        moment(mentionned.joinedAt).format("Do MMMM YYYY, LTS"),
+        true
+      )
+      .addField(
+        "🛠 Compte créé le",
+        moment(mentionnedbot.createdAt).format("Do MMMM YYYY, LTS"),
+        true
+      )
+      .addBlankField()
+      .addField(
+        "⭕ Kickable",
+        `${mentionned.kickable ? "✅ Oui" : "❌ Non"}`,
+        true
+      )
+      .addField(
+        "⭕ Bannable",
+        `${mentionned.bannable ? "✅ Oui" : "❌ Non"}`,
+        true
+      )
+      .addBlankField()
+      .addField("test crash", message.guild.roles.array());
+
+    return message.channel.send(userEmbed);
   } catch (e) {
-    message.channel.send(
+    return message.channel.send(
       "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Il est possible que vous ayez trop de rôles par rapport au nombre de caractères maximum que demande un embed (<google / <ggl Qu'est ce qu'un embed Discord ?)"
     );
   }
