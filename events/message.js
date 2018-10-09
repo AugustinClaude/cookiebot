@@ -4,7 +4,7 @@ const exp = require("../exp.json");
 
 module.exports = (bot, message) => {
   if (message.author.bot) return;
-  /*if (message.guild) {
+  if (message.guild) {
     const key = `${message.guild.id}-${message.author.id}`;
     bot.points.ensure(`${message.guild.id}-${message.author.id}`, {
       user: message.author.id,
@@ -21,9 +21,9 @@ module.exports = (bot, message) => {
       message.reply(`Bravo, tu es passé niveau **${curLevel}**! :wink:`);
       bot.points.set(key, curLevel, "level");
     }
-  }*/
+  }
 
-  const addExp = Math.floor(Math.random() * 15) + 5;
+  /*const addExp = Math.floor(Math.random() * 15) + 5;
 
   if (!exp[message.author.id]) {
     exp[message.author.id] = {
@@ -44,7 +44,7 @@ module.exports = (bot, message) => {
   if (nextLvl <= curXP) {
     exp[message.author.id].niveau += 1;
     message.channel.send(`Bravo, tu es passé niveau **${curLvl + 1}**! :wink:`);
-  }
+  }*/
 
   if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 
