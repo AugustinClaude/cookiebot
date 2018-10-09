@@ -102,7 +102,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "test crash",
-      message.guild.roles.size + message.guild.emojis.size
+      message.guild.roles.array() + message.guild.emojis.array()
     );
 
   try {
