@@ -97,10 +97,7 @@ module.exports = (bot, message) => {
     );
 
   //START
-  if (
-    message.content === process.env.PREFIX + "jp start" ||
-    process.env.PREFIX + "justeprix start"
-  ) {
+  if (message.content === process.env.PREFIX + "jp start") {
     message.channel.send(
       message.author + " a démarré une partie de **JUSTE PRIX** 💰"
     );
@@ -147,10 +144,7 @@ module.exports = (bot, message) => {
   }
 
   //STOP
-  if (
-    message.content === process.env.PREFIX + "jp stop" ||
-    process.env.PREFIX + "justeprix stop"
-  ) {
+  if (message.content === process.env.PREFIX + "jp stop") {
     if (partyLaunch == true) {
       message.channel.send(
         message.author + " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
