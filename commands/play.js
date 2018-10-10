@@ -21,9 +21,11 @@ module.exports.run = async (bot, message, args) => {
   );
 
   message.channel.send(
-    `▶ **Now Playing** : \`\`\`fix\n${info.title}\n\`\`\`\n**Link** : ${
-      args[0]
-    }`
+    `▶ **Now Playing** : \`\`\`fix\n${
+      info.title
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`\n${
+      info.length_seconds
+    }\n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
 };
