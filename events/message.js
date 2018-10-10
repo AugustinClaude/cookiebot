@@ -56,6 +56,32 @@ module.exports = (bot, message) => {
     return;
   }
 
+  const args = message.content
+    .slice(process.env.PREFIX.length)
+    .trim()
+    .split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  // Récupération des permissions
+  const perms = bot.permlevel(message);
+
+  // Alias ?
+  const cmd =
+    bot.commands.get(command) || bot.commands.get(bot.aliases.get(command));
+
+  // Si la commande existe + permission, on lance la commande
+  if (cmd && perms >= cmd.conf.permLevel) {
+    bot.log(
+      "log",
+      ` ${message.guild.name} | #${message.channel.name}:
+        ${message.author.username}#${message.author.discriminator} (${
+        message.author.id
+      }) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
+      "CMD"
+    );
+    cmd.run(bot, message, args, perms);
+  }
+
   //JUSTE PRIX
 
   var numberRandom = 0;
@@ -138,33 +164,5 @@ module.exports = (bot, message) => {
         ":x: Aucune partie n'a été commencée ! Utilisez <justeprix start pour commencer une partie !"
       );
     }
-  }
-
-  //SUITE
-
-  const args = message.content
-    .slice(process.env.PREFIX.length)
-    .trim()
-    .split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  // Récupération des permissions
-  const perms = bot.permlevel(message);
-
-  // Alias ?
-  const cmd =
-    bot.commands.get(command) || bot.commands.get(bot.aliases.get(command));
-
-  // Si la commande existe + permission, on lance la commande
-  if (cmd && perms >= cmd.conf.permLevel) {
-    bot.log(
-      "log",
-      ` ${message.guild.name} | #${message.channel.name}:
-        ${message.author.username}#${message.author.discriminator} (${
-        message.author.id
-      }) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
-      "CMD"
-    );
-    cmd.run(bot, message, args, perms);
   }
 };
