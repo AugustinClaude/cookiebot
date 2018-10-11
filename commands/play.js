@@ -14,6 +14,10 @@ module.exports.run = async (bot, message, args) => {
   if (!validate)
     return message.channel.send("Sorry, this link is not available ! 😦");
 
+  if (info.length_seconds >= 60) 
+    var secondS = 60;
+  var minute = 1;
+
   const info = await ytdl.getInfo(args[0]);
   const connection = await message.member.voiceChannel.join();
   const dispatcher = await connection.playStream(
@@ -23,9 +27,9 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`\n${
-      info.length_seconds
-    } secondes\n\`\`\`\n**Link** : ${args[0]}`
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`\n${minute}m ${
+      info.length_seconds - secondS
+    }sec \n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
 };
