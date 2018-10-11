@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
     }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${ytdl(args[0], {
-      begin: "5s"
+      begin: "30s"
     })} secondes\n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
