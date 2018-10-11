@@ -23,9 +23,9 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${ytdl.begin(
-      args[0]
-    )} secondes\n\`\`\`\n**Link** : ${args[0]}`
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${ytdl(args[0], {
+      begin: "5s"
+    })} secondes\n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
 };
