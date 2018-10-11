@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
       info.title
     }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${
       info.length_seconds
-    }sec\n\`\`\`\n**Link** : ${args[0]}`
+    } secondes\n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
 };
