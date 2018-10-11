@@ -20,14 +20,12 @@ module.exports.run = async (bot, message, args) => {
     ytdl(args[0], { filter: "audioonly" })
   );
 
-  if (info.length_seconds >= 60) var secondS = 60;
-  var minute = 1;
-
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`\n${minute}m ${info.length_seconds -
-      secondS}sec \n\`\`\`\n**Link** : ${args[0]}`
+    }\n\`\`\`js\n⏳ **Duration** : \`\`\`\n${
+      info.length_seconds
+    }sec\n\`\`\`\n**Link** : ${args[0]}`
   );
   message.delete();
 };
