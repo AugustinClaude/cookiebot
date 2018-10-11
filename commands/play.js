@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`js\n⏳ **Duration** : \`\`\`\n${
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${
       info.length_seconds
     }sec\n\`\`\`\n**Link** : ${args[0]}`
   );
