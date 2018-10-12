@@ -70,11 +70,11 @@ module.exports.run = async (bot, message, args) => {
           mentionned.roles.size
         } rôle(s)]`,
         `- ${mentionned.roles
+          .filter(role => role.id !== message.guild.id)
           .array()
           .sort()
           .map(g => g)
-          .join("\n- ")
-          .filter(role => role.id !== message.guild.id)}`,
+          .join("\n- ")}`,
         true
       )
       .addBlankField()
