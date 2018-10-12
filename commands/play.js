@@ -23,10 +23,10 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${ytdl(args[0], {
-      begin: info.length_seconds
-    })} secondes\n\`\`\`\n**Link** : ${args[0]}`
-  );
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${info.length_seconds} seconds\n\`\`\`\n **Views** : \`\`\`js\n${info.view_count} views\n\`\`\`\n**Link** : ${
+      info.video_url
+    }`
+  ); // LOUNDNESS MEDIA
   message.delete();
 };
 
