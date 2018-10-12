@@ -11,9 +11,7 @@ module.exports.run = async (bot, message, args) => {
   var mentionnedbot = message.mentions.users.first();
   var getvalueof;
 
-  function compareNombres(a, b) {
-    return a - b;
-  }
+  var compare = mentionned.roles.size.array();
 
   if (mentionnedbot) {
     var getvalueof = mentionnedbot;
@@ -75,7 +73,7 @@ module.exports.run = async (bot, message, args) => {
         `- ${mentionned.roles
           .filter(role => role.id !== message.guild.id)
           .array()
-          .sort(compareNombres)
+          .sort(compare)
           .map(g => g)
           .join("\n- ")}`,
         true
