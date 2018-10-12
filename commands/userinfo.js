@@ -66,9 +66,8 @@ module.exports.run = async (bot, message, args) => {
       )
       .addBlankField()
       .addField(
-        `<:bing_slime:477106597756141569> Rôle(s) [${
-          mentionned.roles.size
-        } rôle(s)]`,
+        `<:bing_slime:477106597756141569> Rôle(s) [${mentionned.roles.size -
+          1} rôle(s)]`,
         `- ${mentionned.roles
           .filter(role => role.id !== message.guild.id)
           .array()
