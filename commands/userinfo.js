@@ -71,7 +71,7 @@ module.exports.run = async (bot, message, args) => {
         `- ${mentionned.roles
           .filter(role => role.id !== message.guild.id)
           .array()
-          .sort()
+          .sort(g => g)
           .map(g => g)
           .join("\n- ")}`,
         true
