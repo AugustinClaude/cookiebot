@@ -74,8 +74,7 @@ module.exports.run = async (bot, message, args) => {
           .sort()
           .map(g => g)
           .join("\n- ")
-          .filter(role => role.id !== message.guild.id)
-          .map(role => role.name)}`,
+          .filter(role => role.id !== message.guild.id)}`,
         true
       )
       .addBlankField()
