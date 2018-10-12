@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   var mentionnedbot = message.mentions.users.first();
   var getvalueof;
 
-  var compare = mentionned.roles.size.array();
+  var compare = mentionned.roles.array();
 
   if (mentionnedbot) {
     var getvalueof = mentionnedbot;
