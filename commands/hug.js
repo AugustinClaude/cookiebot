@@ -24,10 +24,10 @@ module.exports.run = async (bot, message, args) => {
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
   "/img/pat",       -> réconforter / ca va aller hein
   "/img/baka";      -> INSULT **************************** DONE
-  "/img/feed",      -> donne a bouffer
+  "/img/feed",      -> donne a bouffer ************************* DONE
   "/img/cuddle",    -> caresser
   "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE ************************* DONE
-  "/img/kiss",      -> bisou wesh
+  "/img/kiss",      -> bisou wesh ******************************* DONE
 */
   if (message.author === huguserAuto) {
     const hugEmbed = new Discord.RichEmbed()
