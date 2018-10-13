@@ -29,9 +29,9 @@ module.exports.run = async (bot, message, args) => {
       info.view_count
     } views\n\`\`\`\n👤 **Author** : \`\`\`css\n${
       info.author.name
-    } \n\`\`\`\n **Song infos** : \`\`\`js\n${
-      info.media.song.artist.writers
-    } \n\`\`\`\n🌐 **Link** : ${info.video_url}`
+    } \n\`\`\`\n📋 **Song infos** : \`\`\`js\n${info.media.song +
+      info.media.artist +
+      info.media.writers} \n\`\`\`\n🌐 **Link** : ${info.video_url}`
   );
   message.delete();
 };
