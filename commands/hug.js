@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/why");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/ngif");
   /*"/img/tickle",  -> guili
   "/img/slap",      -> frapper
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
@@ -29,12 +29,6 @@ module.exports.run = async (bot, message, args) => {
   "----------X /img/fox_girl",  -> OUI BAH UNE MEUF QUOI //IMAGE X ---------------------
   "/img/feed",      -> donne a bouffer
   "/img/cuddle",    -> joue contre joue / reconforter
-  "/why",           -> ?
-  "/cat",           -> ?
-  "/owoify",        -> ?
-  "/8ball",         -> ?
-  "/fact",          -> ?
-  "/chat",          -> ?
   "/img/ngif",      -> 
   "/img/kemonomimi",-> 
   "/img/holo",      -> 
@@ -46,7 +40,6 @@ module.exports.run = async (bot, message, args) => {
       .setTitle(
         `**${message.author.username}** s'est fait un calin à lui même O_o`
       )
-      .setDescription(body.url)
       .setImage(body.url)
       .setColor("RANDOM");
 
