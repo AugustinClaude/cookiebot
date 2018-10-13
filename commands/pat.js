@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
-  const hugUserAuto = message.mentions.users.first();
-  const hugUser = message.guild.member(
+  const patUserAuto = message.mentions.users.first();
+  const patUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
@@ -13,34 +13,36 @@ module.exports.run = async (bot, message, args) => {
     );
   }
 
-  if (!hugUser)
+  if (!patUser)
     return message.channel.send(
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/pat");
 
-  if (message.author === hugUserAuto) {
-    const hugEmbed = new Discord.RichEmbed()
+  if (message.author === patUserAuto) {
+    const patEmbed = new Discord.RichEmbed()
       .setTitle(
-        `**${message.author.username}** s'est fait un calin à lui même O_o`
+        `**${
+          message.author.username
+        }** se réconforte lui même O_o D'accord pourquoi pas '-'`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
-    return message.channel.send(hugEmbed);
+    return message.channel.send(patEmbed);
   }
 
-  const hugEmbed = new Discord.RichEmbed()
+  const patEmbed = new Discord.RichEmbed()
     .setTitle(
-      `**${message.author.username}** a fait un calin à **${
+      `**${message.author.username}** réconforte **${
         message.mentions.users.first().username
       }** ! Trop mignon :heart:`
     )
     .setImage(body.url)
     .setColor("RANDOM");
 
-  return message.channel.send(hugEmbed);
+  return message.channel.send(patEmbed);
 };
 
 module.exports.conf = {
@@ -51,5 +53,5 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "hug"
+  name: "pat"
 };
