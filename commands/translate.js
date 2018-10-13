@@ -26,11 +26,8 @@ module.exports.run = async (bot, message, args) => {
         return message.channel.send(transEmbed);
 
       });
-
     }
-
   }
-
 }
 
 module.exports.conf = {
