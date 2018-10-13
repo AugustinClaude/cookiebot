@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
   /*"/img/tickle",  -> guili
-  "/img/slap",      -> frapper
+  "/img/slap",      -> frapper **************************** DONE
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
   "/img/pat",       -> réconforter / ca va aller hein
   "/img/baka";      -> INSULT
