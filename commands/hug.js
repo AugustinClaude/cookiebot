@@ -18,9 +18,9 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/slap");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/poke");
   /*"/img/tickle",  -> guili
-  "/img/slap",
+  "/img/slap",      -> frapper
   "/img/poke",
   "/img/pat",
   "/img/neko",
