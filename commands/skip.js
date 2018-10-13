@@ -1,14 +1,27 @@
 var servers = {};
+const ytdl = require("ytdl-core");
 
 module.exports.run = async (bot, message, args) => {
   if (!message.member.voiceChannel)
     return message.reply("You're not connect to a voice channel !");
 
-  var server = servers[message.guild.id];
+  function play(connection, message) {
+    var server = servers[message.guild.id];
 
-  if (server.dispatcher) {
-    server.dispatcher.end();
-    message.channel.send("⏭ Song skipped successfully !");
+    server.dispatcher = connection.playStream(
+      ytdl(server.queue[0], { filter: "audioonly" })
+    );
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+      if (server.queue[0]) play(connection, message);
+      else connection.disconnect();
+    });
+    if (server.dispatcher) {
+      server.dispatcher.end();
+      message.channel.send("⏭ Song skipped successfully !");
+    }
   }
 };
 
