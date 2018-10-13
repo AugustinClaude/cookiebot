@@ -3,6 +3,11 @@ const ytdl = require("ytdl-core");
 const queue = new Map();
 
 module.exports.run = async (bot, message, args) => {
+  if (!servers[message.guild.id])
+    servers[message.guild.id] = {
+      queue: []
+    };
+
   if (!message.member.voiceChannel)
     return message.reply("You're not connect to a voice channel !");
 
