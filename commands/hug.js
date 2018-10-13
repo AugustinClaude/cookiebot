@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
-  const huguserAuto = message.mentions.users.first();
+  const hugUserAuto = message.mentions.users.first();
   const hugUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
@@ -19,17 +19,11 @@ module.exports.run = async (bot, message, args) => {
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
-  /*"/img/tickle",  -> guili ********************** DONE
-  "/img/slap",      -> frapper **************************** DONE
-  "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
+  /*
+  "/img/poke",      -> réveiller / pousser
   "/img/pat",       -> réconforter / ca va aller hein
-  "/img/baka";      -> INSULT **************************** DONE
-  "/img/feed",      -> donne a bouffer ************************* DONE
-  "/img/cuddle",    -> caresser *************************** DONE
-  "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE ************************* DONE
-  "/img/kiss",      -> bisou wesh ******************************* DONE
 */
-  if (message.author === huguserAuto) {
+  if (message.author === hugUserAuto) {
     const hugEmbed = new Discord.RichEmbed()
       .setTitle(
         `**${message.author.username}** s'est fait un calin à lui même O_o`

@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
-  const cuddleUserAuto = message.mentions.users.first();
-  const cuddleUser = message.guild.member(
+  const pokeUserAuto = message.mentions.users.first();
+  const pokeUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
@@ -13,45 +13,43 @@ module.exports.run = async (bot, message, args) => {
     );
   }
 
-  if (!cuddleUser)
+  if (!pokeUser)
     return message.channel.send(
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/cuddle");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/poke");
 
-  if (message.author === cuddleUserAuto) {
-    const cuddleEmbed = new Discord.RichEmbed()
+  if (message.author === pokeUserAuto) {
+    const pokeEmbed = new Discord.RichEmbed()
       .setTitle(
-        `**${
-          message.author.username
-        }** se réconforte lui même O_o Toujours aussi bizarre ce gars ;-;`
+        `**${message.author.username}** s'est fait un calin à lui même O_o`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
-    return message.channel.send(cuddleEmbed);
+    return message.channel.send(pokeEmbed);
   }
 
-  const cuddleEmbed = new Discord.RichEmbed()
+  const pokeEmbed = new Discord.RichEmbed()
     .setTitle(
-      `**${message.author.username}** réconforte **${
+      `**${message.author.username}** a fait un calin à **${
         message.mentions.users.first().username
       }** ! Trop mignon :heart:`
     )
     .setImage(body.url)
     .setColor("RANDOM");
 
-  return message.channel.send(cuddleEmbed);
+  return message.channel.send(pokeEmbed);
 };
 
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["caress"],
+  aliases: [],
   permLevel: 0
 };
 
 module.exports.help = {
-  name: "cuddle"
+  name: "poke"
 };
