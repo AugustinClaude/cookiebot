@@ -18,9 +18,7 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get(
-    "https://nekos.life/api/v2/img/fox_girl"
-  );
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/feed");
   /*"/img/tickle",  -> guili
   "/img/slap",      -> frapper
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
@@ -30,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
   "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE
   "/img/kiss",      -> bisou wesh
   "/img/hug",       -> calin
-  "/img/fox_girl",  -> 
+  "----------X /img/fox_girl",  -> OUI BAH UNE MEUF QUOI //IMAGE X ---------------------
   "/img/feed",      -> 
   "/img/cuddle",    -> 
   "/why",           -> 
