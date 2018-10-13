@@ -18,14 +18,14 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/lizard");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/kiss");
   /*"/img/tickle",  -> guili
   "/img/slap",      -> frapper
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
   "/img/pat",       -> réconforter / ca va aller hein 
-  "----------X /img/neko",      -> IMAGE DE MEUF un peu voila mais pas trop ^^ X <- ceci est une croix------
-  "/img/meow",      -> CHATS CHATS CHATS ET DES GIF EN PLUS !!!
-  "/img/lizard",    -> 
+  "----------X /img/neko", //IMAGE     -> IMAGE DE MEUF un peu voila mais pas trop ^^ X <- ceci est une croix------
+  "/img/meow",      -> CHATS CHATS CHATS ET DES GIF EN PLUS !!! // IMAGE + GIFS
+  "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE
   "/img/kiss",      -> 
   "/img/hug",       -> calin
   "/img/fox_girl",  -> 
