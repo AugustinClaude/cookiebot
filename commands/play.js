@@ -23,9 +23,13 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${info.length_seconds} seconds\n\`\`\`\n **Views** : \`\`\`js\n${info.view_count} views\n\`\`\`\n**Link** : ${
-      info.video_url
-    }`
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${
+      info.length_seconds
+    } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
+      info.view_count
+    } views\n\`\`\`\n **Media** : \`\`\`js\n${
+      info.media
+    } \n\`\`\`\n🌐 **Link** : ${info.video_url}`
   ); // LOUNDNESS MEDIA
   message.delete();
 };
