@@ -41,6 +41,17 @@ module.exports.run = async (bot, message, args) => {
     var status = "<:streaming:492994618942685214> Streaming";
   }
 
+  if (!mentionned.roles) {
+    var roles = ":x: Aucun rôles";
+  } else {
+    var roles = `- ${mentionned.roles
+      .filter(role => role.id !== message.guild.id)
+      .array()
+      .sort(mentionned.roles.size)
+      .map(g => g)
+      .join("\n- ")}`;
+  }
+
   try {
     const userEmbed = new Discord.RichEmbed()
       .setColor("#b7db24")
@@ -68,12 +79,7 @@ module.exports.run = async (bot, message, args) => {
       .addField(
         `<:bing_slime:477106597756141569> Rôle(s) [${mentionned.roles.size -
           1} rôle(s)]`,
-        `- ${mentionned.roles
-          .filter(role => role.id !== message.guild.id)
-          .array()
-          .sort(mentionned.roles.size)
-          .map(g => g)
-          .join("\n- ")}`,
+        `${roles}`,
         true
       )
       .addBlankField()
@@ -103,9 +109,6 @@ module.exports.run = async (bot, message, args) => {
       .addBlankField();
 
     message.channel.send(userEmbed);
-    message.channel.send(
-      mentionned.roles.filter(role => role.id !== message.guild.id)
-    );
   } catch (e) {
     return message.channel.send(
       `Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Il est possible que vous ayez trop de rôles par rapport au nombre de caractères maximum que demande un embed (\`\`<google / <ggl Qu'est ce qu'un embed Discord ?\`\`). Attention, cela peut aussi être lié à un autre problème dont je ne connais pas forcément l'existence !`
