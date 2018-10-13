@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(
       `**${message.author.username}** donne à manger à **${
         message.mentions.users.first().username
-      }** ! Quelle belle action de sa part ! 🥖`
+      }** ! Belle action de sa part ! 🥖`
     )
     .setImage(body.url)
     .setColor("RANDOM");
