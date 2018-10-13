@@ -28,13 +28,13 @@ module.exports.run = async (bot, message, args) => {
   "/img/kiss",      -> bisou wesh
   "----------X /img/fox_girl",  -> OUI BAH UNE MEUF QUOI //IMAGE X ---------------------
   "/img/feed",      -> donne a bouffer
-  "/img/cuddle",    -> joue contre joue
-  "/why",           -> 
-  "/cat",           -> 
-  "/owoify",        -> 
-  "/8ball",         -> 
-  "/fact",          -> 
-  "/chat",          -> 
+  "/img/cuddle",    -> joue contre joue / reconforter
+  "/why",           -> ?
+  "/cat",           -> ?
+  "/owoify",        -> ?
+  "/8ball",         -> ?
+  "/fact",          -> ?
+  "/chat",          -> ?
   "/img/ngif",      -> 
   "/img/kemonomimi",-> 
   "/img/holo",      -> 
@@ -46,6 +46,7 @@ module.exports.run = async (bot, message, args) => {
       .setTitle(
         `**${message.author.username}** s'est fait un calin à lui même O_o`
       )
+      .setDescription(body.url)
       .setImage(body.url)
       .setColor("RANDOM");
 

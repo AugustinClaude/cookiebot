@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
   const catEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("🐱 Image de Chat")
+    .setTitle("🐱 Chat")
     .setImage(body.file);
   message.channel.send(catEmbed);
 };
