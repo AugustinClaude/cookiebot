@@ -2,7 +2,10 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
-  const { body } = await superagent.get("http://aws.random.cat//meow");
+  const { body } = await superagent.get(
+    "http://aws.random.cat//meow",
+    "https://nekos.life/api/v2/img/meow"
+  );
 
   const catEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
