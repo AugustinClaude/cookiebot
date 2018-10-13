@@ -20,6 +20,10 @@ module.exports.run = async (bot, message, args) => {
     ytdl(args[0], { filter: "audioonly" })
   );
 
+  var artist = info.media.artist;
+
+  if (!artist) var artist = info.author.name;
+
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
@@ -27,11 +31,11 @@ module.exports.run = async (bot, message, args) => {
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
-    } views\n\`\`\`\n👤 **Author** : \`\`\`css\n${
+    } views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
-    } \n\`\`\`\n📋 **Song infos** : \`\`\`js\n${info.media.song +
-      info.media.artist +
-      info.media.writers} \n\`\`\`\n🌐 **Link** : ${info.video_url}`
+    } \n\`\`\`\n📋 **Song Writer** : \`\`\`bash\n${artist} \n\`\`\`\n🌐 **Link** : ${
+      info.video_url
+    }`
   );
   message.delete();
 };
