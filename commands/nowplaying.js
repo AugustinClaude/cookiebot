@@ -4,14 +4,12 @@ var servers = {};
 
 module.exports.run = async (bot, message, args) => {
   var server = servers[message.guild.id];
-  const info = await ytdl.getInfo(server);
-
-  if (!message.guild.me.voiceChannel)
-    return message.reply("I'm not connect to a voice channel !");
+  //const info = await ytdl.getInfo();
 
   if (!server) return message.reply("There is nothing playing.");
   else {
-    var artist = info.media.artist;
+    return message.reply(server);
+    /*var artist = info.media.artist;
 
     if (!artist)
       var artist = "I couldn't find any artist for this song, sorry :(";
@@ -28,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
       } \n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist} \n\`\`\`\n🌐 **Link** : ${
         info.video_url
       }`
-    );
+    );*/
   }
 };
 
