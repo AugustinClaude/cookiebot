@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🖼 Images",
-      "``- <cat / <chat`` : Photo et gifs de chat!\n``- <dog / <chien`` : Photo de chien!\n``- <lizard / lezard`` : Photo de lézard!\n``- <hug [@member]`` : Fais un calin à une personne :3\n``- <slap [@member]`` : Frappe une personne ! Ce n'est pas très gentil !"
+      "``- <cat / <chat`` : Photo et gifs de chat!\n``- <dog / <chien`` : Photo de chien!\n``- <lizard / lezard`` : Photo de lézard!\n``- <hug [@member]`` : Fais un calin à une personne :3\n``- <slap [@member]`` : Frappe une personne ! Ce n'est pas très gentil !\n``- <tickle [@member]`` : Chatouille une personne ! La pauvre ;)"
     )
     .addBlankField()
     .addField(
