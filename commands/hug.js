@@ -18,22 +18,16 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/baka");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
   /*"/img/tickle",  -> guili
   "/img/slap",      -> frapper
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
-  "/img/pat",       -> réconforter / ca va aller hein 
-  "----------X /img/neko", //IMAGE     -> IMAGE DE MEUF un peu voila mais pas trop ^^ X <- ceci est une croix------
-  "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE
-  "/img/kiss",      -> bisou wesh
-  "----------X /img/fox_girl",  -> OUI BAH UNE MEUF QUOI //IMAGE X ---------------------
+  "/img/pat",       -> réconforter / ca va aller hein
+  "/img/baka";      -> INSULT
   "/img/feed",      -> donne a bouffer
   "/img/cuddle",    -> joue contre joue / reconforter
-  "----------X /img/ngif",      -> ECCHI CA MERE STOP X ----------------
-  "----------X /img/kemonomimi",-> STOP LES PUTAIN D'ECCHI //IMAGE X------------------
-  "----------X /img/holo",      -> MIEUX MAIS TOUJOURS UN PEU ECCHI //IMAGE X--------------
-  "----------X /img/smug",      -> REGARDER mais c'est un peu nul donc X--------------
-  "/img/baka";      -> 
+  "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE ************************* DONE
+  "/img/kiss",      -> bisou wesh
 */
   if (message.author === huguserAuto) {
     const hugEmbed = new Discord.RichEmbed()

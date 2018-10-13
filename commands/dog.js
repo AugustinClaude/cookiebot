@@ -3,12 +3,12 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
   const { body } = await superagent.get("http://random.dog/woof.json");
-    
+
   const dogEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("🐶 Image de Chien")
+    .setTitle("🐶 Chien")
     .setImage(body.url);
-        
+
   message.channel.send(dogEmbed);
 };
 
