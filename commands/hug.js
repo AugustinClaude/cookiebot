@@ -12,7 +12,29 @@ module.exports.run = async (bot, message, args) => {
   if (!hugUser) return message.channel.send("L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !");
 
   const { body } = await superagent
-    .get("https://nekos.life/api/v2/img/hug");
+    .get("https://nekos.life/api/v2/img/tickle");
+  /*"/img/tickle",
+  "/img/slap",
+  "/img/poke",
+  "/img/pat",
+  "/img/neko",
+  "/img/meow",
+  "/img/lizard",
+  "/img/kiss",
+  "/img/fox_girl",
+  "/img/feed",
+  "/img/cuddle",
+  "/why",
+  "/cat",
+  "/owoify",
+  "/8ball",
+  "/fact",
+  "/chat",
+  "/img/ngif",
+  "/img/kemonomimi",
+  "/img/holo",
+  "/img/smug",
+  "/img/baka";*/
 
   if (message.author === huguserAuto) {
     const hugEmbed = new Discord.RichEmbed()
