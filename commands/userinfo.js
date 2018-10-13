@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
     var status = "<:streaming:492994618942685214> Streaming";
   }
 
-  if (!mentionned.roles) {
+  if (!mentionned.roles.filter(role => role.id !== message.guild.id)) {
     var roles = ":x: Aucun rôles";
   } else {
     var roles = `- ${mentionned.roles
