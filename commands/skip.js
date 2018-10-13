@@ -2,7 +2,7 @@ var servers = {};
 const ytdl = require("ytdl-core");
 
 module.exports.run = async (bot, message, args) => {
-  if (!servers[message.guild.id])
+  /*if (!servers[message.guild.id])
     servers[message.guild.id] = {
       queue: []
     };
@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   if (server.dispatcher) {
     server.dispatcher.end();
     message.channel.send("⏭ Song skipped successfully !");
-  }
+  }*/
 };
 
 module.exports.conf = {
