@@ -27,8 +27,8 @@ module.exports.run = async (bot, message, args) => {
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
-    } views\n\`\`\`\n **Status** : \`\`\`js\n${
-      info.status
+    } views\n\`\`\`\n👤 **Author** : \`\`\`js\n${
+      info.author
     } \n\`\`\`\n🌐 **Link** : ${info.video_url}`
   );
   message.delete();
