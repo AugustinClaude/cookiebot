@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
 
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/smug");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/baka");
   /*"/img/tickle",  -> guili
   "/img/slap",      -> frapper
   "/img/poke",      -> touche / pousser / enfin il touche un mec ou une meuf pour le **réveiller** ou autre
@@ -31,8 +31,8 @@ module.exports.run = async (bot, message, args) => {
   "/img/cuddle",    -> joue contre joue / reconforter
   "----------X /img/ngif",      -> ECCHI CA MERE STOP X ----------------
   "----------X /img/kemonomimi",-> STOP LES PUTAIN D'ECCHI //IMAGE X------------------
-  "----------X/img/holo",      -> MIEUX MAIS TOUJOURS UN PEU ECCHI //IMAGE X--------------
-  "/img/smug",      -> 
+  "----------X /img/holo",      -> MIEUX MAIS TOUJOURS UN PEU ECCHI //IMAGE X--------------
+  "----------X /img/smug",      -> REGARDER mais c'est un peu nul donc X--------------
   "/img/baka";      -> 
 */
   if (message.author === huguserAuto) {
