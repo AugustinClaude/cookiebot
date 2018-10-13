@@ -38,8 +38,6 @@ module.exports.run = async (bot, message, args) => {
     }`
   );
   message.delete();
-
-  if (dispatcher.end()) message.guild.me.voiceChannel.leave();
 };
 
 module.exports.conf = {
