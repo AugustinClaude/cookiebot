@@ -59,7 +59,8 @@ module.exports.run = async (bot, message, args) => {
   //.addField('📁 Nombre de staff', Fondacount + Admincount + Modocount + Devcount, true)
   //.addField('📆 Staff connectés', StaffOnline, true)
 
-  return message.channel.send(servEmbed);
+  message.channel.send(servEmbed);
+  message.delete();
 };
 
 module.exports.conf = {
