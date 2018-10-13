@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🖼 Images",
-      "``- <cat / <chat`` : Photo et gifs de chat!\n``- <dog / <chien`` : Photo de chien!\n``- <lizard / lezard`` : Photo de lézard!\n``- <hug [@member]`` : Fais un calin à une personne :3\n``- <slap [@member]`` : Frappe une personne ! Ce n'est pas très gentil !\n``- <tickle [@member]`` : Chatouille une personne ! La pauvre ;)\n``- <insult / <baka [@member]`` : Insulte une personne ! P'tit clash :D\n``- <kiss [@member]`` : Embrasse une personne ! Trop mignon <3\n``- <feed [@member]`` : Donne à manger à une personne ! C'est très gentil !\n``- <cuddle / <caress [@member]`` Caresse une personne !"
+      "``- <cat / <chat`` : Photo et gifs de chat!\n``- <dog / <chien`` : Photo de chien!\n``- <lizard / lezard`` : Photo de lézard!\n``- <hug [@member]`` : Fais un calin à une personne :3\n``- <slap [@member]`` : Frappe une personne ! Ce n'est pas très gentil !\n``- <tickle [@member]`` : Chatouille une personne ! La pauvre ;)\n``- <insult / <baka [@member]`` : Insulte une personne ! P'tit clash :D\n``- <kiss [@member]`` : Embrasse une personne ! Trop mignon <3\n``- <feed [@member]`` : Donne à manger à une personne ! C'est très gentil !\n``- <cuddle / <caress [@member]`` : Caresse une personne !\n``- <poke [@member]`` : Poke une personne !"
     )
     .addBlankField()
     .addField(

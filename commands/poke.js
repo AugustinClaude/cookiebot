@@ -9,22 +9,20 @@ module.exports.run = async (bot, message, args) => {
 
   if (args[0] === "random") {
     return message.reply(
-      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
+      "Random is not working yet ! Please, mention users :)"
     );
   }
 
   if (!pokeUser)
     return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+      "This user doesn't exist or you do not have mentionned a user !"
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/poke");
 
   if (message.author === pokeUserAuto) {
     const pokeEmbed = new Discord.RichEmbed()
-      .setTitle(
-        `**${message.author.username}** s'est fait un calin à lui même O_o`
-      )
+      .setTitle(`**${message.author.username}** poked himself O_o Ok...`)
       .setImage(body.url)
       .setColor("RANDOM");
 
@@ -33,9 +31,9 @@ module.exports.run = async (bot, message, args) => {
 
   const pokeEmbed = new Discord.RichEmbed()
     .setTitle(
-      `**${message.author.username}** a fait un calin à **${
+      `**${message.author.username}** poked **${
         message.mentions.users.first().username
-      }** ! Trop mignon :heart:`
+      }** ! `
     )
     .setImage(body.url)
     .setColor("RANDOM");
