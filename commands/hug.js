@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
   "/img/pat",       -> réconforter / ca va aller hein
   "/img/baka";      -> INSULT **************************** DONE
   "/img/feed",      -> donne a bouffer ************************* DONE
-  "/img/cuddle",    -> caresser
+  "/img/cuddle",    -> caresser *************************** DONE
   "/img/lizard",    -> LEZARD WOAH TROP BIEN :D // IMAGE ************************* DONE
   "/img/kiss",      -> bisou wesh ******************************* DONE
 */
