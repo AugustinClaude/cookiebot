@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
       .setTitle(
         `**${
           message.author.username
-        }** se réconforte lui même O_o D'accord pourquoi pas '-'`
+        }** se caresse lui même O_o D'accord pourquoi pas '-'`
       )
       .setImage(body.url)
       .setColor("RANDOM");
@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
   const patEmbed = new Discord.RichEmbed()
     .setTitle(
-      `**${message.author.username}** réconforte **${
+      `**${message.author.username}** caresse **${
         message.mentions.users.first().username
       }** ! Trop mignon :heart:`
     )
@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["caress"],
   permLevel: 0
 };
 
