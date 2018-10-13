@@ -22,11 +22,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (message.author === feedUserAuto) {
     const feedEmbed = new Discord.RichEmbed()
-      .setTitle(
-        `**${
-          message.author.username
-        }** se donne à manger O_o Sauf qu'on le voit en double o_O Weirdo`
-      )
+      .setTitle(`**${message.author.username}** se donne à manger... o_O`)
       .setImage(body.url)
       .setColor("RANDOM");
 
