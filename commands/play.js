@@ -2,17 +2,16 @@ const ytdl = require("ytdl-core");
 
 module.exports.run = async (bot, message, args) => {
   if (!message.member.voiceChannel)
-    return message.channel.send("You're not connect to a voice channel !");
+    return message.reply("You're not connect to a voice channel !");
 
   /*if (message.guild.me.voiceChannel)
-    return message.channel.send("I'm already connect to a voice channel !");*/
+    return message.reply("I'm already connect to a voice channel !");*/
 
-  if (!args[0]) return message.channel.send("Please specify a YouTube link !");
+  if (!args[0]) return message.reply("Please specify a YouTube link !");
 
   const validate = await ytdl.validateURL(args[0]);
 
-  if (!validate)
-    return message.channel.send("Sorry, this link is not available ! 😦");
+  if (!validate) return message.reply("Sorry, this link is not available ! 😦");
 
   const info = await ytdl.getInfo(args[0]);
   const connection = await message.member.voiceChannel.join();
