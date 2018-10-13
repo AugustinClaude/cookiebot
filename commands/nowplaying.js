@@ -1,16 +1,16 @@
 const ytdl = require("ytdl-core");
 const queue = new Map();
+var servers = {};
 
 module.exports.run = async (bot, message, args) => {
-  const url = args[1] ? args[1].replace(/<(.+)>/g, "$1") : "";
-  const serverQueue = queue.get(message.guild.id);
-  const info = await ytdl.getInfo(serverQueue.url);
+  var server = servers[message.guild.id];
+  const info = await ytdl.getInfo(server);
 
   if (!message.guild.me.voiceChannel)
     return message.reply("I'm not connect to a voice channel !");
 
-  if (!serverQueue) return message.reply("There is nothing playing.");
-  if (serverQueue) {
+  if (!server) return message.reply("There is nothing playing.");
+  else {
     var artist = info.media.artist;
 
     if (!artist)
