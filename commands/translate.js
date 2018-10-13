@@ -6,28 +6,26 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]) {
     return message.channel.send("Please provide a language : <translate [language] [text]");
-  } else {
-
-    if (!args[1]) {
-      return message.channel.send("Please give me something to translate : <translate [language] [text]");
-    } else {
-
-      const transArg = args[0].toLowerCase();
-      const translation;
-
-      if (!Langs.includes(transArg)) return message.channel.send("Invalid language !");
-      args = args.slice(transArg.length);
-
-      translate(args, {to: transArg}).then(res => {
-
-        const transEmbed = new Discord.RichEmbed()
-        .addField(`:flag_fr: Français => ${transArg}`, `${res.text}`)
-        .setColor("RANDOM");
-        return message.channel.send(transEmbed);
-
-      });
-    }
   }
+
+  if (!args[1]) {
+    return message.channel.send("Please give me something to translate : <translate [language] [text]");
+  }
+
+  const transArg = args[0].toLowerCase();
+  const translation;
+
+  if (!Langs.includes(transArg)) return message.channel.send("Invalid language !");
+  args = args.slice(transArg.length);
+
+  translate(args, {to: transArg}).then(res => {
+
+    const transEmbed = new Discord.RichEmbed()
+      .addField(`:flag_fr: Français => ${transArg}`, `${res.text}`)
+      .setColor("RANDOM");
+    return message.channel.send(transEmbed);
+
+  });
 }
 
 module.exports.conf = {
