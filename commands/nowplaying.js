@@ -2,8 +2,9 @@ const ytdl = require("ytdl-core");
 const queue = new Map();
 
 module.exports.run = async (bot, message, args) => {
+  const url = args[1] ? args[1].replace(/<(.+)>/g, "$1") : "";
   const serverQueue = queue.get(message.guild.id);
-  const info = await ytdl.getInfo(serverQueue.video_url);
+  const info = await ytdl.getInfo(serverQueue.url);
 
   if (!message.guild.me.voiceChannel)
     return message.reply("I'm not connect to a voice channel !");
