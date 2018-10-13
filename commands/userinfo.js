@@ -102,8 +102,9 @@ module.exports.run = async (bot, message, args) => {
       )
       .addBlankField();
 
-    return message.channel.send(
-      userEmbed + mentionned.roles.filter(role => role.id !== message.guild.id)
+    message.channel.send(userEmbed);
+    message.channel.send(
+      mentionned.roles.filter(role => role.id !== message.guild.id)
     );
   } catch (e) {
     return message.channel.send(
