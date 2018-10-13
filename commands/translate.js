@@ -4,11 +4,11 @@ const Langs = ["afrikaans", "albanian", "amharic", "arabic", "armenian", "azerba
 
 module.exports.run = async (bot, message, args) => {
 
-  if (args[0] === undefined) {
+  if (!args[0]) {
     return message.channel.send("Please provide a language : <translate [language] [text]");
   } else {
 
-    if (args[1] === undefined) {
+    if (!args[1]) {
       return message.channel.send("Please give me something to translate : <translate [language] [text]");
     } else {
 
