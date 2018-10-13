@@ -3,17 +3,23 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
   const huguserAuto = message.mentions.users.first();
-  const hugUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    
+  const hugUser = message.guild.member(
+    message.mentions.users.first() || message.guild.members.get(args[0])
+  );
+
   if (args[0] === "random") {
-    return message.reply("Le Random ne fonctionne pas encore ! Merci de mentionner :)");
+    return message.reply(
+      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
+    );
   }
 
-  if (!hugUser) return message.channel.send("L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !");
+  if (!hugUser)
+    return message.channel.send(
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+    );
 
-  const { body } = await superagent
-    .get("https://nekos.life/api/v2/img/tickle");
-  /*"/img/tickle",
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/slap");
+  /*"/img/tickle",  -> guili
   "/img/slap",
   "/img/poke",
   "/img/pat",
@@ -21,6 +27,7 @@ module.exports.run = async (bot, message, args) => {
   "/img/meow",
   "/img/lizard",
   "/img/kiss",
+  "/img/hug",       -> calin
   "/img/fox_girl",
   "/img/feed",
   "/img/cuddle",
@@ -38,7 +45,9 @@ module.exports.run = async (bot, message, args) => {
 
   if (message.author === huguserAuto) {
     const hugEmbed = new Discord.RichEmbed()
-      .setTitle(`**${message.author.username}** s'est fait un calin à lui même O_o`)
+      .setTitle(
+        `**${message.author.username}** s'est fait un calin à lui même O_o`
+      )
       .setImage(body.url)
       .setColor("RANDOM");
 
@@ -46,7 +55,11 @@ module.exports.run = async (bot, message, args) => {
   }
 
   const hugEmbed = new Discord.RichEmbed()
-    .setTitle(`**${message.author.username}** a fait un calin à **${message.mentions.users.first().username}** ! Trop mignon :heart:`)
+    .setTitle(
+      `**${message.author.username}** a fait un calin à **${
+        message.mentions.users.first().username
+      }** ! Trop mignon :heart:`
+    )
     .setImage(body.url)
     .setColor("RANDOM");
 
