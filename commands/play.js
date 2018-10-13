@@ -27,10 +27,10 @@ module.exports.run = async (bot, message, args) => {
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
-    } views\n\`\`\`\n **Media** : \`\`\`js\n${
-      info.media
+    } views\n\`\`\`\n **Loudness** : \`\`\`js\n${
+      info.loudness
     } \n\`\`\`\n🌐 **Link** : ${info.video_url}`
-  ); // LOUNDNESS MEDIA
+  );
   message.delete();
 };
 
