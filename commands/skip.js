@@ -1,6 +1,5 @@
 var servers = {};
 const ytdl = require("ytdl-core");
-const queue = new Map();
 
 module.exports.run = async (bot, message, args) => {
   if (!servers[message.guild.id])
