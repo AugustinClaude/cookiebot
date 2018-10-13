@@ -22,7 +22,8 @@ module.exports.run = async (bot, message, args) => {
 
   var artist = info.media.artist;
 
-  if (!artist) var artist = info.author.name;
+  if (!artist)
+    var artist = "I couldn't find any artist for this song, sorry :(";
 
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
