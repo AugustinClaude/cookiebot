@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
       info.view_count
     } views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
-    } \n\`\`\`\n📋 **Song Writer** : \`\`\`bash\n${artist} \n\`\`\`\n🌐 **Link** : ${
+    } \n\`\`\`\n🎵 **Song Writer** : \`\`\`bash\n${artist} \n\`\`\`\n🌐 **Link** : ${
       info.video_url
     }`
   );
