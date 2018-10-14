@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🌐 **Site Web**",
-      "=> [[VISITER](https://cookiebot547551019.wordpress.com/)] <="
+      "=> [[VISITER](https://cookie-bot.site123.me/)] <="
     )
     .addBlankField()
     .addField(
