@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["um"],
   permLevel: 0
 };
 

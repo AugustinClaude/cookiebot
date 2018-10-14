@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "📛 Modération",
-      "``- <prefix [new prefix]`` : Change le prefix actuel par un autre\n``- <kick [@member] [Raison]`` : Kick un utilisateur mentionné\n``- <ban [@member] [Raison]`` : Ban un utilisateur mentionné\n``- <unban [ID]`` : Unban l'ID d'un utilisateur banni\n``- <tempban / <tb [@membre] [durée] [raison]`` : Tempban un utilisateur mentionné\n``- <mute [@member] [Durée]`` : Mute un utilisateur mentionné\n``- <unmute [@member]`` : Unmute un utilisateur mute\n``- <report [@member] [Raison]`` : Report un utilisateur mentionné\n``- <clear / <purge [Nb msg]`` : Clear un nombre défini de messages\n``- <cmd / <command [fichier.js]`` : Affiche le code source d'une commande en .js"
+      "``- <prefix [new prefix]`` : Change le prefix actuel par un autre\n``- <kick [@member] [Raison]`` : Kick un utilisateur mentionné\n``- <ban [@member] [Raison]`` : Ban un utilisateur mentionné\n``- <unban [ID]`` : Unban l'ID d'un utilisateur banni\n``- <tempban / <tb [@membre] [durée] [raison]`` : Tempban un utilisateur mentionné\n``- <mute [@member] [Durée]`` : Mute un utilisateur mentionné\n``- <unmute / <um [@member]`` : Unmute un utilisateur mute\n``- <report [@member] [Raison]`` : Report un utilisateur mentionné\n``- <clear / <purge [Nb msg]`` : Clear un nombre défini de messages\n``- <cmd / <command [fichier.js]`` : Affiche le code source d'une commande en .js"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
