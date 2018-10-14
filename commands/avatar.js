@@ -4,20 +4,15 @@ module.exports.run = async (bot, message, args) => {
   const mentionned = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
+  var value;
 
-  var mentionnedbot = message.mentions.users.first();
-  var getvalueof;
-
-  if (mentionnedbot) {
-    var getvalueof = mentionnedbot;
-  } else {
-    var getvalueof = message.author;
-  }
+  if (!mentionned) var value = message.author;
+  else var value = mentionned;
 
   const avatarEmbed = new Discord.RichEmbed()
-    .setTitle(`Avatar de **${getvalueof.username}**`)
+    .setTitle(`Avatar de **${value.username}**`)
     .setColor("RANDOM")
-    .setImage(getvalueof.displayAvatarURL);
+    .setImage(value.displayAvatarURL);
 
   message.channel.send(avatarEmbed);
   message.delete();
