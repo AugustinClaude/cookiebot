@@ -4,8 +4,15 @@ module.exports.run = async (bot, message, args) => {
   const servIcon = message.guild.iconURL;
   const servName = message.guild.name;
   const nbMember = message.guild.memberCount;
+  var roles = message.guild.roles.size;
+
   const humains = message.guild.members.filter(member => !member.user.bot).size;
   const bots = message.guild.members.filter(member => member.user.bot).size;
+
+  let botoffline = message.guild.members.filter(
+    member => member.user.bot && member.presence.status === "offline"
+  ).size;
+
   const stream = message.guild.members.filter(
     o => o.presence.status === "streaming"
   ).size;
@@ -19,20 +26,6 @@ module.exports.run = async (bot, message, args) => {
   const online =
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
-  let botoffline = message.guild.members.filter(
-    member => member.user.bot && member.presence.status === "offline"
-  ).size;
-  var roles = message.guild.roles.size;
-
-  //let Fondacount = message.guild.roles.find(`name`, '🐲 Fondateur 🐲').members.size
-  //let Admincount = message.guild.roles.find(`name`, '🐯 Admin 🐯').members.size
-  //let Modocount = message.guild.roles.find(`name`, '🦁 Modo 🦁').members.size
-  //let Devcount = message.guild.roles.find(`name`, '🚀 Développeur 🚀').members.size
-  //let StaffOnline = message.guild.members.filter(o => o.presence.status === 'online').size
-
-  /*if (!Fondacount || !Admincount || !Modocount || !Devcount) {
-        return message.channel.send("Commande <membercount OFFLINE, merci de réessayer plus tard")
-    }*/
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
@@ -56,8 +49,6 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField("🌍 Nombre de rôle(s)", roles, true)
     .addField("📁 Bots offline", botoffline, true);
-  //.addField('📁 Nombre de staff', Fondacount + Admincount + Modocount + Devcount, true)
-  //.addField('📆 Staff connectés', StaffOnline, true)
 
   message.channel.send(servEmbed);
   message.delete();
