@@ -14,14 +14,8 @@ module.exports.run = async (bot, message, args) => {
     var getvalueof = message.author;
   }
 
-  if (!mentionned) {
-    return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
-    );
-  }
-
   const avatarEmbed = new Discord.RichEmbed()
-    .setTitle(`Avatar de **${getvalueof.name}**`)
+    .setTitle(`Avatar de **${getvalueof.username}**`)
     .setColor("RANDOM")
     .setImage(getvalueof.displayAvatarURL);
 
