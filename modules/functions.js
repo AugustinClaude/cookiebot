@@ -1,5 +1,5 @@
 module.exports = bot => {
-  bot.permlevel = message => {
+  /*  bot.permlevel = message => {
     let permlvl = 0;
   
     if (message.author.id === process.env.OWNER) return 10;
@@ -26,20 +26,20 @@ module.exports = bot => {
     if (message.author.id === message.guild.owner.id) permlvl = 4;
   
     return permlvl;
-  };
-  
+  };*/
+
   // Log de la console
-  
+
   bot.log = (type, msg, title) => {
     if (!title) title = "Log";
     console.log(`[${type}] [${title}]${msg}`);
   };
-  
+
   // Fonctions basiques
-  
+
   // Ajouter `await wait(1000);` pour faire une pause d'une seconde
   global.wait = require("util").promisify(setTimeout);
-  
+
   global.range = (count, start = 0) => {
     const myArr = [];
     for (var i = 0; i < count; i++) {
@@ -47,13 +47,13 @@ module.exports = bot => {
     }
     return myArr;
   };
-  
+
   // Amélioration des messages d'erreurs
   process.on("uncaughtException", err => {
     const errorMsg = err.stack.replace(new RegExp(`${__dirname}\/`, "g"), "./");
     console.error("Uncaught Exception: ", errorMsg);
   });
-  
+
   process.on("unhandledRejection", err => {
     console.error("Uncaught Promise Error: ", err);
   });
