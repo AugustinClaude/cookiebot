@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🎵 Musique",
-      "``- <play [URL YouTube]`` : Lance une musique via une URL YouTube, ``- <stop / <leave`` : Arrête la musique, ``- <join`` : Rejoins un channel vocal, ``- <pause`` : Met la musique en pause, ``- <resume`` : Remet la musique en marche, ``- <nowplaying / <np`` : Infos à propos de la musique qui est jouée, ``- <skip / <next`` : Skip une musique"
+      "``- <play [URL YouTube]``, ``- <stop / <leave``, ``- <join``, ``- <pause``, ``- <resume``, ``- <nowplaying / <np``, ``- <skip / <next``"
     )
     .addBlankField()
     .addField(
