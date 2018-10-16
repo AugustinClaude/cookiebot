@@ -1,11 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  var help_embed = new Discord.RichEmbed()
-    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
-    .setColor("#0059F2")
-    .setTitle("🔧 Voici la liste des commandes !")
-    .addField(
+  /*.addField(
       "⚙️ Utile",
       "``- <help / <aide`` : Affiche la liste des commandes\n``- <invite / <support / <infobot / <ib`` : Affiche des informations à propos du bot et quelques liens d'invitation\n``- <avatar / <a [@member]`` : Affiche l'avatar d'une personne mentionnée\n``- <icon / <i`` : Affiche l'icône du serveur\n``- <level / <lvl / <rank`` : Affiche vos niveaux d'expérience\n``- <ping`` : Affiche la latence du serveur (ping) | Pong!\n``- <userinfo / <ui`` : Affiche des informations à propos d'un joueur mentionné\n``- <info / <infoserv / <is`` : Affiche des informations à propos du serveur\n``- <membercount / <mc`` : Affiche en détails le nombre de membres\n``- <poll / <sondage [Question]`` : Permet de créer un sondage\n``- <anime [recherche]`` : Recherche un anime\n``- <manga [recherche]`` : Recherche un manga\n``- <doc / <discord.js [recherche]`` : Recherche sur la documentation de discord.js (Dev de bots discord)\n``- <google / <ggl [recherche]`` : Lance une recherche Google\n``- <youtube / <yt [recherche]`` : Lance une recherche YouTube\n``- <wikipedia / <wiki [recherche]`` : Lance une recherche Wikipédia"
     )
@@ -28,6 +24,36 @@ module.exports.run = async (bot, message, args) => {
     .addField(
       "📛 Modération",
       "``- <prefix [new prefix]`` : Change le prefix actuel par un autre\n``- <kick [@member] [Raison]`` : Kick un utilisateur mentionné\n``- <ban [@member] [Raison]`` : Ban un utilisateur mentionné\n``- <unban [ID]`` : Unban l'ID d'un utilisateur banni\n``- <tempban / <tb [@membre] [durée] [raison]`` : Tempban un utilisateur mentionné\n``- <mute [@member] [Durée]`` : Mute un utilisateur mentionné\n``- <unmute / <um [@member]`` : Unmute un utilisateur mute\n``- <report [@member] [Raison]`` : Report un utilisateur mentionné\n``- <clear / <purge [Nb msg]`` : Clear un nombre défini de messages\n``- <cmd / <command [fichier.js]`` : Affiche le code source d'une commande en .js"
+    )
+*/
+
+  var help_embed = new Discord.RichEmbed()
+    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
+    .setColor("#0059F2")
+    .setTitle("🔧 Voici la liste des commandes !")
+    .addField(
+      "⚙️ Utile",
+      "``- <help / <aide``, ``- <invite / <support / <infobot / <ib``, ``- <avatar / <a [@member]``, ``- <icon / <i``, ``- <level / <lvl / <rank``, ``- <ping``, ``- <userinfo / <ui``, ``- <info / <infoserv / <is``, ``- <membercount / <mc``, ``- <poll / <sondage [Question]``, ``- <anime [recherche]``, ``- <manga [recherche]``, ``- <doc / <discord.js [recherche]``, ``- <google / <ggl [recherche]``, ``- <youtube / <yt [recherche]``, ``- <wikipedia / <wiki [recherche]``"
+    )
+    .addBlankField()
+    .addField(
+      "🎉 Fun",
+      "``- <fight / <combat``, ``- <justeprix / <jp``, ``- <roulette / <rr``, ``- <vdm``, ``- <coinflip / <cf``, ``- <ask / <8ball / <8b``, ``- <say``"
+    )
+    .addBlankField()
+    .addField(
+      "🎵 Musique",
+      "``- <play [URL YouTube]`` : Lance une musique via une URL YouTube, ``- <stop / <leave`` : Arrête la musique, ``- <join`` : Rejoins un channel vocal, ``- <pause`` : Met la musique en pause, ``- <resume`` : Remet la musique en marche, ``- <nowplaying / <np`` : Infos à propos de la musique qui est jouée, ``- <skip / <next`` : Skip une musique"
+    )
+    .addBlankField()
+    .addField(
+      "🖼 Images",
+      "``- <cat / <chat``, ``- <dog / <chien``, ``- <lizard / lezard``, ``- <hug [@member]``, ``- <slap [@member]``, ``- <tickle [@member]``, ``- <insult / <baka [@member]``, ``- <kiss [@member]``, ``- <feed [@member]``, ``- <cuddle [@member]``, ``- <poke [@member]``, ``- <pat / <caress [@member]``"
+    )
+    .addBlankField()
+    .addField(
+      "📛 Modération",
+      "``- <prefix [new prefix]``, ``- <kick [@member] [Raison]``, ``- <ban [@member] [Raison]``, ``- <unban [ID]``, ``- <tempban / <tb [@membre] [durée] [raison]``, ``- <mute [@member] [Durée]``, ``- <unmute / <um [@member]``, ``- <report [@member] [Raison]``, ``- <clear / <purge [Nb msg]``, ``- <cmd / <command [fichier.js]``"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
