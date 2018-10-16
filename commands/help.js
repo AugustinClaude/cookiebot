@@ -33,27 +33,27 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "⚙️ Utile",
-      "``- <help / <aide``, ``- <invite / <support / <infobot / <ib``, ``- <avatar / <a [@member]``, ``- <icon / <i``, ``- <level / <lvl / <rank``, ``- <ping``, ``- <userinfo / <ui``, ``- <info / <infoserv / <is``, ``- <membercount / <mc``, ``- <poll / <sondage [Question]``, ``- <anime [recherche]``, ``- <manga [recherche]``, ``- <doc / <discord.js [recherche]``, ``- <google / <ggl [recherche]``, ``- <youtube / <yt [recherche]``, ``- <wikipedia / <wiki [recherche]``"
+      "``- <help / <aide``\n``- <invite / <support / <infobot / <ib``\n``- <avatar / <a [@member]``\n``- <icon / <i``\n``- <level / <lvl / <rank``\n``- <ping``\n``- <userinfo / <ui``\n``- <info / <infoserv / <is``\n``- <membercount / <mc``\n``- <poll / <sondage [Question]``\n``- <anime [recherche]``\n``- <manga [recherche]``\n``- <doc / <discord.js [recherche]``\n``- <google / <ggl [recherche]``\n``- <youtube / <yt [recherche]``\n``- <wikipedia / <wiki [recherche]``"
     )
     .addBlankField()
     .addField(
       "🎉 Fun",
-      "``- <fight / <combat``, ``- <justeprix / <jp``, ``- <roulette / <rr``, ``- <vdm``, ``- <coinflip / <cf``, ``- <ask / <8ball / <8b``, ``- <say``"
+      "``- <fight / <combat``\n``- <justeprix / <jp``\n``- <roulette / <rr``\n``- <vdm``\n``- <coinflip / <cf``\n``- <ask / <8ball / <8b``\n``- <say``"
     )
     .addBlankField()
     .addField(
       "🎵 Musique",
-      "``- <play [URL YouTube]``, ``- <stop / <leave``, ``- <join``, ``- <pause``, ``- <resume``, ``- <nowplaying / <np``, ``- <skip / <next``"
+      "``- <play [URL YouTube]``\n``- <stop / <leave``\n``- <join``\n``- <pause``\n``- <resume``\n``- <nowplaying / <np``\n``- <skip / <next``"
     )
     .addBlankField()
     .addField(
       "🖼 Images",
-      "``- <cat / <chat``, ``- <dog / <chien``, ``- <lizard / lezard``, ``- <hug [@member]``, ``- <slap [@member]``, ``- <tickle [@member]``, ``- <insult / <baka [@member]``, ``- <kiss [@member]``, ``- <feed [@member]``, ``- <cuddle [@member]``, ``- <poke [@member]``, ``- <pat / <caress [@member]``"
+      "``- <cat / <chat``\n``- <dog / <chien``\n``- <lizard / lezard``\n``- <hug [@member]``\n``- <slap [@member]``\n``- <tickle [@member]``\n``- <insult / <baka [@member]``\n``- <kiss [@member]``\n``- <feed [@member]``\n``- <cuddle [@member]``\n``- <poke [@member]``\n``- <pat / <caress [@member]``"
     )
     .addBlankField()
     .addField(
       "📛 Modération",
-      "``- <prefix [new prefix]``, ``- <kick [@member] [Raison]``, ``- <ban [@member] [Raison]``, ``- <unban [ID]``, ``- <tempban / <tb [@membre] [durée] [raison]``, ``- <mute [@member] [Durée]``, ``- <unmute / <um [@member]``, ``- <report [@member] [Raison]``, ``- <clear / <purge [Nb msg]``, ``- <cmd / <command [fichier.js]``"
+      "``- <prefix [new prefix]``\n``- <kick [@member] [Raison]``\n``- <ban [@member] [Raison]``\n``- <unban [ID]``\n``- <tempban / <tb [@membre] [durée] [raison]``\n``- <mute [@member] [Durée]``\n``- <unmute / <um [@member]``\n``- <report [@member] [Raison]``\n``- <clear / <purge [Nb msg]``\n``- <cmd / <command [fichier.js]``"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
