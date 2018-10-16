@@ -1,10 +1,10 @@
 module.exports = bot => {
-  /*  bot.permlevel = message => {
+  bot.permlevel = message => {
     let permlvl = 0;
-  
+
     if (message.author.id === process.env.OWNER) return 10;
     if (!message.guild || !message.member) return 0;
-  
+
     try {
       const modRole = message.guild.roles.find("name", process.env.STAFFROLE);
       if (modRole && message.member.roles.has(modRole.id)) permlvl = 2;
@@ -12,21 +12,18 @@ module.exports = bot => {
       console.warn("modRoleName non présent dans le fichier de configuration.");
     }
     try {
-      const adminRole = message.guild.roles.find(
-        "name",
-        process.env.STAFFROLE
-      );
+      const adminRole = message.guild.roles.find("name", process.env.STAFFROLE);
       if (adminRole && message.member.roles.has(adminRole.id)) permlvl = 3;
     } catch (e) {
       console.warn(
         "adminRoleName non présent dans le fichier de configuration."
       );
     }
-  
+
     if (message.author.id === message.guild.owner.id) permlvl = 4;
-  
+
     return permlvl;
-  };*/
+  };
 
   // Log de la console
 
