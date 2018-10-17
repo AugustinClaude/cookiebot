@@ -69,11 +69,13 @@ module.exports.run = async (bot, message, args) => {
   const muteChannel = message.guild.channels.find("name", "logs");
 
   if (!muteChannel) {
-    const eLogs = await message.channel.send(
-      ":x: Channel **'logs'** introuvable."
-    );
+    const eLogs = message.channel.send(":x: Channel **'logs'** introuvable.");
+    message.channel.send(eLogs);
+
     eLogs.delete(2000);
-    const m = await message.channel.send("Création du channel **'logs'**...");
+
+    const m = message.channel.send("Création du channel **'logs'**...");
+    message.channel.send(m);
 
     setTimeout(() => {
       message.guild.createChannel("logs", "text", [
@@ -88,6 +90,7 @@ module.exports.run = async (bot, message, args) => {
     m.delete(3000);
   }
 
+  message.delete();
   muteChannel.send(muteEmbed);
 };
 

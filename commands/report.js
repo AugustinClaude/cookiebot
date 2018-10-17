@@ -36,11 +36,13 @@ module.exports.run = async (bot, message, args) => {
   const reportChannel = message.guild.channels.find("name", "logs");
 
   if (!reportChannel) {
-    const eLogs = await message.channel.send(
-      ":x: Channel **'logs'** introuvable."
-    );
+    const eLogs = message.channel.send(":x: Channel **'logs'** introuvable.");
+    message.channel.send(eLogs);
+
     eLogs.delete(2000);
-    const m = await message.channel.send("Création du channel **'logs'**...");
+
+    const m = message.channel.send("Création du channel **'logs'**...");
+    message.channel.send(m);
 
     setTimeout(() => {
       message.guild.createChannel("logs", "text", [
@@ -57,8 +59,6 @@ module.exports.run = async (bot, message, args) => {
 
   message.delete();
   reportChannel.send(reportedEmbed);
-  console.log("Commande REPORT utilisée!");
-  return;
 };
 
 module.exports.conf = {
