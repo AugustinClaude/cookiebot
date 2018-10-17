@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
   const everyOne = message.guild.members.has(
     role => role.id !== message.guild.id
   );
-  const noRole = roles - everyOne;
+  const noRole = Math.floor(Math.random() * roles - everyOne);
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
