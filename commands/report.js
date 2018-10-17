@@ -50,9 +50,10 @@ module.exports.run = async (bot, message, args) => {
           allow: ["READ_MESSAGE_HISTORY", "VIEW_CHANNEL"]
         }
       ]);
-      m.edit("Channel **'logs'** créé avec succès !");
+      m.edit("✅ Channel **'logs'** créé avec succès !").then(msg =>
+        msg.delete(3000)
+      );
     }, 5000);
-    message.delete(3000).then(msg => msg.delete(2000));
   }
 
   message.delete();
