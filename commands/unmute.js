@@ -35,9 +35,21 @@ module.exports.run = async (bot, message, args) => {
     const unmuteChannel = message.guild.channels.find("name", "logs");
 
     if (!unmuteChannel) {
-      return message.channel.send(
-        ":x: Channel **'logs'** introuvable. Veuillez créer ce channel avant de pouvoir kick quelqu'un !"
-      );
+      message.channel.send(":x: Channel **'logs'** introuvable.");
+      message.delete(2000);
+      const m = await message.channel.send("Création du channel **'logs'**...");
+
+      setTimeout(() => {
+        message.guild.createChannel("logs", "text", [
+          {
+            id: message.guild.id,
+            deny: ["SEND_MESSAGES", "ADD_REACTIONS"],
+            allow: ["READ_MESSAGE_HISTORY", "VIEW_CHANNEL"]
+          }
+        ]);
+        m.edit("Channel **'logs'** créé avec succès !");
+      }, 5000);
+      message.delete(3000);
     }
 
     unmuteChannel.send(unmuteEmbed);

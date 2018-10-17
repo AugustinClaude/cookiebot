@@ -44,12 +44,20 @@ module.exports.run = async (bot, message, args) => {
     .addField("❓ Raison", banReason);
 
   const banChannel = message.guild.channels.find("name", "logs");
+
   if (!banChannel) {
     message.channel.send(":x: Channel **'logs'** introuvable.");
     message.delete(2000);
     const m = await message.channel.send("Création du channel **'logs'**...");
 
     setTimeout(() => {
+      message.guild.createChannel("logs", "text", [
+        {
+          id: message.guild.id,
+          deny: ["SEND_MESSAGES", "ADD_REACTIONS"],
+          allow: ["READ_MESSAGE_HISTORY", "VIEW_CHANNEL"]
+        }
+      ]);
       m.edit("Channel **'logs'** créé avec succès !");
     }, 5000);
     message.delete(3000);
