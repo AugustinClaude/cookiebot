@@ -27,14 +27,10 @@ module.exports.run = async (bot, message, args) => {
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
 
-  /*const everyOne = message.guild.members.has(
+  const everyOne = message.guild.members.has(
     role => role.id !== message.guild.id
   );
-  const noRole = Math.floor(Math.random() * roles - everyOne);*/
-
-  const noRole = message.guild.members.forEach(member => {
-    member.has(role => role.id !== message.guild.id);
-  });
+  const noRole = Math.floor(Math.random() * roles - everyOne);
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
