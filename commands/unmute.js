@@ -35,9 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!unmuteChannel) {
       const eLogs = message.channel.send(":x: Channel **'logs'** introuvable.");
-      message.channel.send(eLogs);
-
-      message.delete(2000);
+      message.channel.send(eLogs).then(msg => msg.delete(2000));
 
       const m = message.channel.send("Création du channel **'logs'**...");
       message.channel.send(m);
@@ -52,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
         ]);
         m.edit("Channel **'logs'** créé avec succès !");
       }, 5000);
-      message.delete(3000);
+      message.delete(3000).then(msg => msg.delete(2000));
     }
 
     message.delete();
