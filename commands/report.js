@@ -36,8 +36,10 @@ module.exports.run = async (bot, message, args) => {
   const reportChannel = message.guild.channels.find("name", "logs");
 
   if (!reportChannel) {
-    message.channel.send(":x: Channel **'logs'** introuvable.");
-    message.delete(2000);
+    const eLogs = await message.channel.send(
+      ":x: Channel **'logs'** introuvable."
+    );
+    eLogs.delete(2000);
     const m = await message.channel.send("Création du channel **'logs'**...");
 
     setTimeout(() => {
@@ -50,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
       ]);
       m.edit("Channel **'logs'** créé avec succès !");
     }, 5000);
-    message.delete(3000);
+    m.delete(3000);
   }
 
   message.delete();
