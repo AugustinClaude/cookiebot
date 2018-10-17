@@ -71,7 +71,9 @@ module.exports.run = async (bot, message, args) => {
   if (!muteChannel) {
     message.channel
       .send(":x: Channel **'logs'** introuvable.")
-      .then(msg => msg.delete(2000));
+      .then(msg => msg.delete(3000));
+
+    setTimeout(() => {}, 3500);
 
     const m = await message.channel.send("Création du channel **'logs'**...");
 
