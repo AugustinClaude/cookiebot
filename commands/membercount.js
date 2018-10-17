@@ -35,7 +35,13 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", "noRole", true)
+    .addField(
+      "👻 Membres sans rôle(s)",
+      `${
+        message.guild.roles.filter(role => role.id !== message.guild.id).size
+      }`,
+      true
+    )
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
