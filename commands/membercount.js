@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
 
-  const everyOne = message.guild.member.has(
+  const everyOne = message.guild.members.has(
     role => role.id !== message.guild.id
   );
   const noRole = Math.floor(Math.random() * roles - everyOne);
