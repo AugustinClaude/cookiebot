@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
     const eLogs = message.channel.send(":x: Channel **'logs'** introuvable.");
     message.channel.send(eLogs);
 
-    eLogs.delete(2000);
+    message.delete(2000);
 
     const m = message.channel.send("Création du channel **'logs'**...");
     message.channel.send(m);
@@ -64,10 +64,9 @@ module.exports.run = async (bot, message, args) => {
       ]);
       m.edit("Channel **'logs'** créé avec succès !");
     }, 5000);
-    m.delete(3000);
+    message.delete(3000);
   }
 
-  message.delete();
   message.guild.member(bannedUser).ban(banReason);
   banChannel.send(banEmbed);
   message.channel.send(`${bannedUser} a été banni avec succès !`);
