@@ -27,7 +27,8 @@ module.exports.run = async (bot, message, args) => {
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
 
-  const noRole = message.guild.id.forEach(member => {
+  const Guild = message.guild.id;
+  const noRole = Guild.forEach(member => {
     member.has(role => role.id !== message.guild.id);
   });
 
