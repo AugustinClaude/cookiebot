@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   const reportedUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
@@ -58,7 +59,6 @@ module.exports.run = async (bot, message, args) => {
     }, 5000);
   }
 
-  message.delete();
   reportChannel.send(reportedEmbed);
 };
 

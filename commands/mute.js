@@ -3,6 +3,7 @@ const ms = require("ms");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   moment.locale("fr");
 
   const mutedUser = message.guild.member(
@@ -73,7 +74,7 @@ module.exports.run = async (bot, message, args) => {
       .send(":x: Channel **'logs'** introuvable.")
       .then(msg => msg.delete(3000));
 
-    setTimeout(() => {}, 3500);
+    await wait(3500);
 
     const m = await message.channel.send("Création du channel **'logs'**...");
 
@@ -91,7 +92,6 @@ module.exports.run = async (bot, message, args) => {
     }, 5000);
   }
 
-  message.delete();
   muteChannel.send(muteEmbed);
 };
 

@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   const kickedUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
@@ -46,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
       .send(":x: Channel **'logs'** introuvable.")
       .then(msg => msg.delete(3000));
 
-    setTimeout(() => {}, 3500);
+    await wait(3500);
 
     const m = await message.channel.send("Création du channel **'logs'**...");
 
@@ -64,7 +65,6 @@ module.exports.run = async (bot, message, args) => {
     }, 5000);
   }
 
-  message.delete();
   message.guild.member(kickedUser).kick(kickedReason);
   kickChannel.send(kickedEmbed);
   message.channel.send(`${kickedUser} a été kick avec succès !`);
