@@ -68,11 +68,11 @@ module.exports.run = async (bot, message, args) => {
   const tempBanChannel = message.guild.channels.find("name", "logs");
 
   if (!tempBanChannel) {
-    const eLogs = message.channel.send(":x: Channel **'logs'** introuvable.");
-    message.channel.send(eLogs).then(msg => msg.delete(2000));
+    message.channel
+      .send(":x: Channel **'logs'** introuvable.")
+      .then(msg => msg.delete(2000));
 
-    const m = message.channel.send("Création du channel **'logs'**...");
-    message.channel.send(m);
+    const m = await message.channel.send("Création du channel **'logs'**...");
 
     setTimeout(() => {
       message.guild.createChannel("logs", "text", [
