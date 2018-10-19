@@ -48,6 +48,9 @@ module.exports.run = async (bot, message, args) => {
   const muteTime = args[1];
   if (!muteTime) return message.reply("Merci de préciser la durée du mute");
 
+  const muteReason = args[2];
+  if (!muteReason) return message.reply("Merci de précisier la raison du mute");
+
   await mutedUser.addRole(muteRole.id);
   message.channel.send(
     `🔇 <@${mutedUser.id}> a été mute pour ${ms(ms(muteTime))} !`
@@ -65,7 +68,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("🌀 Mute par", `${message.author} (ID: ${message.author.id})`)
     .addField("🕑 Mute le", moment(message.createdAt).format("LLL"))
     .addField("⏳ Durée du mute", ms(ms(muteTime)))
-    .addField("💬 Channel", message.channel);
+    .addField("💬 Channel", message.channel)
+    .addField("❓ Raison", muteReason);
 
   const muteChannel = message.guild.channels.find("name", "logs");
 
