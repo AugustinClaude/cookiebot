@@ -21,9 +21,9 @@ module.exports.run = async (bot, message, args) => {
       "Please provide a valid emoji !\n<addreaction [MESSAGE ID] [EMOJI]"
     );
 
-  const msg = args[1];
+  const msg = messageId;
   try {
-    await msg.react(args[1]);
+    await msg.react(emoji);
   } catch (e) {
     message.reply("The message ID or the emoji is incorrect");
   }
