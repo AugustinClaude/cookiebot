@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
       "Please provide a valid emoji !\n<addreaction [MESSAGE ID] [EMOJI]"
     );
 
-  const msg = message.channel.send(args[0]);
+  const msg = await message.channel.send(args[0]).then(mess => mess.delete());
   try {
     await msg.react(args[1]);
   } catch (e) {
