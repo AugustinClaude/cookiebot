@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     return message.reply(
-      "Vous n'avez pas les permissions pour exécuter cette commande !"
+      "You don't have permissions to execute this command !"
     );
   }
 
@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
       "Please provide a valid emoji !\n<addreaction [MESSAGE ID] [EMOJI]"
     );
 
-  const msg = await message.channel.send(args[0]).then(mess => mess.delete());
+  const msg = args[1];
   try {
     await msg.react(args[1]);
   } catch (e) {
