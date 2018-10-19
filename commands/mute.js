@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-const moment = require("moment");
+const moment = require("moment", "moment-timezone");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
