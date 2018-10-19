@@ -19,6 +19,7 @@
     "mal-scraper": "^2.4.5",
     "mal-scraper-node": "^1.0.0",
     "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
     "ms": "^2.1.1",
     "myanimelists": "^1.0.1",
     "nodemon": "^1.18.4",
