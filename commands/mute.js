@@ -53,7 +53,9 @@ module.exports.run = async (bot, message, args) => {
 
   await mutedUser.addRole(muteRole.id);
   message.channel.send(
-    `🔇 <@${mutedUser.id}> a été mute pour ${ms(ms(muteTime))} !`
+    `🔇 <@${mutedUser.id}> a été mute pendant ${ms(
+      ms(muteTime)
+    )} pour ${muteReason} !`
   );
 
   setTimeout(() => {
