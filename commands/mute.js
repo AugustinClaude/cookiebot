@@ -4,6 +4,7 @@ const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  moment.tz("fr");
   moment.locale("fr");
 
   const mutedUser = message.guild.member(
