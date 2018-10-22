@@ -28,10 +28,7 @@ exports.run = (bot, message, args) => {
       if (final_price == initial_price) var final_price = ":x:";
 
       var metacritic_score = results.otherData.metacriticScore;
-      if (metacritic_score == null) var metacritic_score = " ";
-
-      var metacritic = "✅ Metacritic Score";
-      if (metacritic_score == null) var metacritic = ":x: Metacritic Score";
+      if (metacritic_score == null) var metacritic_score = ":x:";
 
       const embed = new Discord.RichEmbed()
         .setAuthor("Steam Store", steampng)
@@ -49,7 +46,7 @@ exports.run = (bot, message, args) => {
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
         .addBlankField()
-        .addField(`${metacritic}`, metacritic_score, true)
+        .addField(" Metacritic Score", metacritic_score, true)
         .addField("🔘 Tags", results.otherData.features, true)
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)

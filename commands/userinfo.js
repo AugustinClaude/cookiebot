@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   moment.locale("fr");
 
   const mentionned = message.guild.member(
