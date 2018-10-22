@@ -47,7 +47,8 @@ exports.run = (bot, message, args) => {
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
         .addField("📜 Publisher", results.otherData.publisher, true)
-        .addField("🌐 Link", results.otherData.link, true)
+        .addBlankField()
+        .addField("🌐 Link", results.otherData.url, true)
         .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL);
 
       message.channel.send(embed).catch(e => {
