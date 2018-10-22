@@ -27,6 +27,7 @@
     "opusscript": "0.0.6",
     "random-anime-wallpapers": "^1.1.0",
     "request": "^2.88.0",
+    "steam-provider": "^0.3.2",
     "superagent": "^3.8.3",
     "util": "^0.11.0",
     "ytdl-core": "^0.26.0"
