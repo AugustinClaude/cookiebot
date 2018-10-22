@@ -14,6 +14,15 @@ exports.run = (bot, message, args) => {
   provider.search(game).then(result => {
     provider.detail(result[0].id, "french", "fr").then(results => {
       console.log(results);
+      var initial_price = results.priceData.initialPrice;
+      if (initial_price == 0.0) var initial_price = "Free";
+
+      var final_price = results.priceData.finalPrice;
+      if (final_price == 0.0) var final_price = "Free";
+
+      var metacritic_score = results.otherData.metacriticScore;
+      if (metacritic_score == "null") var metacritic_score = ":x:";
+
       const embed = new Discord.RichEmbed()
         .setAuthor("Steam Store", steampng)
         .setColor("#0059F2")
@@ -25,18 +34,12 @@ exports.run = (bot, message, args) => {
         .addBlankField()
         .addField(
           "💰 Prices",
-          `● Normal Price **${
-            results.priceData.initialPrice
-          }**€\n● Reduced Price **${results.priceData.finalPrice}**€ `,
+          `● Normal Price : **${initial_price}**€\n● Reduced Price : **${final_price}**€ `,
           true
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
         .addBlankField()
-        .addField(
-          "✅ Metacritic Score",
-          results.otherData.metacriticScore,
-          true
-        )
+        .addField("✅ Metacritic Score", metacritic_score, true)
         .addField("🌐 Tags", results.otherData.features, true)
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
