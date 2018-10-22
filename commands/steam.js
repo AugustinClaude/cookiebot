@@ -17,10 +17,11 @@ exports.run = (bot, message, args) => {
       const embed = new Discord.RichEmbed()
         .setAuthor("Steam Store", steampng)
         .setColor("#0059F2")
-        .setTitle(`Result for : ${result[0].name}`)
-        .addField("🆔 Game ID", result[0].id, true)
+        .setTitle(`${result[0].name}`)
         .setThumbnail(results.otherData.imageUrl)
+        .addField("🆔 Game ID", result[0].id, true)
         .addField("📋 Genres", results.genres, true)
+        .addBlankField()
         .addField(
           "💰 Prices",
           `● Normal Price **${
@@ -29,10 +30,13 @@ exports.run = (bot, message, args) => {
           true
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
+        .addBlankField()
         .addField("✅ Score", results.otherData.metacriticScore, true)
         .addField("🌐 Tags", results.otherData.features, true)
+        .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
-        .addField("📜 Publisher", results.otherData.publisher, true);
+        .addField("📜 Publisher", results.otherData.publisher, true)
+        .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL);
 
       message.channel.send(embed).catch(e => {
         console.log(e);
