@@ -17,11 +17,16 @@ exports.run = (bot, message, args) => {
   provider.search(game).then(result => {
     provider.detail(result[0].id, "french", "fr").then(results => {
       console.log(results);
-      var initial_price = results.priceData.initialPrice;
+      var initial_price = `${results.priceData.initialPrice}€`;
       if (initial_price == 0.0) var initial_price = "Free";
 
-      var final_price = results.priceData.finalPrice;
+      var final_price = `${results.priceData.finalPrice}€`;
       if (final_price == 0.0) var final_price = "Free";
+
+      if (final_price == initial_price) var final_price = ":x:";
+
+      if (final_price !== initial_price)
+        var initial_price = `~~${results.priceData.initialPrice}€~~`;
 
       var metacritic_score = results.otherData.metacriticScore;
       if (metacritic_score == null) var metacritic_score = ":x:";
@@ -37,7 +42,7 @@ exports.run = (bot, message, args) => {
         .addBlankField()
         .addField(
           "💰 Prices",
-          `● Normal Price : **${initial_price}**€\n● Reduced Price : **${final_price}**€ `,
+          `● Normal Price : **${initial_price}**\n● Reduced Price : **${final_price}** `,
           true
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
