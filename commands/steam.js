@@ -17,21 +17,22 @@ exports.run = (client, message, args) => {
       const embed = new Discord.RichEmbed()
         .setAuthor("Steam Store", steampng)
         .setColor("#0059F2")
-        .setTitle(result[0].name)
-        .addField("Game ID", result[0].id)
+        .setTitle(`Result for : ${result[0].name}`)
+        .addField("🆔 Game ID", result[0].id, true)
         .setThumbnail(results.otherData.imageUrl)
-        .addField("Types", results.genres)
+        .addField("📋 Genres", results.genres, true)
         .addField(
-          "Prices",
-          `Normal Price **${results.priceData.initialPrice}**€
-Reduced Price **${results.priceData.finalPrice}**€ `,
+          "💰 Prices",
+          `● Normal Price **${
+            results.priceData.initialPrice
+          }**€\n● Reduced Price **${results.priceData.finalPrice}**€ `,
           true
         )
-        .addField("Platform", results.otherData.platforms, true)
-        .addField("Metacritic Score", results.otherData.metacriticScore, true)
-        .addField("Features", results.otherData.features, true)
-        .addField("Developer", results.otherData.developer, true)
-        .addField("Publisher", results.otherData.publisher);
+        .addField("💻 Platforms", results.otherData.platforms, true)
+        .addField("✅ Score", results.otherData.metacriticScore, true)
+        .addField("🌐 Tags", results.otherData.features, true)
+        .addField("🚀 Developer", results.otherData.developer, true)
+        .addField("📜 Publisher", results.otherData.publisher, true);
 
       message.channel.send(embed).catch(e => {
         console.log(e);
