@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🔘 Status des membres",
-      `<:online:492774463398477834> Online : ${online}\n   <:offline:492994318072807424> Offline : ${offline}\n    <:idle:492993972277608448> Inactif : ${idle}\n    <:dnd:492774462400364556> Ne pas déranger : ${dnd}\n    <:streaming:492994618942685214> Streaming : ${stream}`,
+      `<:online:492774463398477834> **Online :** ${online}\n<:offline:492994318072807424> **Offline :** ${offline}\n<:idle:492993972277608448> **Inactif :** ${idle}\n<:dnd:492774462400364556> **Ne pas déranger :** ${dnd}\n<:streaming:492994618942685214> **Streaming :** ${stream}`,
       true
     )
     .addField("🍏 Membres connectés", online, true)
