@@ -1,4 +1,5 @@
 module.exports = (bot, member) => {
+  var options;
   const link = member.guild.channels.createInvite(options.maxAge(0));
 
   member.createDM().then(function(channel) {
