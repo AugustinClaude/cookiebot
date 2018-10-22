@@ -18,6 +18,7 @@ exports.run = (bot, message, args) => {
         .setAuthor("Steam Store", steampng)
         .setColor("#0059F2")
         .setTitle(`${result[0].name}`)
+        .addBlankField()
         .setThumbnail(results.otherData.imageUrl)
         .addField("🆔 Game ID", result[0].id, true)
         .addField("📋 Genres", results.genres, true)
@@ -31,7 +32,11 @@ exports.run = (bot, message, args) => {
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
         .addBlankField()
-        .addField("✅ Score", results.otherData.metacriticScore, true)
+        .addField(
+          "✅ Metacritic Score",
+          results.otherData.metacriticScore,
+          true
+        )
         .addField("🌐 Tags", results.otherData.features, true)
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
