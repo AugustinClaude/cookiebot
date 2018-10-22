@@ -8,7 +8,10 @@ module.exports = (bot, member) => {
   });
 
   const channel = member.guild.channels.find(
-    ch => ch.name === "welcome" || ch.name === "bienvenue"
+    ch =>
+      ch.name === "welcome" ||
+      ch.name === "bienvenue" ||
+      ch.name === "🚪-bienvenue-🚪"
   );
   if (channel) {
     return channel.send(

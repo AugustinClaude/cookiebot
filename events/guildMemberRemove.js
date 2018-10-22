@@ -1,18 +1,19 @@
 module.exports = (bot, member) => {
-  var options;
-  const link = member.guild.channels.createInvite(options.maxAge(0));
-
   member.createDM().then(function(channel) {
     return channel.send(
       `Goodbye <@${member.id}> ! You can come back in \`\`${
         member.guild.name
-      }\`\` anytime !\n:globe_with_meridians: **Link :** ${link}`
+      }\`\` anytime !\nJust don't forget the link ! :D`
     );
   });
 
   const channel = member.guild.channels.find(
-    ch => ch.name === "welcome" || ch.name === "bienvenue"
+    ch =>
+      ch.name === "welcome" ||
+      ch.name === "bienvenue" ||
+      ch.name === "🚪-bienvenue-🚪"
   );
+
   if (channel) {
     return channel.send(
       `\`\`${member.guild.name}\`\` has lost somebody :cry: : **${
