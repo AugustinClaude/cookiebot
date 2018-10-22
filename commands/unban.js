@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
   const unbanEmbed = new Discord.RichEmbed()
     .setTitle("❌ Unbans")
     .setColor("#F02A2A")
-    .addField("⛔️ Membre unban", `${member => member.user} (ID: ${args[0]})`)
+    .addField("⛔️ Membre unban", `${args[0].user} (ID: ${args[0]})`)
     .addField("🌀 Unban par", `${message.author} (ID: ${message.author.id})`)
     .addField("🕑 Unban le", moment(message.createdAt).format("LLL"));
 
@@ -56,7 +56,7 @@ module.exports.run = async (bot, message, args) => {
   try {
     await message.guild.unban(args[0]);
     unbanChannel.send(unbanEmbed);
-    message.channel.send(`L'ID \`\`${args[0]}\`\` a été unban avec succès !`);
+    message.channel.send(`${args[0].user} a été unban avec succès !`);
   } catch (e) {
     message.reply("Cette ID n'existe pas ou cet utilisateur n'est pas banni !");
   }
