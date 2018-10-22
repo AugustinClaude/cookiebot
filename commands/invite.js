@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#0059F2")
     .addField("🍪 **Nom**", `\`\`\`js\n${bot.user.username}\n\`\`\``)
     .addBlankField()
-    .addField("📁 **Version**", `\`\`\`js\n1.2.9 | Alpha / Beta\n\`\`\``)
+    .addField("📁 **Version**", `\`\`\`js\n1.4.7 | Alpha / Beta\n\`\`\``)
     .addBlankField()
     .addField("👤 **Auteur**", `\`\`\`js\nSpokloo#7791\n\`\`\``)
     .addBlankField()
