@@ -17,7 +17,7 @@ module.exports = (bot, member) => {
   if (channel) {
     return channel.send(
       `\`\`${member.guild.name}\`\` has lost somebody :cry: : **${
-        member.name
+        member.user
       }** ! This is so sad :(\nWe are now \`\`${
         member.guild.memberCount
       }\`\` in this guild !`
