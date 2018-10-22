@@ -5,7 +5,7 @@ var provider = new steam.SteamProvider();
 exports.run = (bot, message, args) => {
   message.delete();
 
-  const game = args[0];
+  const game = args.join(" ");
   const steampng =
     "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png";
 
