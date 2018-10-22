@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
   const unbanEmbed = new Discord.RichEmbed()
     .setTitle("❌ Unbans")
     .setColor("#F02A2A")
-    .addField("⛔️ ID unban", `${args[0]}`)
+    .addField("⛔️ Membre unban", `${member => member.user} (ID: ${args[0]})`)
     .addField("🌀 Unban par", `${message.author} (ID: ${message.author.id})`)
     .addField("🕑 Unban le", moment(message.createdAt).format("LLL"));
 
