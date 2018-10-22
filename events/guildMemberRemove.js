@@ -3,7 +3,7 @@ module.exports = (bot, member) => {
     return channel.send(
       `Goodbye <@${member.id}> ! You can come back in \`\`${
         member.guild.name
-      }\`\` anytime !\nJust don't forget the link ! :D`
+      }\`\` at anytime !\nJust don't forget the link ! :D`
     );
   });
 
@@ -18,7 +18,7 @@ module.exports = (bot, member) => {
     return channel.send(
       `\`\`${member.guild.name}\`\` has lost somebody :cry: : **${
         member.name
-      }** ! This is so sad :( We are now \`\`${
+      }** ! This is so sad :(\nWe are now \`\`${
         member.guild.memberCount
       }\`\` in this guild !`
     );
