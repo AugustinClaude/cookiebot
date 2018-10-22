@@ -17,10 +17,10 @@ exports.run = (bot, message, args) => {
   provider.search(game).then(result => {
     provider.detail(result[0].id, "french", "fr").then(results => {
       var initial_price = `${results.priceData.initialPrice}€`;
-      if (initial_price == 0.0) var initial_price = "Free";
+      if (initial_price == "0.0€") var initial_price = "Free";
 
       var final_price = `${results.priceData.finalPrice}€`;
-      if (final_price == 0.0) var final_price = "Free";
+      if (final_price == "0.0€") var final_price = "Free";
 
       if (final_price !== initial_price)
         var initial_price = `~~${results.priceData.initialPrice}€~~`;
