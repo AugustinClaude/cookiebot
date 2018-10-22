@@ -23,10 +23,10 @@ exports.run = (bot, message, args) => {
       var final_price = `${results.priceData.finalPrice}€`;
       if (final_price == 0.0) var final_price = "Free";
 
-      if (final_price == initial_price) var final_price = ":x:";
-
       if (final_price !== initial_price)
         var initial_price = `~~${results.priceData.initialPrice}€~~`;
+
+      if (final_price == initial_price) var final_price = ":x:";
 
       var metacritic_score = results.otherData.metacriticScore;
       if (metacritic_score == null) var metacritic_score = ":x:";
