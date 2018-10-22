@@ -3,9 +3,12 @@ var steam = require("steam-provider");
 var provider = new steam.SteamProvider();
 
 exports.run = (bot, message, args) => {
+  message.delete();
+
   const game = args[0];
   const steampng =
     "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png";
+
   if (!game)
     return message.reply(
       "Please provide the name of a steam game. Example: `<steam portal 2`"
@@ -47,7 +50,6 @@ exports.run = (bot, message, args) => {
         .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL);
 
       message.channel.send(embed).catch(e => {
-        console.log(e);
         message.reply(
           "An error has occured :\n `" + game + "` was not found !"
         );
