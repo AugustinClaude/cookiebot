@@ -46,7 +46,7 @@ exports.run = (bot, message, args) => {
         )
         .addField("💻 Platforms", results.otherData.platforms, true)
         .addBlankField()
-        .addField(" Metacritic Score", metacritic_score, true)
+        .addField("✅ Metacritic Score", metacritic_score, true)
         .addField("🔘 Tags", results.otherData.features, true)
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
