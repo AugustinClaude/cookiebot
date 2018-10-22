@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 var steam = require("steam-provider");
 var provider = new steam.SteamProvider();
 
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
   const game = args[0];
   const steampng =
     "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png";
