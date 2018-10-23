@@ -12,6 +12,11 @@ module.exports.run = async (bot, message, args) => {
     var random = message.guild.members.random().user.username;
   } else var random = hugUser.user.username;
 
+  if (args[0] !== "random" || !hugUser)
+    return message.channel.send(
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+    );
+
   const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
 
   if (message.author === hugUserAuto) {
