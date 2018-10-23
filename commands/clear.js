@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  message.delete();
   if (!message.member.hasPermission("MANAGE_MESSAGES"))
     return message.reply(
       "Vous n'avez pas la permission d'exécuter cette commande !"
@@ -23,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     return message.reply("Syntaxe : <clear [Nombre de message à supprimer]");
 
   message.channel.bulkDelete(args[0]).then(() => {
-    //message.channel.bulkDelete(1);
+    message.channel.bulkDelete(1);
     message.channel
       .send(`🗑 J'ai supprimé ***${args[0]} messages*** avec succès !`)
       .then(msg => msg.delete(1000));
