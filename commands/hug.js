@@ -8,38 +8,44 @@ module.exports.run = async (bot, message, args) => {
   );
   var random;
 
+  if (!args[0])
+    return message.channel.send(
+      "Syntaxe incorrect ! Exemple : <hug @membre **OU** <hug random !"
+    );
+
   if (args[0] === "random") {
     var random = message.guild.members.random().user.username;
   } else var random = hugUser.user.username;
 
-  if (args[0] !== "random" || !hugUser)
-    return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
-    );
-
   const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
 
-  if (message.author === hugUserAuto) {
+  try {
+    if (message.author === hugUserAuto) {
+      const hugEmbed = new Discord.RichEmbed()
+        .setTitle(
+          `**${message.author.username}** s'est fait un calin à lui même O_o`
+        )
+        .setImage(body.url)
+        .setColor("RANDOM");
+
+      return message.channel.send(hugEmbed);
+    }
+
     const hugEmbed = new Discord.RichEmbed()
       .setTitle(
-        `**${message.author.username}** s'est fait un calin à lui même O_o`
+        `**${
+          message.author.username
+        }** a fait un calin à **${random}** ! Trop mignon :heart:`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
     return message.channel.send(hugEmbed);
+  } catch (e) {
+    message.channel.send(
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Vous avez peut-être mentionné un utilisateur qui n'existe pas, ou alors la syntaxe est incorrecte ! Il est possible également que l'API utilisée ne fonctionne pas !"
+    );
   }
-
-  const hugEmbed = new Discord.RichEmbed()
-    .setTitle(
-      `**${
-        message.author.username
-      }** a fait un calin à **${random}** ! Trop mignon :heart:`
-    )
-    .setImage(body.url)
-    .setColor("RANDOM");
-
-  return message.channel.send(hugEmbed);
 };
 
 module.exports.conf = {
