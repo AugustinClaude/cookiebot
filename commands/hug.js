@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (args[0] !== "random" && !hugUser)
     return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/hug");
