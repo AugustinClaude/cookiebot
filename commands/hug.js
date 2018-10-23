@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
   var random;
 
   if (!args[0])
-    return message.channel.send(
+    return message.reply(
       "Syntaxe incorrect ! Exemple : <hug @membre **OU** <hug random !"
     );
 
