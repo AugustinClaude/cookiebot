@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
     } views\n\`\`\`\n📅 **Published**\`\`\`js\n${
-      info.shortform
+      info.status
     }\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
     }\n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist}\n\`\`\`\n🌐 **Link** : ${
