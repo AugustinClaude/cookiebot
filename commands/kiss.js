@@ -7,42 +7,53 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
-  if (args[0] === "random") {
-    return message.reply(
-      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
-    );
-  }
+  var random;
 
-  if (!kissUser)
+  if (!args[0])
+    return message.reply(
+      "Syntaxe incorrecte ! Exemple : <kiss @membre **OU** <kiss random !"
+    );
+
+  if (args[0] === "random") {
+    var random = message.guild.members.random().user.username;
+  } else if (kissUser) var random = kissUser.user.username;
+
+  if (args[0] !== "random" && !kissUser)
     return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/kiss");
 
-  if (message.author === kissUserAuto) {
+  try {
+    if (message.author === kissUserAuto) {
+      const kissEmbed = new Discord.RichEmbed()
+        .setTitle(
+          `**${
+            message.author.username
+          }** s'embrasse lui même O_o Comment c'est possible ? o_O`
+        )
+        .setImage(body.url)
+        .setColor("RANDOM");
+
+      return message.channel.send(kissEmbed);
+    }
+
     const kissEmbed = new Discord.RichEmbed()
       .setTitle(
         `**${
           message.author.username
-        }** s'embrasse lui même O_o Comment c'est possible ? o_O`
+        }** embrasse **${random}** ! Trop mignon :heart:`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
     return message.channel.send(kissEmbed);
+  } catch (e) {
+    message.channel.send(
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Peut-être que la syntaxe est incorrecte ou alors l'API utilisée ne fonctionne pas !"
+    );
   }
-
-  const kissEmbed = new Discord.RichEmbed()
-    .setTitle(
-      `**${message.author.username}** embrasse **${
-        message.mentions.users.first().username
-      }** ! Trop mignon :heart:`
-    )
-    .setImage(body.url)
-    .setColor("RANDOM");
-
-  return message.channel.send(kissEmbed);
 };
 
 module.exports.conf = {
