@@ -6,12 +6,11 @@ module.exports.run = async (bot, message, args) => {
   const hugUser = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
+  var random;
 
   if (args[0] === "random") {
-    return message.reply(
-      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
-    );
-  }
+    var random = message.guild.members.random().user.username;
+  } else var random = hugUser.user.username;
 
   if (!hugUser)
     return message.channel.send(
@@ -33,9 +32,9 @@ module.exports.run = async (bot, message, args) => {
 
   const hugEmbed = new Discord.RichEmbed()
     .setTitle(
-      `**${message.author.username}** a fait un calin à **${
-        message.mentions.users.first().username
-      }** ! Trop mignon :heart:`
+      `**${
+        message.author.username
+      }** a fait un calin à **${random}** ! Trop mignon :heart:`
     )
     .setImage(body.url)
     .setColor("RANDOM");
