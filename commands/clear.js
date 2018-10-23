@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
     //message.channel.bulkDelete(1);
     message.channel
       .send(`🗑 J'ai supprimé ***${args[0]} messages*** avec succès !`)
-      .then(msg => msg.delete(2000));
+      .then(msg => msg.delete(1000));
   });
 };
 
