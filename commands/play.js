@@ -31,9 +31,11 @@ module.exports.run = async (bot, message, args) => {
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
-    } views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
+    } views\n\`\`\`\n📅 **Published**\`\`\`js\n${
+      info.published
+    }\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
-    } \n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist} \n\`\`\`\n🌐 **Link** : ${
+    }\n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist}\n\`\`\`\n🌐 **Link** : ${
       info.video_url
     }`
   );

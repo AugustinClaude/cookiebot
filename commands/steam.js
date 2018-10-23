@@ -27,7 +27,7 @@ exports.run = (bot, message, args) => {
 
       if (final_price == initial_price) var final_price = ":x:";
 
-      var metacritic_score = results.otherData.metacriticScore;
+      var metacritic_score = `${results.otherData.metacriticScore}%`;
       if (metacritic_score == null) var metacritic_score = ":x:";
 
       const embed = new Discord.RichEmbed()
