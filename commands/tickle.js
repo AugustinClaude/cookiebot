@@ -7,42 +7,53 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
-  if (args[0] === "random") {
-    return message.reply(
-      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
-    );
-  }
+  var random;
 
-  if (!tickleUser)
+  if (!args[0])
+    return message.reply(
+      "Syntaxe incorrecte ! Exemple : <tickle @membre **OU** <tickle random !"
+    );
+
+  if (args[0] === "random") {
+    var random = message.guild.members.random().user.username;
+  } else if (tickleUser) var random = tickleUser.user.username;
+
+  if (args[0] !== "random" && !tickleUser)
     return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/tickle");
 
-  if (message.author === tickleUserAuto) {
+  try {
+    if (message.author === tickleUserAuto) {
+      const tickleEmbed = new Discord.RichEmbed()
+        .setTitle(
+          `**${
+            message.author.username
+          }** se chatouille lui même O_o Il est vraiment bizarre ce gars .-.`
+        )
+        .setImage(body.url)
+        .setColor("RANDOM");
+
+      return message.channel.send(tickleEmbed);
+    }
+
     const tickleEmbed = new Discord.RichEmbed()
       .setTitle(
         `**${
           message.author.username
-        }** se chatouille lui même O_o Il est vraiment bizarre ce gars .-.`
+        }** chatouille **${random}** ! Le pauvre :joy:`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
     return message.channel.send(tickleEmbed);
+  } catch (e) {
+    message.channel.send(
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Peut-être que la syntaxe est incorrecte ou alors l'API utilisée ne fonctionne pas !"
+    );
   }
-
-  const tickleEmbed = new Discord.RichEmbed()
-    .setTitle(
-      `**${message.author.username}** chatouille **${
-        message.mentions.users.first().username
-      }** ! Le pauvre :joy:`
-    )
-    .setImage(body.url)
-    .setColor("RANDOM");
-
-  return message.channel.send(tickleEmbed);
 };
 
 module.exports.conf = {
