@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0])
     return message.reply(
-      "Syntaxe incorrect ! Exemple : <hug @membre **OU** <hug random !"
+      "Syntaxe incorrecte ! Exemple : <hug @membre **OU** <hug random !"
     );
 
   if (args[0] === "random") {
