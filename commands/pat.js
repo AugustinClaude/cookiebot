@@ -7,42 +7,53 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
-  if (args[0] === "random") {
-    return message.reply(
-      "Le Random ne fonctionne pas encore ! Merci de mentionner :)"
-    );
-  }
+  var random;
 
-  if (!patUser)
+  if (!args[0])
+    return message.reply(
+      "Syntaxe incorrecte ! Exemple : <pat / <caress @membre **OU** <pat / <caress random !"
+    );
+
+  if (args[0] === "random") {
+    var random = message.guild.members.random().user.username;
+  } else if (patUser) var random = patUser.user.username;
+
+  if (args[0] !== "random" && !patUser)
     return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );
 
   const { body } = await superagent.get("https://nekos.life/api/v2/img/pat");
 
-  if (message.author === patUserAuto) {
+  try {
+    if (message.author === patUserAuto) {
+      const patEmbed = new Discord.RichEmbed()
+        .setTitle(
+          `**${
+            message.author.username
+          }** se caresse lui même O_o D'accord pourquoi pas '-'`
+        )
+        .setImage(body.url)
+        .setColor("RANDOM");
+
+      return message.channel.send(patEmbed);
+    }
+
     const patEmbed = new Discord.RichEmbed()
       .setTitle(
         `**${
           message.author.username
-        }** se caresse lui même O_o D'accord pourquoi pas '-'`
+        }** caresse **${random}** ! Trop mignon :heart:`
       )
       .setImage(body.url)
       .setColor("RANDOM");
 
     return message.channel.send(patEmbed);
+  } catch (e) {
+    message.channel.send(
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Peut-être que la syntaxe est incorrecte ou alors l'API utilisée ne fonctionne pas !"
+    );
   }
-
-  const patEmbed = new Discord.RichEmbed()
-    .setTitle(
-      `**${message.author.username}** caresse **${
-        message.mentions.users.first().username
-      }** ! Trop mignon :heart:`
-    )
-    .setImage(body.url)
-    .setColor("RANDOM");
-
-  return message.channel.send(patEmbed);
 };
 
 module.exports.conf = {
