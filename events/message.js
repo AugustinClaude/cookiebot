@@ -82,18 +82,20 @@ module.exports = (bot, message) => {
     cmd.run(bot, message, args, perms);
   }
 
-  var numberRandom = 0;
-  var partyLaunch = false;
+  if (command === "justeprix" || "jp") {
+    var numberRandom = 0;
+    var partyLaunch = false;
 
-  if (!args[0])
-    return message.reply(
-      "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, tapez la commande : <justeprix stop"
-    );
+    if (!args[0])
+      return message.reply(
+        "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, tapez la commande : <justeprix stop"
+      );
 
-  if (args[1])
-    return message.reply(
-      "Vous avez préciser trop d'arguments. Syntaxe: <justeprix start"
-    );
+    if (args[1])
+      return message.reply(
+        "Vous avez préciser trop d'arguments. Syntaxe: <justeprix start"
+      );
+  }
 
   if (command === "justeprix start" || command === "jp start") {
     message.channel.send(
