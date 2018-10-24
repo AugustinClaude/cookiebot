@@ -137,7 +137,7 @@ module.exports = (bot, message) => {
     }
   }
 
-  if (partyLaunch && message.content != null) {
+  if (partyLaunch == true) {
     if (Number.isInteger(parseInt(message.content))) {
       if (message.content > numberRandom) {
         message.reply(
