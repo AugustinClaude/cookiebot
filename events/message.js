@@ -141,7 +141,7 @@ module.exports = (bot, message) => {
 
   //NOMBRE A DEVINER (justeprix)
   if (partyLaunch == true) {
-    if (Number.isInteger(parseInt(message.content))) {
+    if (!isNaN(message.content)) {
       if (message.content > numberRandom) {
         message.reply(
           ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **PETIT** ⬇ !\nEssaie encore 😉"
