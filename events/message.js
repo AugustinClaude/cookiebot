@@ -140,7 +140,7 @@ module.exports = (bot, message) => {
   }
 
   //NOMBRE A DEVINER (justeprix)
-  if (partyLaunch == true && !command) {
+  if (partyLaunch == true) {
     if (Number.isInteger(parseInt(message.content))) {
       if (message.content > numberRandom) {
         message.reply(
@@ -159,6 +159,5 @@ module.exports = (bot, message) => {
         partyLaunch = false;
       }
     }
-    message.channel.send("TEST");
   }
 };
