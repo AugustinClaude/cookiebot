@@ -140,7 +140,7 @@ module.exports = (bot, message) => {
   }
 
   //NOMBRE A DEVINER (justeprix)
-  if (partyLaunch == true && (command != "justeprix" || command != "jp")) {
+  if (partyLaunch == true && !command) {
     if (Number.isInteger(parseInt(message.content))) {
       if (message.content > numberRandom) {
         message.reply(
