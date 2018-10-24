@@ -141,7 +141,7 @@ module.exports = (bot, message) => {
 
   //NOMBRE A DEVINER (justeprix)
   if (partyLaunch && message.content != null) {
-    if (Number.isInteger(parseInt(message.content))) {
+    /*if (Number.isInteger(parseInt(message.content))) {
       if (message.content > numberRandom) {
         message.reply(
           ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **PETIT** ⬇ !\nEssaie encore 😉"
@@ -158,6 +158,7 @@ module.exports = (bot, message) => {
         );
         partyLaunch = false;
       }
-    }
+    }*/
+    message.channel.send("TEST");
   }
 };
