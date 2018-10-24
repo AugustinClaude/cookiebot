@@ -84,6 +84,7 @@ module.exports = (bot, message) => {
     cmd.run(bot, message, args, perms);
   }
 
+  //JUSTEPRIX (commande)
   if (command === "justeprix" || command === "jp") {
     if (!args[0])
       return message.reply(
@@ -95,6 +96,7 @@ module.exports = (bot, message) => {
         "Vous avez préciser trop d'arguments. Syntaxe: <justeprix start"
       );
 
+    //START
     if (args[0] === "start") {
       message.channel.send(
         message.author + " a démarré une partie de **JUSTE PRIX** 💰"
@@ -119,6 +121,7 @@ module.exports = (bot, message) => {
       );
     }
 
+    //STOP
     if (args[0] === "stop") {
       if (partyLaunch == true) {
         message.channel.send(
@@ -136,7 +139,8 @@ module.exports = (bot, message) => {
     }
   }
 
-  if (partyLaunch == true) {
+  //NOMBRE A DEVINER (justeprix)
+  if (partyLaunch && message.content != null) {
     if (Number.isInteger(parseInt(message.content))) {
       if (message.content > numberRandom) {
         message.reply(
