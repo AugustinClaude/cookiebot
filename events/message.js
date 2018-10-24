@@ -159,6 +159,5 @@ module.exports = (bot, message) => {
         partyLaunch = false;
       }
     }
-    console.log("test");
   }
 };
