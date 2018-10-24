@@ -82,10 +82,10 @@ module.exports = (bot, message) => {
     cmd.run(bot, message, args, perms);
   }
 
-  if (command === "justeprix" || command === "jp") {
-    var numberRandom = 0;
-    var partyLaunch = false;
+  var numberRandom = 0;
+  var partyLaunch = false;
 
+  if (command === "justeprix" || command === "jp") {
     if (!args[0])
       return message.reply(
         "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, tapez la commande : <justeprix stop"
