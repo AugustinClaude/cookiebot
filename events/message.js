@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+var numberRandom = 0;
+var partyLaunch = false;
 
 module.exports = (bot, message) => {
   if (message.author.bot) return;
@@ -81,9 +83,6 @@ module.exports = (bot, message) => {
     );
     cmd.run(bot, message, args, perms);
   }
-
-  var numberRandom = 0;
-  var partyLaunch = false;
 
   if (command === "justeprix" || command === "jp") {
     if (!args[0])
