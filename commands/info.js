@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   const lastmember = Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1);
   const userJoin = moment(message.member.joinedAt).format("Do MMMM YYYY, LTS");
   const servCreate = moment(message.guild.createdAt).format("Do MMMM YYYY, LTS");
-  //let emojisSize = message.guild.emojis.size
+  const emojisSize = message.guild.emojis.size
 
   const servEmbed = new Discord.RichEmbed()
     .setAuthor(servName, servIcon)
@@ -21,12 +21,16 @@ module.exports.run = async (bot, message, args) => {
     .addField("🌐 Nom du serveur", servName, true)
     .addField("🏆 Fondateur", message.guild.owner, true)
     .addBlankField()
-    .addField("🥝 Nombre de membres", `**${message.guild.memberCount}** | <membercount`, true)
+    .addField("🥝 Nombre de membres", `**${message.guild.memberCount}** | <mc pour les détails`, true)
     .addField(`🌎 ${servName} créé le`, servCreate, true)
+    .addBlankField()
+    .addField(`📚 Nombre de channels [${message.guild.channels.size}]`, `💬 Channels textuels : ${}\n🔊 Channels vocaux : ${}`, true)
+    .addField("", "", true)
     .addBlankField()
     .addField("🔘 Dernier membre", lastmember, true)
     .addField("🚪 Votre arrivée sur le serveur", userJoin, true)
-    .addBlankField();
+    .addBlankField()
+    .addField("📜 Nombre d'émojis", `**${emojisSize}** | <emoji pour les détails`, true)
   //.addField(`📜 Liste des émojis [${emojisSize}]`, emojis) <-- TROP VOLUMINEUX (trop d'émojis)
 
   return message.channel.send(servEmbed);

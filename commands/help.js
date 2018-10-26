@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "⚙️ Utile",
-      "``- <help / <aide``\n``- <invite / <support / <infobot / <ib``\n``- <avatar / <a [@member]``\n``- <icon / <i``\n``- <steam [name of a steam game]``\n``- <level / <lvl / <rank``\n``- <ping``\n``- <userinfo / <ui``\n``- <info / <infoserv / <is``\n``- <membercount / <mc``\n``- <poll / <sondage [Question]``\n``- <anime [recherche]``\n``- <manga [recherche]``\n``- <doc / <discord.js [recherche]``\n``- <google / <ggl [recherche]``\n``- <youtube / <yt [recherche]``\n``- <wikipedia / <wiki [recherche]``"
+      "``- <help / <aide``\n``- <invite / <support / <infobot / <ib``\n``- <avatar / <a [@member]``\n``- <icon / <i``\n``- <steam [name of a steam game]``\n``<emoji / <emojis / <e``\n``- <level / <lvl / <rank``\n``- <ping``\n``- <userinfo / <ui``\n``- <info / <infoserv / <is``\n``- <membercount / <mc``\n``- <poll / <sondage [Question]``\n``- <anime [recherche]``\n``- <manga [recherche]``\n``- <doc / <discord.js [recherche]``\n``- <google / <ggl [recherche]``\n``- <youtube / <yt [recherche]``\n``- <wikipedia / <wiki [recherche]``"
     )
     .addBlankField()
     .addField(
