@@ -25,12 +25,11 @@ module.exports.run = async (bot, message, args) => {
     .addField(`🌎 ${servName} créé le`, servCreate, true)
     .addBlankField()
     .addField(`📚 Nombre de channels [${message.guild.channels.size}]`, `💬 Channels textuels : ${}\n🔊 Channels vocaux : ${}`, true)
-    .addField("", "", true)
+    .addField("📜 Nombre d'émojis", `**${emojisSize}** | <emoji pour les détails`, true)
     .addBlankField()
     .addField("🔘 Dernier membre", lastmember, true)
     .addField("🚪 Votre arrivée sur le serveur", userJoin, true)
     .addBlankField()
-    .addField("📜 Nombre d'émojis", `**${emojisSize}** | <emoji pour les détails`, true)
   //.addField(`📜 Liste des émojis [${emojisSize}]`, emojis) <-- TROP VOLUMINEUX (trop d'émojis)
 
   return message.channel.send(servEmbed);

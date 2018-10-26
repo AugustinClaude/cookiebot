@@ -4,9 +4,14 @@ module.exports.run = async (bot, message, args) => {
   const emojis = message.guild.emojis.map(e => e).join(" ");
   const emojisSize = message.guild.emojis.size;
 
-  message.channel.send(
-    `Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n${emojis}`
-  );
+  var noEmoji;
+
+  if (emojisSize == 0)
+    var noEmoji = ":x: Ce serveur n'a pas d'emojis personnalisés !";
+  else
+    var noEmoji = `📜 Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n${emojis}`;
+
+  message.channel.send(`${noEmoji}`);
 };
 
 module.exports.conf = {
