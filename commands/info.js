@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("🏆 Fondateur", message.guild.owner, true)
     .addBlankField()
     .addField(
-      "🥝 Nombre de membres",
+      "🥝 Membres",
       `**${message.guild.memberCount}** | <mc pour les détails`,
       true
     )
