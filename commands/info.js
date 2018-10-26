@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   moment.locale("fr");
 
   const servIcon = message.guild.iconURL;
@@ -38,8 +39,8 @@ module.exports.run = async (bot, message, args) => {
     .addField(`🌎 ${servName} créé le`, servCreate, true)
     .addBlankField()
     .addField(
-      `📚 Channels totaux [${message.guild.channels.size}]`,
-      `💬 Channels textuels : ${textChannels}\n🔊 Channels vocaux : ${voiceChannels}`,
+      `📚 Channels [${message.guild.channels.size}]`,
+      `💬 Textuels : **${textChannels}**\n🔊 Vocaux : **${voiceChannels}**`,
       true
     )
     .addField(
