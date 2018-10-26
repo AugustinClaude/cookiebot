@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if (emojisSize == 0)
     var noEmoji = ":x: Ce serveur n'a pas d'emojis personnalisés !";
   else
-    var noEmoji = `📜 Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n\n${emojis}`;
+    var noEmoji = `📜 Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n\n**------------------------------------------------------**\n\n${emojis}\n\n**------------------------------------------------------**`;
 
   message.channel.send(`${noEmoji}`);
 };
