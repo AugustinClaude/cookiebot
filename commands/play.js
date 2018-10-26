@@ -1,6 +1,9 @@
 const ytdl = require("ytdl-core");
+const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  moment.locale("fr");
+
   if (!message.member.voiceChannel)
     return message.reply("You're not connect to a voice channel !");
 
@@ -31,7 +34,9 @@ module.exports.run = async (bot, message, args) => {
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.view_count
-    } views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
+    } views\n\`\`\`\n📅 **Published** : \`\`\`js\n${moment(
+      info.published
+    ).format("LLL")} views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
     }\n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist}\n\`\`\`\n🌐 **Link** : ${
       info.video_url
