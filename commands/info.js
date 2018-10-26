@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
     .addField(`🌎 ${servName} créé le`, servCreate, true)
     .addBlankField()
     .addField(
-      `📚 Nombre de channels [${message.guild.channels.size}]`,
+      `📚 Channels totaux [${message.guild.channels.size}]`,
       `💬 Channels textuels : ${textChannels}\n🔊 Channels vocaux : ${voiceChannels}`,
       true
     )
