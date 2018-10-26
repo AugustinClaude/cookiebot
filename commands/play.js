@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
       info.view_count
     } views\n\`\`\`\n📅 **Published** : \`\`\`js\n${moment(
       info.published
-    ).format("LLL")} views\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
+    ).format("LLL")}\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
       info.author.name
     }\n\`\`\`\n🎵 **Song Writer** : \`\`\`fix\n${artist}\n\`\`\`\n🌐 **Link** : ${
       info.video_url
