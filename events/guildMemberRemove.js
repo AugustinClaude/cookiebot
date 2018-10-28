@@ -1,3 +1,6 @@
+const Canvas = require("canvas");
+const snekfetch = require("snekfetch");
+
 module.exports = (bot, member) => {
   member.createDM().then(function(channel) {
     return channel.send(
@@ -14,13 +17,15 @@ module.exports = (bot, member) => {
       ch.name === "🚪-bienvenue-🚪"
   );
 
-  if (channel) {
-    return channel.send(
-      `\`\`${member.guild.name}\`\` has lost somebody :cry: : **${
-        member.user
-      }** ! This is so sad :(\nWe are now \`\`${
-        member.guild.memberCount
-      }\`\` in this guild !`
-    );
-  } else return;
+  if (!channel) return;
+
+  const canvas = Canvas.createCanvas(700, 250);
+  const ctx = canvas.getContext("2d");
+
+  const background = await Canvas.loadImage('./wallpaper.jpg');
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  
+  const attachment = new Discord.Attachment(canvas.toBuffer(), 'goodbye-image.png');
+
+  channel.send(attachment);
 };
