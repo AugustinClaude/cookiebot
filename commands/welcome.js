@@ -1,4 +1,6 @@
 module.exports.run = async (bot, message) => {
+  message.delete();
+
   bot.emit(
     "guildMemberAdd",
     message.member || (await message.guild.fetchMember(message.author))
