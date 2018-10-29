@@ -85,7 +85,7 @@ bot.on("guildMemberRemove", async member => {
   const canvas = Canvas.createCanvas(700, 250);
   const ctx = canvas.getContext("2d");
 
-  const background = await Canvas.loadImage("./wallpaper.jpg");
+  const background = await Canvas.loadImage("./wallpaper.png");
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
   const attachment = new Discord.Attachment(
