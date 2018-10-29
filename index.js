@@ -3,6 +3,9 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const bot = new Discord.Client();
 
+const Canvas = require("canvas");
+const snekfetch = require("snekfetch");
+
 const http = require("http");
 setInterval(function() {
   http.get("http://cookie-bot-discord.herokuapp.com");
@@ -40,6 +43,55 @@ bot.aliases = new Discord.Collection();
 
   bot.login(process.env.BOT_TOKEN);
 })();
+
+// CANVAS WELCOME IMAGE
+
+bot.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.find(
+    ch =>
+      ch.name === "welcome" ||
+      ch.name === "bienvenue" ||
+      ch.name === "🚪-bienvenue-🚪"
+  );
+
+  if (!channel) return;
+
+  const canvas = Canvas.createCanvas(700, 250);
+  const ctx = canvas.getContext("2d");
+
+  const background = await Canvas.loadImage('./wallpaper.jpg');
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  
+  const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+
+  channel.send(attachment);
+});
+
+// CANVAS GOODBYE IMAGE
+
+bot.on("guildMemberRemove", member => {
+  const channel = member.guild.channels.find(
+    ch =>
+      ch.name === "welcome" ||
+      ch.name === "bienvenue" ||
+      ch.name === "🚪-bienvenue-🚪"
+  );
+
+  if (!channel) return;
+
+  const canvas = Canvas.createCanvas(700, 250);
+  const ctx = canvas.getContext("2d");
+
+  const background = await Canvas.loadImage('./wallpaper.jpg');
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  
+  const attachment = new Discord.Attachment(canvas.toBuffer(), 'goodbye-image.png');
+
+  channel.send(attachment);
+});
+
+
+
 
 // ---------------------------------------------------------------------------------- //
 /*bot.on('message', async message => {
