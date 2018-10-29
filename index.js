@@ -67,7 +67,11 @@ bot.on("guildMemberAdd", async member => {
 
   ctx.font = "60px sans-serif";
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.tag, canvas.width / 2.5, canvas.height / 1.8);
+  ctx.fillText(
+    member.displayName + member.discriminator,
+    canvas.width / 2.5,
+    canvas.height / 1.8
+  );
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
@@ -109,7 +113,11 @@ bot.on("guildMemberRemove", async member => {
 
   ctx.font = "60px sans-serif";
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.tag, canvas.width / 2.5, canvas.height / 1.8);
+  ctx.fillText(
+    member.displayName + member.discriminator,
+    canvas.width / 2.5,
+    canvas.height / 1.8
+  );
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
