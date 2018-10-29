@@ -49,16 +49,12 @@ bot.aliases = new Discord.Collection();
 const applyText = (canvas, text) => {
   const ctx = canvas.getContext("2d");
 
-  // Declare a base size of the font
   let fontSize = 70;
 
   do {
-    // Assign the font to the context and decrement it so it can be measured again
     ctx.font = `${(fontSize -= 10)}px sans-serif`;
-    // Compare pixel width of the text to the canvas minus the approximate avatar size
   } while (ctx.measureText(text).width > canvas.width - 300);
 
-  // Return the result to use in the actual canvas
   return ctx.font;
 };
 
@@ -81,13 +77,9 @@ bot.on("guildMemberAdd", async member => {
   ctx.strokeStyle = "#000000";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.font = applyText(canvas, member.displayName + member.user.tag);
+  ctx.font = applyText(canvas, member.user.tag);
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(
-    member.displayName + member.user.tag,
-    canvas.width / 2.5,
-    canvas.height / 1.8
-  );
+  ctx.fillText(member.user.tag, canvas.width / 2.5, canvas.height / 1.8);
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
@@ -127,13 +119,9 @@ bot.on("guildMemberRemove", async member => {
   ctx.strokeStyle = "#000000";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.font = applyText(canvas, member.displayName + member.user.tag);
+  ctx.font = applyText(canvas, member.user.tag);
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(
-    member.displayName + member.user.tag,
-    canvas.width / 2.5,
-    canvas.height / 1.8
-  );
+  ctx.fillText(member.user.tag, canvas.width / 2.5, canvas.height / 1.8);
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
