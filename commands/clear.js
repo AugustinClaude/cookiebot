@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     return message.reply("Syntaxe : <clear [Nombre de message à supprimer]");
 
   try {
-    message.channel.bulkDelete(args[0]).then(() => {
+    await message.channel.bulkDelete(args[0]).then(() => {
       message.channel.bulkDelete(1);
       message.channel
         .send(`🗑 J'ai supprimé ***${args[0]} messages*** avec succès !`)
@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
   } catch (e) {
     message.delete();
     message.channel.send(
-      "Je ne peux pas supprimer des messages datant de plus de 14 jours !"
+      ":x: Je ne peux pas supprimer des messages datant de plus de 14 jours !"
     );
   }
 };
