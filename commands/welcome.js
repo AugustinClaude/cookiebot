@@ -5,6 +5,13 @@ module.exports.run = async (bot, message) => {
     "guildMemberAdd",
     message.member || (await message.guild.fetchMember(message.author))
   );
+
+  await wait(3000);
+
+  bot.emit(
+    "guildMemberRemove",
+    message.member || (await message.guild.fetchMember(message.author))
+  );
 };
 
 module.exports.conf = {
