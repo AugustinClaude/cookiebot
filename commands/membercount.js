@@ -29,8 +29,8 @@ module.exports.run = async (bot, message, args) => {
 
   const everyOne = message.guild.members.has(
     role => role.id !== message.guild.id
-  ).size;
-  const noRole = Math.floor(Math.random() * roles - everyOne);
+  );
+  const noRole = message.guild.members.size - everyOne;
 
   /*var noRoleCount;
 
