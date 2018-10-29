@@ -81,7 +81,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.font = "28px sans-serif";
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
-      `Welcome to ${member.guild.name},`,
+      "Welcome to the guild,",
       canvas.width / 2.5,
       canvas.height / 3.5
     );
