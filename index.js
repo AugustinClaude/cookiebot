@@ -68,7 +68,7 @@ bot.on("guildMemberAdd", async member => {
   ctx.font = "60px sans-serif";
   ctx.fillStyle = "#ffffff";
   ctx.fillText(
-    member.displayName + member.discriminator,
+    member.displayName + member.user.tag,
     canvas.width / 2.5,
     canvas.height / 1.8
   );
@@ -114,7 +114,7 @@ bot.on("guildMemberRemove", async member => {
   ctx.font = "60px sans-serif";
   ctx.fillStyle = "#ffffff";
   ctx.fillText(
-    member.displayName + member.discriminator,
+    member.displayName + member.user.tag,
     canvas.width / 2.5,
     canvas.height / 1.8
   );
