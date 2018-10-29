@@ -78,7 +78,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.strokeStyle = "#000000";
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-    ctx.font = "28px Impact";
+    ctx.font = "32px Impact";
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
       "Welcome to the guild,",
@@ -145,7 +145,7 @@ bot.on("guildMemberRemove", async member => {
     ctx.strokeStyle = "#000000";
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-    ctx.font = "28px Impact";
+    ctx.font = "32px Impact";
     ctx.fillStyle = "#ffffff";
     ctx.fillText("Goodbye,", canvas.width / 2.5, canvas.height / 3.5);
 
