@@ -30,9 +30,11 @@ module.exports.run = async (bot, message, args) => {
     });
   } catch (e) {
     message.delete();
-    message.channel.send(
-      ":x: Je ne peux pas supprimer des messages datant de plus de 14 jours !"
-    );
+    message.channel
+      .send(
+        ":x: Je ne peux pas supprimer des messages datant de plus de 14 jours !"
+      )
+      .then(msg => msg.delete(2000));
   }
 };
 
