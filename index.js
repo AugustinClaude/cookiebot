@@ -46,7 +46,7 @@ bot.aliases = new Discord.Collection();
 
 // CANVAS WELCOME IMAGE
 
-bot.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", async member => {
   const channel = member.guild.channels.find(
     ch =>
       ch.name === "welcome" ||
@@ -59,17 +59,20 @@ bot.on("guildMemberAdd", member => {
   const canvas = Canvas.createCanvas(700, 250);
   const ctx = canvas.getContext("2d");
 
-  const background = await Canvas.loadImage('./wallpaper.jpg');
+  const background = await Canvas.loadImage("./wallpaper.jpg");
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  
-  const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+
+  const attachment = new Discord.Attachment(
+    canvas.toBuffer(),
+    "welcome-image.png"
+  );
 
   channel.send(attachment);
 });
 
 // CANVAS GOODBYE IMAGE
 
-bot.on("guildMemberRemove", member => {
+bot.on("guildMemberRemove", async member => {
   const channel = member.guild.channels.find(
     ch =>
       ch.name === "welcome" ||
@@ -82,16 +85,16 @@ bot.on("guildMemberRemove", member => {
   const canvas = Canvas.createCanvas(700, 250);
   const ctx = canvas.getContext("2d");
 
-  const background = await Canvas.loadImage('./wallpaper.jpg');
+  const background = await Canvas.loadImage("./wallpaper.jpg");
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  
-  const attachment = new Discord.Attachment(canvas.toBuffer(), 'goodbye-image.png');
+
+  const attachment = new Discord.Attachment(
+    canvas.toBuffer(),
+    "goodbye-image.png"
+  );
 
   channel.send(attachment);
 });
-
-
-
 
 // ---------------------------------------------------------------------------------- //
 /*bot.on('message', async message => {
