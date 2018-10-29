@@ -78,7 +78,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.strokeStyle = "#000000";
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-    ctx.font = "28px sans-serif";
+    ctx.font = applyText(canvas, `Welcome to ${member.guild.name},`);
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
       `Welcome to ${member.guild.name},`,
