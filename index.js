@@ -94,7 +94,7 @@ bot.on("guildMemberAdd", async member => {
   ctx.fillText(
     `We are now ${member.guild.memberCount} !`,
     canvas.width / 2.5,
-    canvas.height / 1.1
+    canvas.height / 1.5
   );
 
   ctx.beginPath();
@@ -148,7 +148,7 @@ bot.on("guildMemberRemove", async member => {
   ctx.fillText(
     `We are now ${member.guild.memberCount} !`,
     canvas.width / 2.5,
-    canvas.height / 1.1
+    canvas.height / 1.5
   );
 
   ctx.beginPath();
