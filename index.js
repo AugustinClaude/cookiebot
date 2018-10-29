@@ -77,9 +77,17 @@ bot.on("guildMemberAdd", async member => {
   ctx.strokeStyle = "#000000";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.font = applyText(canvas, member.user.tag);
+  ctx.font = "28px sans-serif";
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.user.tag, canvas.width / 2.5, canvas.height / 1.8);
+  ctx.fillText(
+    "Welcome to the server,",
+    canvas.width / 2.5,
+    canvas.height / 3.5
+  );
+
+  ctx.font = applyText(canvas, member.user.tag + " !");
+  ctx.fillStyle = "#ffffff";
+  ctx.fillText(member.user.tag + " !", canvas.width / 2.5, canvas.height / 1.8);
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
@@ -119,9 +127,13 @@ bot.on("guildMemberRemove", async member => {
   ctx.strokeStyle = "#000000";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.font = applyText(canvas, member.user.tag);
+  ctx.font = "28px sans-serif";
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.user.tag, canvas.width / 2.5, canvas.height / 1.8);
+  ctx.fillText("Goodbye,", canvas.width / 2.5, canvas.height / 3.5);
+
+  ctx.font = applyText(canvas, member.user.tag + " !");
+  ctx.fillStyle = "#ffffff";
+  ctx.fillText(member.user.tag + " !", canvas.width / 2.5, canvas.height / 1.8);
 
   ctx.beginPath();
   ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
