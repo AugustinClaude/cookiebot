@@ -65,6 +65,11 @@ bot.on("guildMemberAdd", async member => {
   ctx.strokeStyle = "#74037b";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
+  ctx.beginPath();
+  ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+  ctx.closePath();
+  ctx.clip();
+
   const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
   const avatar = await Canvas.loadImage(buffer);
   ctx.drawImage(avatar, 25, 25, 200, 200);
@@ -97,6 +102,11 @@ bot.on("guildMemberRemove", async member => {
 
   ctx.strokeStyle = "#74037b";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+  ctx.beginPath();
+  ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+  ctx.closePath();
+  ctx.clip();
 
   const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
   const avatar = await Canvas.loadImage(buffer);
