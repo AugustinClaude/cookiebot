@@ -68,50 +68,60 @@ bot.on("guildMemberAdd", async member => {
 
   if (!channel) return;
 
-  const canvas = Canvas.createCanvas(700, 250);
-  const ctx = canvas.getContext("2d");
+  try {
+    const canvas = Canvas.createCanvas(700, 250);
+    const ctx = canvas.getContext("2d");
 
-  const background = await Canvas.loadImage("./wallpaper.png");
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    const background = await Canvas.loadImage("./wallpaper.png");
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-  ctx.strokeStyle = "#000000";
-  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "#000000";
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.font = "28px sans-serif";
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText(
-    "Welcome to the server,",
-    canvas.width / 2.5,
-    canvas.height / 3.5
-  );
+    ctx.font = "28px sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(
+      "Welcome to the server,",
+      canvas.width / 2.5,
+      canvas.height / 3.5
+    );
 
-  ctx.font = applyText(canvas, member.user.tag + " !");
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.user.tag + " !", canvas.width / 2.5, canvas.height / 1.8);
+    ctx.font = applyText(canvas, member.user.tag + " !");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(
+      member.user.tag + " !",
+      canvas.width / 2.5,
+      canvas.height / 1.8
+    );
 
-  ctx.font = "28px sans-serif";
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText(
-    `We are now ${member.guild.memberCount} !`,
-    canvas.width / 2.5,
-    canvas.height / 1.5
-  );
+    ctx.font = "28px sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(
+      `We are now ${member.guild.memberCount} !`,
+      canvas.width / 2.5,
+      canvas.height / 1.5
+    );
 
-  ctx.beginPath();
-  ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-  ctx.closePath();
-  ctx.clip();
+    ctx.beginPath();
+    ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.clip();
 
-  const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
-  const avatar = await Canvas.loadImage(buffer);
-  ctx.drawImage(avatar, 25, 25, 200, 200);
+    const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
+    const avatar = await Canvas.loadImage(buffer);
+    ctx.drawImage(avatar, 25, 25, 200, 200);
 
-  const attachment = new Discord.Attachment(
-    canvas.toBuffer(),
-    "welcome-image.png"
-  );
+    const attachment = new Discord.Attachment(
+      canvas.toBuffer(),
+      "welcome-image.png"
+    );
 
-  channel.send(attachment);
+    channel.send(attachment);
+  } catch (e) {
+    channel.send(
+      `Welcome to \`${member.guild.name}\` <@${member.id}> ! Enjoy ;)`
+    );
+  }
 });
 
 // CANVAS GOODBYE IMAGE
@@ -125,47 +135,58 @@ bot.on("guildMemberRemove", async member => {
   );
 
   if (!channel) return;
+  try {
+    const canvas = Canvas.createCanvas(700, 250);
+    const ctx = canvas.getContext("2d");
 
-  const canvas = Canvas.createCanvas(700, 250);
-  const ctx = canvas.getContext("2d");
+    const background = await Canvas.loadImage("./wallpaper.png");
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-  const background = await Canvas.loadImage("./wallpaper.png");
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "#000000";
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  ctx.strokeStyle = "#000000";
-  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+    ctx.font = "28px sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("Goodbye,", canvas.width / 2.5, canvas.height / 3.5);
 
-  ctx.font = "28px sans-serif";
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText("Goodbye,", canvas.width / 2.5, canvas.height / 3.5);
+    ctx.font = applyText(canvas, member.user.tag + " !");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(
+      member.user.tag + " !",
+      canvas.width / 2.5,
+      canvas.height / 1.8
+    );
 
-  ctx.font = applyText(canvas, member.user.tag + " !");
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText(member.user.tag + " !", canvas.width / 2.5, canvas.height / 1.8);
+    ctx.font = "28px sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(
+      `We are now ${member.guild.memberCount} !`,
+      canvas.width / 2.5,
+      canvas.height / 1.5
+    );
 
-  ctx.font = "28px sans-serif";
-  ctx.fillStyle = "#ffffff";
-  ctx.fillText(
-    `We are now ${member.guild.memberCount} !`,
-    canvas.width / 2.5,
-    canvas.height / 1.5
-  );
+    ctx.beginPath();
+    ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.clip();
 
-  ctx.beginPath();
-  ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-  ctx.closePath();
-  ctx.clip();
+    const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
+    const avatar = await Canvas.loadImage(buffer);
+    ctx.drawImage(avatar, 25, 25, 200, 200);
 
-  const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
-  const avatar = await Canvas.loadImage(buffer);
-  ctx.drawImage(avatar, 25, 25, 200, 200);
+    const attachment = new Discord.Attachment(
+      canvas.toBuffer(),
+      "goodbye-image.png"
+    );
 
-  const attachment = new Discord.Attachment(
-    canvas.toBuffer(),
-    "goodbye-image.png"
-  );
-
-  channel.send(attachment);
+    channel.send(attachment);
+  } catch (e) {
+    channel.send(
+      `Goodbye <@${member.id}> ! You can come back in \`${
+        member.guild.name
+      }\` at anytime !`
+    );
+  }
 });
 
 // ---------------------------------------------------------------------------------- //
