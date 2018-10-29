@@ -62,6 +62,13 @@ bot.on("guildMemberAdd", async member => {
   const background = await Canvas.loadImage("./wallpaper.png");
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
+  ctx.strokeStyle = "#74037b";
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+  const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
+  const avatar = await Canvas.loadImage(buffer);
+  ctx.drawImage(avatar, 25, 25, 200, 200);
+
   const attachment = new Discord.Attachment(
     canvas.toBuffer(),
     "welcome-image.png"
@@ -87,6 +94,13 @@ bot.on("guildMemberRemove", async member => {
 
   const background = await Canvas.loadImage("./wallpaper.png");
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = "#74037b";
+  ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+  const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
+  const avatar = await Canvas.loadImage(buffer);
+  ctx.drawImage(avatar, 25, 25, 200, 200);
 
   const attachment = new Discord.Attachment(
     canvas.toBuffer(),
