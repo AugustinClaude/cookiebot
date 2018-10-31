@@ -30,7 +30,9 @@ module.exports.run = async (bot, message, args) => {
   const everyOne = message.guild.members.has(
     role => role.id == message.guild.id
   );
-  const noRole = message.guild.members.size - everyOne;
+  var noRole;
+
+  if (everyOne == true) noRole + 1;
 
   /*var noRoleCount;
 
