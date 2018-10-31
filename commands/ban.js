@@ -73,7 +73,9 @@ module.exports.run = async (bot, message, args) => {
   banChannel.send(banEmbed);
   message.channel.send(`${bannedUser} a été banni avec succès !`);
   bannedUser.send(
-    `Vous avez été banni du serveur \`\`${message.guild.name}\`\`.`
+    `Vous avez été banni du serveur \`\`${
+      message.guild.name
+    }\`\` pour "${banReason}"`
   );
 };
 

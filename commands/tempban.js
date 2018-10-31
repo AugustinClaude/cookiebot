@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
   tempBanUser.send(
     `Vous avez été banni du serveur \`\`${message.guild.name}\`\` pour ${ms(
       ms(tempBanTime)
-    )}.`
+    )} pour la raison suivante "${tempBanReason}"`
   );
 
   const tempBanEmbed = new Discord.RichEmbed()

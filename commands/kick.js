@@ -69,7 +69,9 @@ module.exports.run = async (bot, message, args) => {
   kickChannel.send(kickedEmbed);
   message.channel.send(`${kickedUser} a été kick avec succès !`);
   kickedUser.send(
-    `Vous avez été kick du serveur \`\`${message.guild.name}\`\`.`
+    `Vous avez été kick du serveur \`\`${
+      message.guild.name
+    }\`\` pour "${kickedReason}".`
   );
 };
 

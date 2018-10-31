@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     message.guild.members.filter(o => o.presence.status === "offline").size;
 
   const everyOne = message.guild.members.has(
-    role => role.id !== message.guild.id
+    role => role.id == message.guild.id
   );
   const noRole = message.guild.members.size - everyOne;
 
@@ -47,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `${noRole}`, true)
+    .addField("👻 Membres sans rôle(s)", `${everyOne}`, true)
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
