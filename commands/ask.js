@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   if (!args[0]) return message.reply("🎱 Vous ne m'avez pas posé question !");
   if (args.join(" ") === "Quel est la réponse de la vie ?") {
-    const replies2 = ["🎱 C'est simple, c'est 42 !", "🎱 Hmm... Si je me rappelle bien, c'est 42 !", "🎱 Demande à google ! : https://bit.ly/2xJy3nW", "🎱 Hum... C'est embarrassant... Je ne sais pas... Demandons à Mr.Calculatrice ! <Mr.Calculatrice> 'réponse de la vie' = 42"];
+    const replies2 = ["🎱 C'est simple, c'est 42 !", "🎱 Hmm... Si je me rappelle bien, c'est 42 !", "🎱 Demande à google ! : https://bit.ly/2xJy3nW", "🎱 Hum... C'est embarrassant... Je ne sais pas... Demandons à Mr.Calculatrice !\n<Mr.Calculatrice> 'réponse de la vie' = 42"];
     const result2 = Math.floor((Math.random() * replies2.length));
     return message.channel.send(replies2[result2]);
   }
