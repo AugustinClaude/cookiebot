@@ -30,9 +30,6 @@ module.exports.run = async (bot, message, args) => {
   const everyOne = message.guild.members.has(
     role => role.id == message.guild.id
   );
-  var noRole;
-
-  if (everyOne == false) noRole + 1;
 
   /*var noRoleCount;
 
@@ -49,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `${noRole}`, true)
+    .addField("👻 Membres sans rôle(s)", `${everyOne}`, true)
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
