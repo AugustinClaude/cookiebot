@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   );
   var noRole;
 
-  if (everyOne == true) noRole + 1;
+  if (everyOne == false) noRole + 1;
 
   /*var noRoleCount;
 
