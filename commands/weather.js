@@ -19,8 +19,8 @@ module.exports.run = (bot, message, args) => {
       .setThumbnail(current.imageUrl)
       .setColor(0x00ae86)
       .addBlankField()
-      .addField("Timezone 🕒", `UTC+${location.timezone}`, true)
-      .addField("Degree Type :thermometer:", location.degreetype, true)
+      .addField("Timezone 🕒", `UTC+${location.timezone}:00`, true)
+      .addField("Degree Type :thermometer:", `°${location.degreetype}`, true)
       .addField(
         "Temperature :thermometer:",
         `${current.temperature}°${location.degreetype}`,
