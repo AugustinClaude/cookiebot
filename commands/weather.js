@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args) => {
     err,
     result
   ) {
-    if (err) message.channel.send(err);
+    if (err) console.log(err);
     if (result === undefined || result.length === 0) {
       message.channel.send("**Please enter a location!**");
       return;
