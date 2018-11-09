@@ -13,14 +13,21 @@ module.exports.run = (bot, message, args) => {
     }
     var current = result[0].current;
     var location = result[0].location;
+    var UTC;
+
+    if (location.timezone.startsWith("-"))
+      var UTC = `UTC${location.timezone}:00`;
+    else var UTC = `UTC+${location.timezone}:00`;
+
     const weatherEmbed = new Discord.RichEmbed()
       .setDescription(`**${current.skytext}**`)
       .setAuthor(`Weather for ${current.observationpoint}`)
       .setThumbnail(current.imageUrl)
       .setColor(0x00ae86)
       .addBlankField()
-      .addField("Timezone 🕒", `UTC+${location.timezone}:00`, true)
+      .addField("Timezone 🕒", `${UTC}`, true)
       .addField("Degree Type :thermometer:", `°${location.degreetype}`, true)
+      .addBlankField()
       .addField(
         "Temperature :thermometer:",
         `${current.temperature}°${location.degreetype}`,
@@ -31,6 +38,7 @@ module.exports.run = (bot, message, args) => {
         `${current.feelslike}°${location.degreetype}`,
         true
       )
+      .addBlankField()
       .addField("Winds :wind_blowing_face:", current.winddisplay, true)
       .addField("Humidity :sweat_drops:", `${current.humidity}%`, true);
     message.channel.send(weatherEmbed);
