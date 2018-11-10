@@ -161,7 +161,7 @@ module.exports = (bot, message) => {
     }
   }
 
-  if (command === `<test`) {
+  if (command === "<test") {
     const reportedUser = message.guild.member(
       message.mentions.users.first() || message.guild.members.get(args[O])
     );
