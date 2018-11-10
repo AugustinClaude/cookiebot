@@ -77,8 +77,8 @@ module.exports = (bot, message) => {
       "log",
       ` ${message.guild.name} | #${message.channel.name}:
         ${message.author.username}#${message.author.discriminator} (${
-  message.author.id
-}) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
+        message.author.id
+      }) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
       "CMD"
     );
     cmd.run(bot, message, args, perms);
@@ -161,8 +161,8 @@ module.exports = (bot, message) => {
     }
   }
 
-  if (command === `test`) {
-    const reportedUser = message.guild.member (
+  if (command === `<test`) {
+    const reportedUser = message.guild.member(
       message.mentions.users.first() || message.guild.members.get(args[O])
     );
     if (!reportedUser) {
@@ -177,9 +177,13 @@ module.exports = (bot, message) => {
     const reportEmbed = new Discord.RichEmbed()
       .setDescription("Reports")
       .setColor("#FF0000")
-      .addField("L'utilisateur reporté" , `${reportedUser} (ID : ${reportedUser.id})`
+      .addField(
+        "L'utilisateur reporté",
+        `${reportedUser} (ID : ${reportedUser.id})`
       )
-      .addField("L'utilisateur ayant reporté" , `${message.author} (ID : ${message.autor.id})`
+      .addField(
+        "L'utilisateur ayant reporté",
+        `${message.author} (ID : ${message.autor.id})`
       )
       .addField("Canal", message.channel)
       .addField("Raison", reportedReason);
@@ -189,13 +193,8 @@ module.exports = (bot, message) => {
       return message.channel.send(
         "Canal 'Reports' introuvable, Veuillez créer ce canal !"
       );
-
-
     }
     message.delete();
     reportChannel.send(reportEmbed);
-
-
-
   }
 };
