@@ -77,8 +77,8 @@ module.exports = (bot, message) => {
       "log",
       ` ${message.guild.name} | #${message.channel.name}:
         ${message.author.username}#${message.author.discriminator} (${
-        message.author.id
-      }) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
+  message.author.id
+}) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
       "CMD"
     );
     cmd.run(bot, message, args, perms);
@@ -159,5 +159,43 @@ module.exports = (bot, message) => {
         partyLaunch = false;
       }
     }
+  }
+
+  if (command === `test`) {
+    const reportedUser = message.guild.member (
+      message.mentions.users.first() || message.guild.members.get(args[O])
+    );
+    if (!reportedUser) {
+      return message.channel.send("L'utilisateur n'existe pas !");
+    }
+
+    const reportedReason = args.join(" ").slice(22);
+    if (!reportedReason) {
+      return message.reply("Merci de préciser une raison!");
+    }
+
+    const reportEmbed = new Discord.RichEmbed()
+      .setDescription("Reports")
+      .setColor("#FF0000")
+      .addField("L'utilisateur reporté" , `${reportedUser} (ID : ${reportedUser.id})`
+      )
+      .addField("L'utilisateur ayant reporté" , `${message.author} (ID : ${message.autor.id})`
+      )
+      .addField("Canal", message.channel)
+      .addField("Raison", reportedReason);
+
+    const reportChannel = message.guild.channels.find("name", "reports");
+    if (!reportChannel) {
+      return message.channel.send(
+        "Canal 'Reports' introuvable, Veuillez créer ce canal !"
+      );
+
+
+    }
+    message.delete();
+    reportChannel.send(reportEmbed);
+
+
+
   }
 };
