@@ -27,17 +27,22 @@ module.exports.run = async (bot, message, args) => {
     nbMember -
     message.guild.members.filter(o => o.presence.status === "offline").size;
 
-  const everyOne = message.guild.members.has(
+  /*const everyOne = message.guild.members.has(
     role => role.id == message.guild.id
   );
 
-  /*var noRoleCount;
+  var noRoleCount;
 
   const noRole = message.guild.members.forEach(
     role => role.id !== message.guild.id
   );
   if (noRole) var noRoleCount = noRoleCount + 1;
 */
+
+  const noRole = message.guild.members.forEach(members => {
+    members.roles.filter(role => role.id !== message.guild.id).array();
+  });
+
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
   const servEmbed = new Discord.RichEmbed()
@@ -46,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `${everyOne}`, true)
+    .addField("👻 Membres sans rôle(s)", `${noRole}`, true)
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
