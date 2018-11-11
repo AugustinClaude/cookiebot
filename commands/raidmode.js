@@ -1,6 +1,6 @@
-module.exports.run = async (bot, message, args) => {
-  var raidmode = false;
+var raidmode = false;
 
+module.exports.run = async (bot, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     return message.channel.send(
       "Vous n'avez pas les permissions pour faire cela !"
