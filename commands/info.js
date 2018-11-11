@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
 
   const servIcon = message.guild.iconURL;
   const servName = message.guild.name;
-  //let emojis = message.guild.emojis.map(e => e).join(' | ')
   const lastmember = Array.from(message.channel.guild.members.values())
     .sort((a, b) => b.joinedAt - a.joinedAt)
     .map(m => `<@!${m.id}>`)
@@ -52,7 +51,6 @@ module.exports.run = async (bot, message, args) => {
     .addField("🔘 Dernier membre", lastmember, true)
     .addField("🚪 Votre arrivée sur le serveur", userJoin, true)
     .addBlankField();
-  //.addField(`📜 Liste des émojis [${emojisSize}]`, emojis) <-- TROP VOLUMINEUX (trop d'émojis)
 
   return message.channel.send(servEmbed);
 };
