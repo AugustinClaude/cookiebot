@@ -27,12 +27,16 @@ module.exports.run = async (bot, message, args) => {
   }
 
   if (raidmode == false) {
-    await message.guild.members.addRole(muteRole.id);
+    await message.guild.members.forEach(members => {
+      members.addRole(muteRole.id);
+    });
     message.channel.send("🔇 ⛔ RaidMode Activé ⛔ 🔇");
     raidmode = true;
   }
   if (raidmode == true) {
-    await message.guild.members.removeRole(muteRole.id);
+    await message.guild.members.forEach(members => {
+      members.removeRole(muteRole.id);
+    });
     message.channel.send("🔊 ✔ RaidMode Désactivé ✔ 🔊");
     raidmode = false;
   }
