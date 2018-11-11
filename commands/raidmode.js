@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-  var raidmode;
+  var raidmode = false;
 
   if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     return message.channel.send(
