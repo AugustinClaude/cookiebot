@@ -1,6 +1,8 @@
-var raidmode = false;
+var raidmode = true;
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
+
   if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     return message.channel.send(
       "Vous n'avez pas les permissions pour faire cela !"
@@ -26,19 +28,19 @@ module.exports.run = async (bot, message, args) => {
     }
   }
 
-  if (raidmode == false) {
+  if (raidmode == true) {
     await message.guild.members.forEach(members => {
       members.addRole(muteRole.id);
     });
     message.channel.send("🔇 ⛔ RaidMode Activé ⛔ 🔇");
-    raidmode = true;
+    raidmode = false;
   } else {
     await message.guild.members.forEach(members => {
       members.removeRole(muteRole.id);
     });
     message.channel.send("🔊 ✔ RaidMode Désactivé ✔ 🔊");
+    raidmode = true;
   }
-  message.delete();
 };
 
 module.exports.conf = {
