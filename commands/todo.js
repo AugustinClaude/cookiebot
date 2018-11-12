@@ -13,8 +13,8 @@ module.exports.run = async (bot, message, args) => {
   const remindEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
-    .addField("Reminder", `\`\`\`fix${reminder}\`\`\``)
-    .addField("Time", `\`\`\`fix${reminderTime}\`\`\``)
+    .addField("Reminder", `\`\`\`fix\n${reminder}\n\`\`\``)
+    .addField("Time", `\`\`\`fix\n${reminderTime}\n\`\`\``)
     .setTimestamp();
 
   message.channel.send(remindEmbed);
