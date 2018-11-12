@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
+
   const reminderTime = args[0];
   if (!reminderTime)
     return message.channel.send(
