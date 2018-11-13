@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#F02A2A")
     .addField("⛔️ Membre banni", `${bannedUser} (ID: ${bannedUser.id})`)
     .addField("🌀 Banni par", `${message.author} (ID: ${message.author.id})`)
-    .addField("🕑 Ban le", moment(message.createdAt + 1).format("LLL"))
+    .addField("🕑 Ban le", moment(message.createdAt).format("LLL"))
     .addField("💬 Channel", message.channel)
     .addField("❓ Raison", banReason);
 

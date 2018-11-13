@@ -68,7 +68,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#F02A2A")
     .addField("⛔️ Membre mute", `${mutedUser} (ID: ${mutedUser.id})`)
     .addField("🌀 Mute par", `${message.author} (ID: ${message.author.id})`)
-    .addField("🕑 Mute le", moment(message.createdAt).format("LLL"))
+    .addField("🕑 Mute le", moment(message.createdAt + 1).format("LLL"))
     .addField("⏳ Durée du mute", ms(ms(muteTime)))
     .addField("💬 Channel", message.channel)
     .addField("❓ Raison", muteReason);
