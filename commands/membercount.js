@@ -52,7 +52,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `undefined`, true)
+    .addField("👻 Membres sans rôle(s)", `${everyoneCount}`, true)
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
