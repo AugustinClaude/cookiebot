@@ -8,7 +8,7 @@ const snekfetch = require("snekfetch");
 
 const http = require("http");
 setInterval(function() {
-  http.get("http://cookie-bot-discord.herokuapp.com");
+  http.get("https://cookiebot-discord.herokuapp.com/");
 }, 300000);
 
 bot.config = require("./modules/functions")(bot);
