@@ -37,11 +37,12 @@ module.exports.run = async (bot, message, args) => {
     role => role.id !== message.guild.id
   );
   if (noRole) noRoleCount + 1;
-
+*/
   var everyoneCount = 0;
   message.guild.members.forEach(members => {
-    if (members.has(role => role.id == message.guild.id)) everyoneCount + 1;
-  });*/
+    if (members.has(roles.filter(role => role.id == message.guild.id)))
+      everyoneCount + 1;
+  });
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
