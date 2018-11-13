@@ -35,6 +35,11 @@ module.exports.run = async (bot, message, args) => {
     )
     .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL);
+
+  if (args[0] === "here") {
+    return message.channel.send(help_embed);
+  }
+
   try {
     await message.author.send(help_embed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
@@ -42,10 +47,6 @@ module.exports.run = async (bot, message, args) => {
     message.reply(
       "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
     );
-    message.channel.send(help_embed);
-  }
-
-  if (args[0] === "here") {
     message.channel.send(help_embed);
   }
 };
