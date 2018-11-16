@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-  if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) {
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
     const embed = new Discord.RichEmbed()
       .setColor("#FE0101")
       .setDescription(
