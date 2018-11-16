@@ -84,30 +84,6 @@ module.exports = (bot, message) => {
     cmd.run(bot, message, args, perms);
   }
 
-  if (message.content.startsWith("!purge")) {
-    message.delete();
-    if (
-      !message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")
-    ) {
-      const embed = new Discord.RichEmbed()
-        .setColor("#FE0101")
-        .setDescription(
-          ":x: Vous ne disposez pas des permissions nécessaires pour effectuer cette commande."
-        );
-      return message.channel.send(embed);
-    }
-
-    if (!args[0])
-      return message.channel.send(
-        "Tu dois préciser un nombre entre 1 et 100 de mesages supprimer !"
-      );
-    message.channel.bulkDelete(args[0]).then(() => {
-      message.channel
-        .send(`:satellite: ${args[0]} message ont supprimés !`)
-        .then(msg => msg.delete(1000));
-    });
-  }
-
   //JUSTEPRIX (commande)
   if (command === "justeprix" || command === "jp") {
     if (!args[0])
