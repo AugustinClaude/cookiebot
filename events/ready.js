@@ -1,4 +1,4 @@
-module.exports = async (bot, member) => {
+module.exports = async bot => {
   await wait(1000);
 
   bot.log(
@@ -22,13 +22,4 @@ module.exports = async (bot, member) => {
     },
     status: "online"
   });
-
-  const channel = member.guild.channels.find(
-    ch =>
-      ch.name === "welcome" ||
-      ch.name === "bienvenue" ||
-      ch.name === "🚪-bienvenue-🚪"
-  );
-
-  channel.send("Test !");
 };
