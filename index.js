@@ -6,6 +6,13 @@ const bot = new Discord.Client();
 const Canvas = require("canvas");
 const snekfetch = require("snekfetch");
 
+const serverStats = {
+  guildID: "302902092006424577",
+  totalUserID: "513475175682015270",
+  memberCountID: "513475076004249620",
+  botCountID: "513475321010323481"
+};
+
 const http = require("http");
 setInterval(function() {
   http.get("https://cookiebot-discord.herokuapp.com/");
@@ -59,6 +66,23 @@ const applyText = (canvas, text) => {
 };
 
 bot.on("guildMemberAdd", async member => {
+  //CHANNEL => TOTAL MEMBER COUNT
+
+  if (member.guild.id !== serverStats.guildID) return;
+
+  bot.channels
+    .get(serverStats.totalUserID)
+    .setName(`🥝 Membres : ${member.guild.memberCount}`);
+  bot.channels
+    .get(serverStats.memberCountID)
+    .setName(
+      `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+    );
+  bot.channels
+    .get(serverStats.botCountID)
+    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+
+  //CANVAS
   const channel = member.guild.channels.find(
     ch =>
       ch.name === "welcome" ||
@@ -127,6 +151,23 @@ bot.on("guildMemberAdd", async member => {
 // CANVAS GOODBYE IMAGE
 
 bot.on("guildMemberRemove", async member => {
+  //CHANNEL => TOTAL MEMBER COUNT
+
+  if (member.guild.id !== serverStats.guildID) return;
+
+  bot.channels
+    .get(serverStats.totalUserID)
+    .setName(`🥝 Membres : ${member.guild.memberCount}`);
+  bot.channels
+    .get(serverStats.memberCountID)
+    .setName(
+      `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+    );
+  bot.channels
+    .get(serverStats.botCountID)
+    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+
+  //CANVAS
   const channel = member.guild.channels.find(
     ch =>
       ch.name === "welcome" ||
