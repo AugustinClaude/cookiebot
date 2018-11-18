@@ -80,7 +80,7 @@ bot.on("guildMemberAdd", async member => {
     );
   bot.channels
     .get(serverStats.botCountID)
-    .setName(`🤖 Bot : ${member.guild.members.filter(m => m.user.bot).size}`);
+    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
 
   //CANVAS
   const channel = member.guild.channels.find(
@@ -165,7 +165,7 @@ bot.on("guildMemberRemove", async member => {
     );
   bot.channels
     .get(serverStats.botCountID)
-    .setName(`🤖 Bot : ${member.guild.members.filter(m => m.user.bot).size}`);
+    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
 
   //CANVAS
   const channel = member.guild.channels.find(
