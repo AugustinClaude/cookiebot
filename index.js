@@ -74,12 +74,12 @@ bot.on("guildMemberAdd", async member => {
     .get(serverStats.memberCountID)
     .setName(`🥝 Membres : ${member.guild.memberCount}`);
   bot.channels
-    .get(serverStats.memberCountID)
+    .get(serverStats.userCountID)
     .setName(
       `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
     );
   bot.channels
-    .get(serverStats.memberCountID)
+    .get(serverStats.botCountID)
     .setName(`🤖 Bot : ${member.guild.members.filter(m => m.user.bot).size}`);
 
   //CANVAS
