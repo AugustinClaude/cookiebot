@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   const m = await message.channel.send("Ping ?");
   const pingEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
