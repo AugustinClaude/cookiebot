@@ -68,19 +68,21 @@ const applyText = (canvas, text) => {
 bot.on("guildMemberAdd", async member => {
   //CHANNEL => USERCOUNT : 0 etc...
 
-  if (member.guild.id !== serverStats.guildID) return;
-
-  bot.channels
-    .get(serverStats.memberCountID)
-    .setName(`🥝 Membres : ${member.guild.memberCount}`);
-  bot.channels
-    .get(serverStats.userCountID)
-    .setName(
-      `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
-    );
-  bot.channels
-    .get(serverStats.botCountID)
-    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+  try {
+    bot.channels
+      .get(serverStats.memberCountID)
+      .setName(`🥝 Membres : ${member.guild.memberCount}`);
+    bot.channels
+      .get(serverStats.userCountID)
+      .setName(
+        `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+      );
+    bot.channels
+      .get(serverStats.botCountID)
+      .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+  } catch (e) {
+    return;
+  }
 
   //CANVAS
   const channel = member.guild.channels.find(
@@ -153,19 +155,21 @@ bot.on("guildMemberAdd", async member => {
 bot.on("guildMemberRemove", async member => {
   //CHANNEL => USERCOUNT : 0 etc...
 
-  if (member.guild.id !== serverStats.guildID) return;
-
-  bot.channels
-    .get(serverStats.memberCountID)
-    .setName(`🥝 Membres : ${member.guild.memberCount}`);
-  bot.channels
-    .get(serverStats.userCountID)
-    .setName(
-      `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
-    );
-  bot.channels
-    .get(serverStats.botCountID)
-    .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+  try {
+    bot.channels
+      .get(serverStats.memberCountID)
+      .setName(`🥝 Membres : ${member.guild.memberCount}`);
+    bot.channels
+      .get(serverStats.userCountID)
+      .setName(
+        `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+      );
+    bot.channels
+      .get(serverStats.botCountID)
+      .setName(`🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
+  } catch (e) {
+    return;
+  }
 
   //CANVAS
   const channel = member.guild.channels.find(
