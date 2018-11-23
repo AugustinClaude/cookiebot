@@ -13,9 +13,9 @@ const serverStats = {
   botCountID: "513671575791206421"
 };
 
-const http = require("http");
+const https = require("https");
 setInterval(function() {
-  http.get("https://cookiebot-discord.herokuapp.com/");
+  https.get("https://cookiebot-discord.herokuapp.com/");
 }, 300000);
 
 bot.config = require("./modules/functions")(bot);
