@@ -14,6 +14,16 @@ module.exports = async bot => {
     "Prêt!"
   );
 
+  bot.emit(
+    "guildMemberAdd"
+  );
+
+  await wait(3000);
+
+  bot.emit(
+    "guildMemberRemove"
+  );
+
   bot.user.setPresence({
     game: {
       name: `<help | ${bot.guilds.size} guilds`,
