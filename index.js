@@ -15,7 +15,7 @@ const serverStats = {
 
 const http = require("http");
 setInterval(function() {
-  http.get("https://cookiebot-discord.herokuapp.com/");
+  http.get("http://cookiebot-discord.herokuapp.com/");
 }, 300000);
 
 bot.config = require("./modules/functions")(bot);
