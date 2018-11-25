@@ -23,29 +23,6 @@ module.exports = (bot, message) => {
     }
   }
 
-  /*const addExp = Math.floor(Math.random() * 15) + 5;
-
-  if (!exp[message.author.id]) {
-    exp[message.author.id] = {
-      exp: 0,
-      niveau: 1
-    };
-  }
-
-  fs.writeFile("../exp.json", JSON.stringify(exp), err => {
-    if (err) console.log(err);
-  });
-
-  const curXP = exp[message.author.id].exp;
-  const curLvl = exp[message.author.id].niveau;
-  const nextLvl = curLvl * 500;
-  exp[message.author.id].exp = curXP + addExp;
-
-  if (nextLvl <= curXP) {
-    exp[message.author.id].niveau += 1;
-    message.channel.send(`Bravo, tu es passé niveau **${curLvl + 1}**! :wink:`);
-  }*/
-
   if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 
   if (message.channel.type === "dm") {
