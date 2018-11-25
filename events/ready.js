@@ -1,3 +1,4 @@
+let index = 0;
 module.exports = async bot => {
   await wait(1000);
 
@@ -14,12 +15,26 @@ module.exports = async bot => {
     "Prêt!"
   );
 
-  bot.user.setPresence({
-    game: {
-      name: `<help | ${bot.guilds.size} guilds`,
-      type: "PLAYING"
-      //url: 'https://www.twitch.tv/spokloo'
-    },
-    status: "online"
-  });
+  setInterval(async () => {
+    const statuslist = [
+      `<help | ${bot.guilds.size} guilds`,
+      `<help | ${bot.channels.size} channels`,
+      `<help | ${bot.users.size} users`
+    ];
+    try {
+      await bot.user.setPresence({
+        game: {
+          name: `${statuslist[index]}`,
+          type: "PLAYING"
+          //url: 'https://www.twitch.tv/spokloo'
+        },
+        status: "online"
+      });
+    } catch (error) {
+      console.error(error);
+    }
+
+    if (index === statuslist.length) return (index = 0);
+    else +index;
+  }, 3000);
 };
