@@ -51,8 +51,6 @@ bot.aliases = new Discord.Collection();
   bot.login(process.env.BOT_TOKEN);
 })();
 
-bot.on("error", console.error);
-
 // CANVAS WELCOME IMAGE
 
 const applyText = (canvas, text) => {
