@@ -5,15 +5,27 @@ module.exports.run = async (bot, message, args) => {
   const mentionned = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
+  var random;
 
-  if (!mentionned)
-    return message.channel.send(
-      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+  if (!args[0])
+    return message.reply(
+      "Syntaxe incorrecte ! Exemple : <cookie @membre **OU** <cookie random !"
     );
 
-  message.channel.send(
-    `${mentionned}, un Cookie :cookie: vous a été donné par ${message.author} !`
+  if (args[0] === "random") {
+    var random = message.guild.members.random();
+  } else if (mentionned) var random = mentionned;
+
+  if (args[0] !== "random" && !mentionned)
+    return message.channel.send(
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
+    );
+
+  const msg = await message.channel.send(
+    `${random}, un Cookie :cookie: vous a été donné par ${message.author} !`
   );
+
+  await msg.react("🍪");
 };
 
 module.exports.conf = {
