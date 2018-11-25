@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField(
       "🎉 Fun",
-      "``- <fight / <combat``\n``- <justeprix / <jp``\n``- <roulette / <rr``\n``- <vdm``\n``- <coinflip / <cf``\n``- <ask / <8ball / <8b``\n``- <say``"
+      "``- <cookie [@member]``\n``- <fight / <combat``\n``- <justeprix / <jp``\n``- <roulette / <rr``\n``- <vdm``\n``- <coinflip / <cf``\n``- <ask / <8ball / <8b``\n``- <say``"
     )
     .addBlankField()
     .addField(
