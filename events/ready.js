@@ -1,4 +1,3 @@
-let index = 0;
 module.exports = async bot => {
   await wait(1000);
 
@@ -21,10 +20,12 @@ module.exports = async bot => {
       `<help | ${bot.channels.size} channels`,
       `<help | ${bot.users.size} users`
     ];
+    const random = Math.floor(Math.random() * statuslist.length);
+
     try {
       await bot.user.setPresence({
         game: {
-          name: `${statuslist[index]}`,
+          name: `${statuslist[random]}`,
           type: "PLAYING"
           //url: 'https://www.twitch.tv/spokloo'
         },
@@ -33,8 +34,5 @@ module.exports = async bot => {
     } catch (error) {
       console.error(error);
     }
-
-    if (index === statuslist.length) return (index = 0);
-    else +index;
   }, 3000);
 };
