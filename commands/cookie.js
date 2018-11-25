@@ -21,11 +21,19 @@ module.exports.run = async (bot, message, args) => {
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );
 
-  const msg = await message.channel.send(
-    `${random}, un Cookie :cookie: vous a été donné par ${message.author} !`
-  );
+  if (random.id === message.author.id) {
+    const msg = await message.channel.send(
+      `${message.author} s'est donné un Cookie :cookie: ! Oké .-.`
+    );
 
-  await msg.react("🍪");
+    await msg.react("🍪");
+  } else {
+    const msg = await message.channel.send(
+      `${random}, un Cookie :cookie: vous a été donné par ${message.author} !`
+    );
+
+    await msg.react("🍪");
+  }
 };
 
 module.exports.conf = {
