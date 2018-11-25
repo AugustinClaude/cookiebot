@@ -34,5 +34,5 @@ module.exports = async bot => {
     } catch (error) {
       console.error(error);
     }
-  }, 3000);
+  }, 10000);
 };
