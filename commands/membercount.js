@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
 */
   var everyoneCount = 0;
   message.guild.members.forEach(members => {
-    if (members.has(roles.filter(role => role.id == message.guild.id)))
+    if (members.has(message.guild.roles.filter(role => role.id == message.guild.id)))
       everyoneCount + 1;
   });
 
