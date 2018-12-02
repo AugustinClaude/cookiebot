@@ -3,7 +3,7 @@ var raidmode = true;
 module.exports.run = async (bot, message, args) => {
   message.delete();
 
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+  if (!message.member.hasPermission("MANAGE_GUILD")) {
     return message.channel.send(
       "Vous n'avez pas les permissions pour faire cela !"
     );
