@@ -16,7 +16,7 @@ const serverStats = {
 const http = require("http");
 setInterval(function() {
   http.get("http://cookiebot-discord.herokuapp.com/");
-}, 300000);
+}, 240000);
 
 bot.config = require("./modules/functions")(bot);
 
@@ -241,25 +241,3 @@ bot.on("guildMemberRemove", async member => {
     );
   }
 });
-
-// ---------------------------------------------------------------------------------- //
-/*bot.on('message', async message => {
-  
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if (!prefixes[message.guild.id]) {
-    prefixes[message.guild.id] = {
-      prefixes: process.env.PREFIX
-    }
-  }
-
-
-  let prefix = prefixes[message.guild.id].prefixes;
-
-  let messageArray = message.content.split(' ');
-  let command = messageArray[0];
-  let args = messageArray.slice(1);
-  //let prefix = process.env.PREFIX
-
-  let commandFile = bot.commands.get(command.slice(prefix.length));
-  if (commandFile) commandFile.run(bot, message, args);
-})*/
