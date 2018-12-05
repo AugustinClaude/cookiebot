@@ -6,12 +6,18 @@ const bot = new Discord.Client();
 const Canvas = require("canvas");
 const snekfetch = require("snekfetch");
 
-const serverStats = {
+const MyServerStats = {
   guildID: "302902092006424577",
   memberCountID: "513671667042615314",
   userCountID: "513671473139810308",
   botCountID: "513671575791206421"
 };
+const OtherServerStats = {
+  IDguild: "497490880807305237",
+  IDmemberCount: "518475938485501962",
+  IDuserCount: "518475939274031105",
+  IDbotCount: "518475940012228615"
+}
 
 const http = require("http");
 setInterval(function() {
@@ -68,20 +74,40 @@ const applyText = (canvas, text) => {
 bot.on("guildMemberAdd", async member => {
   //CHANNEL => USERCOUNT : 0 etc...
 
-  if (member.guild.id == serverStats.guildID) {
+  if (member.guild.id == MyServerStats.guildID) {
     try {
       bot.channels
-        .get(serverStats.memberCountID)
+        .get(MyServerStats.memberCountID)
         .setName(`🥝 Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(serverStats.userCountID)
+        .get(MyServerStats.userCountID)
         .setName(
           `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(serverStats.botCountID)
+        .get(MyServerStats.botCountID)
         .setName(
           `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
+        );
+    } catch (e) {
+      return;
+    }
+  }
+
+  if (member.guild.id == OtherServerStats.IDguild) {
+    try {
+      bot.channels
+        .get(OtherServerStats.IDmemberCount)
+        .setName(`Membres : ${member.guild.memberCount}`);
+      bot.channels
+        .get(OtherServerStats.IDuserCount)
+        .setName(
+          `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+        );
+      bot.channels
+        .get(OtherServerStats.IDbotCount)
+        .setName(
+          `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
@@ -159,20 +185,40 @@ bot.on("guildMemberAdd", async member => {
 bot.on("guildMemberRemove", async member => {
   //CHANNEL => USERCOUNT : 0 etc...
 
-  if (member.guild.id == serverStats.guildID) {
+  if (member.guild.id == MyServerStats.guildID) {
     try {
       bot.channels
-        .get(serverStats.memberCountID)
+        .get(MyServerStats.memberCountID)
         .setName(`🥝 Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(serverStats.userCountID)
+        .get(MyServerStats.userCountID)
         .setName(
           `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(serverStats.botCountID)
+        .get(MyServerStats.botCountID)
         .setName(
           `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
+        );
+    } catch (e) {
+      return;
+    }
+  }
+
+  if (member.guild.id == OtherServerStats.IDguild) {
+    try {
+      bot.channels
+        .get(OtherServerStats.IDmemberCount)
+        .setName(`Membres : ${member.guild.memberCount}`);
+      bot.channels
+        .get(OtherServerStats.IDuserCount)
+        .setName(
+          `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
+        );
+      bot.channels
+        .get(OtherServerStats.IDbotCount)
+        .setName(
+          `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
