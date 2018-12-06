@@ -1,11 +1,24 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-    return message.reply(
-      "Vous n'avez pas les permissions pour exécuter cette commande !"
+  message.delete();
+  const mentionned = message.guild.member(
+    message.mentions.users.first() || message.guild.members.get(args[0])
+  );
+
+  if (!mentionned) {
+    return message.channel.send(
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
     );
   }
+  if (Number.isInteger(parseInt(args[0]))) {
+    return message.channel.send(
+      `L'id \`${args[0]}\` correspond à l'utilisateur ${mentionned}`
+    );
+  } else
+    return message.channel.send(
+      `L'id de ${mentionned} est \`${mentionned.id}\``
+    );
 };
 
 module.exports.conf = {

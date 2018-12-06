@@ -29,5 +29,13 @@ bot.on("message", async message => {
         "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
       );
     }
+    if (Number.isInteger(parseInt(args[0]))) {
+      return message.channel.send(
+        `L'id \`${args[0]}\` correspond à l'utilisateur ${mentionned}`
+      );
+    } else
+      return message.channel.send(
+        `L'id de ${mentionned} est \`${mentionned.id}\``
+      );
   }
 });
