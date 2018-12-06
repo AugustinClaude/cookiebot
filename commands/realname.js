@@ -6,17 +6,21 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
-  message.channel.send(
-    `Le vrai nom de **${mentionned.username}** est **${
-      mentionned.user.username
-    }** !`
-  );
+  if (mentionned.nickname == null) {
+    return message.channel.send(
+      `**${
+        mentionned.user.username
+      }** n'a pas de surnom, c'est son nom d'origine !`
+    );
+  }
 
-  message.channel.send(
-    `**${
-      mentionned.user.username
-    }** n'a pas de surnom, c'est son nom d'origine !`
-  );
+  if (mentionned.nickname !== mentionned.user.username) {
+    return message.channel.send(
+      `Le vrai nom de **${mentionned.nickname}** est **${
+        mentionned.user.username
+      }** !`
+    );
+  }
 };
 
 module.exports.conf = {
