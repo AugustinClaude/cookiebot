@@ -7,11 +7,15 @@ module.exports.run = async (bot, message, args) => {
   );
 
   message.channel.send(
-    `Le vrai nom de ${mentionned.user.name} est ${mentionned.user.username} !`
+    `Le vrai nom de **${mentionned.name}** est **${
+      mentionned.user.username
+    }** !`
   );
 
   message.channel.send(
-    `${mentionned.user.username} n'a pas de surnom, c'est son nom d'origine !`
+    `**${
+      mentionned.user.username
+    }** n'a pas de surnom, c'est son nom d'origine !`
   );
 };
 
