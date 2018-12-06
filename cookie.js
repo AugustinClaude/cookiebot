@@ -18,25 +18,15 @@ bot.on("message", async message => {
     .split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "rn") {
+  if (command === "id") {
     message.delete();
     const mentionned = message.guild.member(
       message.mentions.users.first() || message.guild.members.get(args[0])
     );
 
-    if (mentionned.nickname == null) {
+    if (!mentionned) {
       return message.channel.send(
-        `**${
-          mentionned.user.username
-        }** n'a pas de surnom, c'est son nom d'origine !`
-      );
-    }
-
-    if (mentionned.nickname !== mentionned.user.username) {
-      return message.channel.send(
-        `Le vrai nom de **${mentionned.nickname}** est **${
-          mentionned.user.username
-        }** !`
+        "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
       );
     }
   }

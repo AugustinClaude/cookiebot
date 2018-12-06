@@ -6,6 +6,12 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
+  if (!mentionned) {
+    return message.channel.send(
+      "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
+    );
+  }
+
   if (mentionned.nickname == null) {
     return message.channel.send(
       `**${
