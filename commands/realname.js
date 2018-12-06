@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   );
 
   message.channel.send(
-    `Le vrai nom de **${mentionned.name}** est **${
+    `Le vrai nom de **${mentionned.username}** est **${
       mentionned.user.username
     }** !`
   );
