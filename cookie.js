@@ -18,25 +18,4 @@ bot.on("message", async message => {
     .trim()
     .split(/ +/g);
   const command = args.shift().toLowerCase();
-
-  if (command === "id") {
-    message.delete();
-    const mentionned = message.guild.member(
-      message.mentions.users.first() || message.guild.members.get(args[0])
-    );
-
-    if (!mentionned) {
-      return message.channel.send(
-        "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
-      );
-    }
-    if (Number.isInteger(parseInt(args[0]))) {
-      return message.channel.send(
-        `L'id \`${args[0]}\` correspond à l'utilisateur ${mentionned}`
-      );
-    } else
-      return message.channel.send(
-        `L'id de ${mentionned} est \`${mentionned.id}\``
-      );
-  }
 });
