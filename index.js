@@ -12,12 +12,18 @@ const MyServerStats = {
   userCountID: "513671473139810308",
   botCountID: "513671575791206421"
 };
-const OtherServerStats = {
+const ParoxServerStats = {
   IDguild: "497490880807305237",
   IDmemberCount: "518475938485501962",
   IDuserCount: "518475939274031105",
   IDbotCount: "518475940012228615"
-}
+};
+const RPServerStats = {
+  guild_id: "520569053476028427",
+  membercount_id: "520577102068842497",
+  usercount_id: "520575385671565322",
+  botcount_id: "520575479150018560"
+};
 
 const http = require("http");
 setInterval(function() {
@@ -94,20 +100,40 @@ bot.on("guildMemberAdd", async member => {
     }
   }
 
-  if (member.guild.id == OtherServerStats.IDguild) {
+  if (member.guild.id == ParoxServerStats.IDguild) {
     try {
       bot.channels
-        .get(OtherServerStats.IDmemberCount)
+        .get(ParoxServerStats.IDmemberCount)
         .setName(`Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(OtherServerStats.IDuserCount)
+        .get(ParoxServerStats.IDuserCount)
         .setName(
           `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(OtherServerStats.IDbotCount)
+        .get(ParoxServerStats.IDbotCount)
         .setName(
           `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
+        );
+    } catch (e) {
+      return;
+    }
+  }
+
+  if (member.guild.id == RPServerStats.guild_id) {
+    try {
+      bot.channels
+        .get(RPServerStats.membercount_id)
+        .setName(`Population : ${member.guild.memberCount}`);
+      bot.channels
+        .get(RPServerStats.usercount_id)
+        .setName(
+          `Citoyen : ${member.guild.members.filter(m => !m.user.bot).size}`
+        );
+      bot.channels
+        .get(RPServerStats.botcount_id)
+        .setName(
+          `Robots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
@@ -205,20 +231,40 @@ bot.on("guildMemberRemove", async member => {
     }
   }
 
-  if (member.guild.id == OtherServerStats.IDguild) {
+  if (member.guild.id == ParoxServerStats.IDguild) {
     try {
       bot.channels
-        .get(OtherServerStats.IDmemberCount)
+        .get(ParoxServerStats.IDmemberCount)
         .setName(`Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(OtherServerStats.IDuserCount)
+        .get(ParoxServerStats.IDuserCount)
         .setName(
           `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(OtherServerStats.IDbotCount)
+        .get(ParoxServerStats.IDbotCount)
         .setName(
           `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
+        );
+    } catch (e) {
+      return;
+    }
+  }
+
+  if (member.guild.id == RPServerStats.guild_id) {
+    try {
+      bot.channels
+        .get(RPServerStats.membercount_id)
+        .setName(`Population : ${member.guild.memberCount}`);
+      bot.channels
+        .get(RPServerStats.usercount_id)
+        .setName(
+          `Citoyen : ${member.guild.members.filter(m => !m.user.bot).size}`
+        );
+      bot.channels
+        .get(RPServerStats.botcount_id)
+        .setName(
+          `Robots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
