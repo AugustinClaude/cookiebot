@@ -112,9 +112,7 @@ bot.on("guildMemberAdd", async member => {
         );
       bot.channels
         .get(ParoxServerStats.IDbotCount)
-        .setName(
-          `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
-        );
+        .setName(`Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
     } catch (e) {
       return;
     }
@@ -145,7 +143,8 @@ bot.on("guildMemberAdd", async member => {
     ch =>
       ch.name === "welcome" ||
       ch.name === "bienvenue" ||
-      ch.name === "🚪-bienvenue-🚪"
+      ch.name === "🚪-bienvenue-🚪" ||
+      ch.name === "arrivées-départs"
   );
 
   if (!channel) return;
@@ -243,9 +242,7 @@ bot.on("guildMemberRemove", async member => {
         );
       bot.channels
         .get(ParoxServerStats.IDbotCount)
-        .setName(
-          `Bots : ${member.guild.members.filter(m => m.user.bot).size}`
-        );
+        .setName(`Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
     } catch (e) {
       return;
     }
@@ -276,7 +273,8 @@ bot.on("guildMemberRemove", async member => {
     ch =>
       ch.name === "welcome" ||
       ch.name === "bienvenue" ||
-      ch.name === "🚪-bienvenue-🚪"
+      ch.name === "🚪-bienvenue-🚪" ||
+      ch.name === "arrivées-départs"
   );
 
   if (!channel) return;
