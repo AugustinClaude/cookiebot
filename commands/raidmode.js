@@ -2,6 +2,7 @@ var raidmode = true;
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  emitter.setMaxListeners(10000);
 
   if (!message.member.hasPermission("MANAGE_GUILD")) {
     return message.channel.send(
