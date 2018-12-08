@@ -1,12 +1,9 @@
 var raidmode = true;
 
 module.exports.run = async (bot, message, args) => {
-  const EventEmitter = require("events");
-  const emitter = new EventEmitter();
+  bot.setMaxListeners(Infinity);
 
   message.delete();
-  emitter.setMaxListeners(Infinity);
-
   if (!message.member.hasPermission("MANAGE_GUILD")) {
     return message.channel.send(
       "Vous n'avez pas les permissions pour faire cela !"
