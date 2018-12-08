@@ -8,24 +8,16 @@ module.exports.run = async (bot, message, args) => {
       "Vous n'avez pas les permissions pour faire cela !"
     );
   }
-  let muteRole = message.guild.roles.find("name", "⛔ RaidMode ⛔");
-  //création du role
-  if (!muteRole) {
-    try {
-      muteRole = await message.guild.createRole({
-        name: "⛔ RaidMode ⛔",
-        color: "#ff0000",
-        permissions: []
+  const muteRole = message.guild.roles.find(r => r.id == message.guild.id);
+  try {
+    message.guild.channels.forEach(async (channel, id) => {
+      await channel.overwritePermissions(muteRole, {
+        SEND_MESSAGES: false,
+        ADD_REACTIONS: false
       });
-      message.guild.channels.forEach(async (channel, id) => {
-        await channel.overwritePermissions(muteRole, {
-          SEND_MESSAGES: false,
-          ADD_REACTIONS: false
-        });
-      });
-    } catch (e) {
-      console.log(e.stack);
-    }
+    });
+  } catch (e) {
+    console.log(e.stack);
   }
 
   if (raidmode == true) {
