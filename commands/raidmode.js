@@ -9,36 +9,38 @@ module.exports.run = async (bot, message, args) => {
     );
   }
 
-  const channelList = 
-  const muteRole = message.guild.roles.find(r => r.id == message.guild.id);
-  try {
-    message.guild.channels.forEach(async (channel, id) => {
-      await channel.overwritePermissions(muteRole, {
-        SEND_MESSAGES: false,
-        ADD_REACTIONS: false
+  let muteRole = message.guild.roles.find(r => r.name == "⛔ RaidMode ⛔");
+
+  if (!muteRole) {
+    try {
+      muteRole = await message.guild.createRole({
+        name: "⛔ RaidMode ⛔",
+        color: "#ff0000",
+        permissions: []
       });
-    });
-  } catch (e) {
-    console.log(e.stack);
+
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muteRole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    } catch (e) {
+      console.log(e.stack);
+    }
   }
 
   if (raidmode == true) {
     await message.guild.members.forEach(members => {
       members.addRole(muteRole.id);
     });
+
     message.channel.send("🔇 ⛔ RaidMode Activé ⛔ 🔇");
     raidmode = false;
   } else {
-    try {
-      message.guild.channels.forEach(async (channel, id) => {
-        await channel.overwritePermissions(muteRole, {
-          SEND_MESSAGES: true,
-          ADD_REACTIONS: true
-        });
-      });
-    } catch (e) {
-      console.log(e.stack);
-    }
+    await message.guild.members.forEach(members => {
+      members.removeRole(muteRole.id);
+    });
 
     message.channel.send("🔊 ✔ RaidMode Désactivé ✔ 🔊");
     raidmode = true;
