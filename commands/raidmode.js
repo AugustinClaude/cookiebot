@@ -8,6 +8,8 @@ module.exports.run = async (bot, message, args) => {
       "Vous n'avez pas les permissions pour faire cela !"
     );
   }
+
+  const channelList = 
   const muteRole = message.guild.roles.find(r => r.id == message.guild.id);
   try {
     message.guild.channels.forEach(async (channel, id) => {
