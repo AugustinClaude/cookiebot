@@ -1,5 +1,6 @@
 module.exports.run = async (bot, message) => {
   message.delete();
+  if (message.member.id !== "483035230731632640") return;
 
   bot.emit(
     "guildMemberAdd",

@@ -162,11 +162,7 @@ bot.on("guildMemberAdd", async member => {
 
     ctx.font = "32px Impact";
     ctx.fillStyle = "#ffffff";
-    ctx.fillText(
-      "Bienvenue sur le serveur,",
-      canvas.width / 2.6,
-      canvas.height / 3.5
-    );
+    ctx.fillText("Bienvenue,", canvas.width / 2.6, canvas.height / 3.5);
 
     ctx.font = applyText(canvas, member.user.tag + " !");
     ctx.fillStyle = "#ffffff";
