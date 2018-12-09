@@ -175,7 +175,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.font = "28px Impact";
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
-      `Nous sommes maintenant ${member.guild.memberCount} !`,
+      `Tu es le ${member.guild.memberCount}e membre !`,
       canvas.width / 2.75,
       canvas.height / 1.27
     );
