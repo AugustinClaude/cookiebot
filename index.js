@@ -162,7 +162,7 @@ bot.on("guildMemberAdd", async member => {
 
     ctx.font = "32px Impact";
     ctx.fillStyle = "#ffffff";
-    ctx.fillText("Bienvenue,", canvas.width / 2.6, canvas.height / 3.5);
+    ctx.fillText("Bienvenue,", canvas.width / 2.75, canvas.height / 3.5);
 
     ctx.font = applyText(canvas, member.user.tag + " !");
     ctx.fillStyle = "#ffffff";
@@ -176,7 +176,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
       `Nous sommes maintenant ${member.guild.memberCount} !`,
-      canvas.width / 2.6,
+      canvas.width / 2.75,
       canvas.height / 1.27
     );
 
@@ -288,7 +288,7 @@ bot.on("guildMemberRemove", async member => {
 
     ctx.font = "32px Impact";
     ctx.fillStyle = "#ffffff";
-    ctx.fillText("Au revoir,", canvas.width / 2.6, canvas.height / 3.5);
+    ctx.fillText("Au revoir,", canvas.width / 2.75, canvas.height / 3.5);
 
     ctx.font = applyText(canvas, member.user.tag + " !");
     ctx.fillStyle = "#ffffff";
@@ -302,7 +302,7 @@ bot.on("guildMemberRemove", async member => {
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
       `Nous sommes maintenant ${member.guild.memberCount} !`,
-      canvas.width / 2.6,
+      canvas.width / 2.75,
       canvas.height / 1.27
     );
 
