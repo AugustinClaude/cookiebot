@@ -33,14 +33,14 @@ module.exports.run = async (bot, message, args) => {
 
   if (raidmode == true) {
     await message.guild.members.forEach(members => {
-      members.addRole(muteRole.id);
+      members.addRoles(muteRole.id);
     });
 
     message.channel.send("🔇 ⛔ RaidMode Activé ⛔ 🔇");
     raidmode = false;
   } else {
     await message.guild.members.forEach(members => {
-      members.removeRole(muteRole.id);
+      members.removeRoles(muteRole.id);
     });
 
     message.channel.send("🔊 ✔ RaidMode Désactivé ✔ 🔊");
