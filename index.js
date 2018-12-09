@@ -175,7 +175,7 @@ bot.on("guildMemberAdd", async member => {
     ctx.font = "28px Impact";
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
-      `Tu es le ${member.guild.memberCount}e membre !`,
+      `Membres : ${member.guild.memberCount}`,
       canvas.width / 2.75,
       canvas.height / 1.27
     );
@@ -301,7 +301,7 @@ bot.on("guildMemberRemove", async member => {
     ctx.font = "28px Impact";
     ctx.fillStyle = "#ffffff";
     ctx.fillText(
-      `Tu es le ${member.guild.memberCount}e membre !`,
+      `Membres : ${member.guild.memberCount}`,
       canvas.width / 2.75,
       canvas.height / 1.27
     );
