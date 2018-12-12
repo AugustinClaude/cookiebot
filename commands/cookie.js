@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0])
     return message.reply(
-      "Syntaxe incorrecte ! Exemple : <cookie @membre **OU** <cookie random **OU** <cookie everyone !"
+      "Syntaxe incorrecte ! Exemple : <cookie @membre **OU** <cookie random / rdm **OU** <cookie everyone !"
     );
 
   if (args[0] === "everyone") {
@@ -22,11 +22,16 @@ module.exports.run = async (bot, message, args) => {
     await msg.react("🍪");
   }
 
-  if (args[0] === "random") {
+  if (args[0] === "random" || args[0] === "rdm") {
     var random = message.guild.members.random();
   } else if (mentionned) var random = mentionned;
 
-  if (args[0] !== "random" && !mentionned && args[0] !== "everyone")
+  if (
+    args[0] !== "random" &&
+    args[0] !== "rdm" &&
+    !mentionned &&
+    args[0] !== "everyone"
+  )
     return message.channel.send(
       'L\'utilisateur n\'existe pas ou vous n\'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié "__random__" ou "__everyone__"'
     );
@@ -34,6 +39,12 @@ module.exports.run = async (bot, message, args) => {
   if (random.id === message.author.id) {
     const msg = await message.channel.send(
       `${message.author} s'est donné un Cookie :cookie: ! Oké .-.`
+    );
+
+    await msg.react("🍪");
+  } else if (random.id === "488022471048691713") {
+    const msg = await message.channel.send(
+      `${random}, vous vous êtes donné un Cookie :cookie: ?! Mais comment cela est-ce possible ? J'espère que vous n'avez pas encore mangé votre propre corps ! Cela serait honteux !`
     );
 
     await msg.react("🍪");
