@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
   const muteTime = args[1];
   if (!muteTime) return message.reply("Merci de préciser la durée du mute");
 
-  const muteReason = args[2];
+  const muteReason = args.join(" ").slice(25);
   if (!muteReason) return message.reply("Merci de précisier la raison du mute");
 
   await mutedUser.addRole(muteRole.id);
