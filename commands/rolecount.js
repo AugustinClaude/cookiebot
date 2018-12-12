@@ -10,12 +10,16 @@ module.exports.run = async (bot, message, args) => {
   const role = message.guild.roles.find(
     r => r.name == args[0] || r.name == args.join(" ")
   );
+
+  var nb;
+  message.guild.members.forEach(nb => {
+    if (message.guild.members.has(role)) nb + 1;
+  });
+
   if (!role) return message.reply("Vous avez donné un rôle qui n'existe pas !");
   else {
     return message.channel.send(
-      `Le rôle \`${role.name}\` comprend \`${
-        message.guild.member.has(role).size
-      } membres\``
+      `Le rôle \`${role.name}\` comprend \`${nb} membres\``
     );
   }
 };
