@@ -1,6 +1,8 @@
 var raidmode = true;
 
 module.exports.run = async (bot, message, args) => {
+  if (message.author.id !== "302901933419790347") return;
+
   bot.setMaxListeners(Infinity);
 
   message.delete();

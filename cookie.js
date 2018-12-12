@@ -31,8 +31,14 @@ bot.on("message", async message => {
       );
     }
 
+    var nickname;
+    if (mentionned.nickname == null) nickname = mentionned.user.username;
+    else nickname = mentionned.nickname;
+
+    var roles = mentionned.roles.name;
+
     message.channel.send(
-      `\`${mentionned.nickname}\` a \`${mentionned.roles.size -
+      `\`${nickname}\` a \`${mentionned.roles.size -
         1}\` rôles.\n\n **__Les voici :__**\n\n- ${mentionned.roles
         .filter(role => role.id !== message.guild.id)
         .array()
