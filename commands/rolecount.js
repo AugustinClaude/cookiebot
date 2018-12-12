@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   if (!role) return message.reply("Vous avez donné un rôle qui n'existe pas !");
   else {
     return message.channel.send(
-      `Le rôle \`${role.name}\` comprend \`${role.size} membres\``
+      `Le rôle \`${role.name}\` comprend \`${message.guild.members.has(role).size} membres\``
     );
   }
 };
