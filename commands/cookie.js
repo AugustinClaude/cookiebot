@@ -12,11 +12,21 @@ module.exports.run = async (bot, message, args) => {
       "Syntaxe incorrecte ! Exemple : <cookie @membre **OU** <cookie random !"
     );
 
-  if (args[0] === "random") {
+  if (args[0] === "everyone") {
+    const msg = await message.channel.send(
+      `Aujourd'hui, c'est ${
+        message.author
+      } qui vous paye la tournée de cookie ! Bonne fête à tous !`
+    );
+
+    await msg.react("🍪");
+  }
+
+  if (args[0] === "random" || args[0] === "rdm") {
     var random = message.guild.members.random();
   } else if (mentionned) var random = mentionned;
 
-  if (args[0] !== "random" && !mentionned)
+  if ((args[0] !== "random" || args[0] !== "rdm") && !mentionned)
     return message.channel.send(
       "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur ! Ou alors vous avez mal orthographié \"__random__\""
     );

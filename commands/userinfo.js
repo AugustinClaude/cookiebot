@@ -48,7 +48,6 @@ module.exports.run = async (bot, message, args) => {
     var roles = `- ${mentionned.roles
       .filter(role => role.id !== message.guild.id)
       .array()
-      .sort(mentionned.roles.size)
       .map(g => g)
       .join("\n- ")}`;
   }
