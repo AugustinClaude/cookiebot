@@ -1,6 +1,12 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  if (!message.member.hasPermission("MANAGE_ROLES")) {
+    return message.reply(
+      "Vous n'avez pas les permissions pour exécuter cette commande !"
+    );
+  }
+
   message.delete();
   const mentionned = message.guild.member(
     message.mentions.users.first() || message.guild.members.get(args[0])
