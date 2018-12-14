@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
+
   var useEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#88eef7")
@@ -50,10 +52,10 @@ module.exports.run = async (bot, message, args) => {
 
   if (args[0] === "here") {
     return (
-      message.channel.send(useEmbed) &&
-      message.channel.send(funEmbed) &&
-      message.channel.send(musicEmbed) &&
-      message.channel.send(imageEmbed) &&
+      message.channel.send(useEmbed),
+      message.channel.send(funEmbed),
+      message.channel.send(musicEmbed),
+      message.channel.send(imageEmbed),
       message.channel.send(modEmbed)
     );
   }
