@@ -20,12 +20,10 @@ module.exports.run = async (bot, message, args) => {
   );
 
   if (!role) return message.reply("Ce rôle n'existe pas");
-
-  if (!mentionned.hasRole(r => r.name === role))
+  /*if (!mentionned.hasRole(r => r.name === role))
     return message.channel.send(
       `${mentionned} n'a pas ce rôle, on ne peux pas le lui retirer`
-    );
-  else {
+    );*/ else {
     try {
       await mentionned.removeRole(role.id);
       message.channel.send(

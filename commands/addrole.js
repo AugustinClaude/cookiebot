@@ -20,12 +20,10 @@ module.exports.run = async (bot, message, args) => {
   );
 
   if (!role) return message.reply("Ce rôle n'existe pas");
-
-  if (mentionned.hasRole(r => r.name === role))
+  /*if (mentionned.hasRole(r => r.name === role))
     return message.channel.send(
       `${mentionned} a déjà ce rôle, on ne peux pas le lui ajouter`
-    );
-  else {
+    );*/ else {
     try {
       await mentionned.addRole(role.id);
       message.channel.send(`${mentionned} à bien reçu le rôle ${role} !`);
