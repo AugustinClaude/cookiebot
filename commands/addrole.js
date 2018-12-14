@@ -11,11 +11,11 @@ module.exports.run = async (bot, message, args) => {
     );
   }
 
-  if (!args[1])
-    return message.channel.send("Veuillez préciser un rôle existant");
+  if (!args[1].join(" "))
+    return message.reply("Veuillez préciser un rôle existant");
 
-  const role = message.guild.roles.find(r => r.name === args[1]);
-  if (!role) return message.channel.send("Ce rôle n'existe pas");
+  const role = message.guild.roles.find(r => r.name === args[1].join(" "));
+  if (!role) return message.reply("Ce rôle n'existe pas");
   else mentionned.addRole(role.id);
 };
 
