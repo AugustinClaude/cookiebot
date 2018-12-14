@@ -18,7 +18,13 @@ module.exports.run = async (bot, message, args) => {
     r => r.name === args.join(" ").slice(22)
   );
   if (!role) return message.reply("Ce rôle n'existe pas");
-  else mentionned.addRole(role.id);
+  else {
+    try {
+      mentionned.addRole(role.id);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 };
 
 module.exports.conf = {
