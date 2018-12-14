@@ -62,10 +62,10 @@ module.exports.run = async (bot, message, args) => {
 
   try {
     await message.author.send(useEmbed);
-    message.author.send(funEmbed);
-    message.author.send(musicEmbed);
-    message.author.send(imageEmbed);
-    message.author.send(modEmbed);
+    await message.author.send(funEmbed);
+    await message.author.send(musicEmbed);
+    await message.author.send(imageEmbed);
+    await message.author.send(modEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
   } catch (e) {
     message.reply(
