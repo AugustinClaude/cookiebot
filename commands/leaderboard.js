@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setDescription("Voici le Top 10 des joueurs ayant le plus d'xp !")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
-    .setColor(0x00ae86);
+    .setColor("RANDOM");
   for (const data of top10) {
     embed.addField(
       bot.users.get(data.user).tag,
