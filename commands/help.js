@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   var useEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
-    .setColor("#0059F2")
+    .setColor("#88eef7")
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
       "https://i.imgur.com/C7cjSEe.png"
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
   var funEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
-    .setColor("#0059F2")
+    .setColor("#ff00ff")
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
       "https://i.imgur.com/C7cjSEe.png"
@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
 
   var imageEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
-    .setColor("#0059F2")
+    .setColor("#33cc33")
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
       "https://i.imgur.com/C7cjSEe.png"
@@ -63,7 +63,7 @@ module.exports.run = async (bot, message, args) => {
 
   var modEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
-    .setColor("#0059F2")
+    .setColor("#ff3300")
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
       "https://i.imgur.com/C7cjSEe.png"
