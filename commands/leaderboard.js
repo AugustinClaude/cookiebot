@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   const top10 = sorted.splice(0, 10).reverse();
   const embed = new Discord.RichEmbed()
     .setTitle("Leaderboard")
-    .setAuthor(bot.user.username, bot.user.avatarURL)
+    .setAuthor(message.guild.name, message.guild.iconURL)
     .setDescription("Voici le Top 10 des joueurs ayant le plus d'xp !")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
