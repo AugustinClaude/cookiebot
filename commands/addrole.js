@@ -20,10 +20,10 @@ module.exports.run = async (bot, message, args) => {
   if (!role) return message.reply("Ce rôle n'existe pas");
   else {
     try {
-      mentionned.addRole(role.id);
+      await mentionned.addRole(role.id);
+      message.channel.send(`${mentionned} à bien reçu le rôle ${role} !`);
     } catch (e) {
-      console.log(e);
-      message.channel.send(
+      return message.channel.send(
         "Une erreur est survenue lors de l'ajout du rôle. Ceci est probablement dû aux manques de permissions (ça pourrait aussi être la hiérarchie des rôles)."
       );
     }
