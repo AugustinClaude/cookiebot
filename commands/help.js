@@ -4,11 +4,6 @@ module.exports.run = async (bot, message, args) => {
   var useEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#88eef7")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
     .setTitle("🔧 Voici la liste des commandes !")
     .addField(
@@ -17,52 +12,30 @@ module.exports.run = async (bot, message, args) => {
     );
 
   var funEmbed = new Discord.RichEmbed()
-    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#ff00ff")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
-    .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "🎉 Fun",
       "``- <cookie [@member]``\n``- <fight / <combat``\n``- <justeprix / <jp``\n``- <roulette / <rr``\n``- <vdm``\n``- <coinflip / <cf``\n``- <ask / <8ball / <8b``\n``- <say``"
     );
 
   var musicEmbed = new Discord.RichEmbed()
-    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#0059F2")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
-    .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "🎵 Musique",
       "``- <play [URL YouTube]``\n``- <stop / <leave``\n``- <join``\n``- <pause``\n``- <resume``\n``- <nowplaying / <np``\n``- <skip / <next``"
     );
 
   var imageEmbed = new Discord.RichEmbed()
-    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#33cc33")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
-    .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "🖼 Images",
       "``- <cat / <chat``\n``- <dog / <chien``\n``- <lizard / <lezard``\n``- <hug [@member]``\n``- <slap [@member]``\n``- <tickle [@member]``\n``- <insult / <baka [@member]``\n``- <kiss [@member]``\n``- <feed [@member]``\n``- <cuddle [@member]``\n``- <poke [@member]``\n``- <pat / <caress [@member]``"
     );
 
   var modEmbed = new Discord.RichEmbed()
-    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
     .setColor("#ff3300")
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
@@ -70,7 +43,6 @@ module.exports.run = async (bot, message, args) => {
     )
     .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
-    .setTitle("🔧 Voici la liste des commandes !")
     .addField(
       "📛 Modération",
       "``- <prefix [new prefix]``\n``- <kick [@member] [Raison]``\n``- <ban [@member] [Raison]``\n``- <unban [ID]``\n``- <tempban / <tb [@membre] [durée] [raison]``\n``- <mute [@member] [Durée] [raison]``\n``- <unmute / <um [@member]``\n``- <report [@member] [Raison]``\n``- <clear / <purge [Nb msg]``\n``- <cmd / <command [fichier.js]``\n``- <cleanlb / <purgelb``\n``- <addrole / <arole [@member] [role]``\n``- <removerole / <rrole [@member] [role]``\n``- <raidmode / <rm``"
