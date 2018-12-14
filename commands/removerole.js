@@ -21,17 +21,19 @@ module.exports.run = async (bot, message, args) => {
 
   if (!role) return message.reply("Ce rôle n'existe pas");
 
-  if (mentionned.has(role))
+  if (!mentionned.has(role))
     return message.channel.send(
-      `${mentionned} a déjà ce rôle, on ne peux pas le lui ajouter`
+      `${mentionned} n'a pas ce rôle, on ne peux pas le lui retirer`
     );
   else {
     try {
-      await mentionned.addRole(role.id);
-      message.channel.send(`${mentionned} à bien reçu le rôle ${role} !`);
+      await mentionned.removeRole(role.id);
+      message.channel.send(
+        `Le rôle : ${role} à bien été retiré de ${mentionned} !`
+      );
     } catch (e) {
       return message.channel.send(
-        "Une erreur est survenue lors de l'ajout du rôle. Ceci est probablement dû aux manques de permissions (ça pourrait aussi être la hiérarchie des rôles)."
+        "Une erreur est survenue lors de l'enlèvement du rôle. Ceci est probablement dû aux manques de permissions (ça pourrait aussi être la hiérarchie des rôles)."
       );
     }
   }
@@ -40,10 +42,10 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["arole"],
+  aliases: ["rrole"],
   permLevel: 0
 };
 
 module.exports.help = {
-  name: "addrole"
+  name: "removerole"
 };
