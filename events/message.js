@@ -10,7 +10,7 @@ module.exports = (bot, message) => {
       user: message.author.id,
       guild: message.guild.id,
       points: 0,
-      level: 1f
+      level: 1
     });
 
     bot.points.inc(key, "points");
