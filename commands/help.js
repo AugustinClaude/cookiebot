@@ -49,11 +49,13 @@ module.exports.run = async (bot, message, args) => {
     );
 
   if (args[0] === "here") {
-    message.channel.send(useEmbed);
-    message.channel.send(funEmbed);
-    message.channel.send(musicEmbed);
-    message.channel.send(imageEmbed);
-    message.channel.send(modEmbed);
+    return (
+      message.channel.send(useEmbed) &&
+      message.channel.send(funEmbed) &&
+      message.channel.send(musicEmbed) &&
+      message.channel.send(imageEmbed) &&
+      message.channel.send(modEmbed)
+    );
   }
 
   try {
