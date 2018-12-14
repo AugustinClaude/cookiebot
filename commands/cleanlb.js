@@ -2,6 +2,13 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+    return message.reply(
+      "Vous n'avez pas les permissions pour exécuter cette commande !"
+    );
+  }
+
   const filtered = bot.points.filter(p => p.guild === message.guild.id);
   const rightNow = new Date();
   const toRemove = filtered.filter(data => {
