@@ -23,6 +23,9 @@ module.exports.run = async (bot, message, args) => {
       mentionned.addRole(role.id);
     } catch (e) {
       console.log(e);
+      message.channel.send(
+        "Une erreur est survenue lors de l'ajout du rôle. Ceci est probablement dû aux manques de permissions (ça pourrait aussi être la hiérarchie des rôles)."
+      );
     }
   }
 };
