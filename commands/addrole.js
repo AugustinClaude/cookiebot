@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!role) return message.reply("Ce rôle n'existe pas");
 
-  if (mentionned.has(role))
+  if (mentionned.hasRole(role))
     return message.channel.send(
       `${mentionned} a déjà ce rôle, on ne peux pas le lui ajouter`
     );
