@@ -19,31 +19,19 @@ bot.on("message", async message => {
     .split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "rm") {
+  if (command === "hg") {
     message.delete();
-    const mentionned = message.guild.member(
-      message.mentions.users.first() || message.guild.members.get(args[0])
+    const superagent = require("superagent");
+
+    const { body } = await superagent.get(
+      "https://nekos.life/api/v2/img/Random_hentai_gif"
     );
 
-    if (!mentionned) {
-      return message.channel.send(
-        "L'utilisateur n'existe pas ou vous n'avez mentionner aucun utilisateur !"
-      );
-    }
+    const hgEmbed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("🍆 Random Hentai Gif")
+      .setImage(body.url);
 
-    var nickname;
-    if (mentionned.nickname == null) nickname = mentionned.user.username;
-    else nickname = mentionned.nickname;
-
-    var roles = mentionned.roles.name;
-
-    message.channel.send(
-      `\`${nickname}\` a \`${mentionned.roles.size -
-        1}\` rôles.\n\n **__Les voici :__**\n\n- ${mentionned.roles
-        .filter(role => role.id !== message.guild.id)
-        .array()
-        .map(g => g)
-        .join("\n- ")}`
-    );
+    message.channel.send(hgEmbed);
   }
 });
