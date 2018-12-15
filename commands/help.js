@@ -39,11 +39,6 @@ module.exports.run = async (bot, message, args) => {
 
   var modEmbed = new Discord.RichEmbed()
     .setColor("#ff3300")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "📛 Modération",
