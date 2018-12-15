@@ -3,25 +3,23 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-  const { body } = await superagent.get(
-    "https://nekos.life/api/v2/img/nsfw_neko_gif"
-  );
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/lewd");
 
-  const ngEmbed = new Discord.RichEmbed()
+  const nEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("🍆 Random Neko Gif")
+    .setTitle("🍆 Random Neko")
     .setImage(body.url);
 
-  message.channel.send(ngEmbed);
+  message.channel.send(nEmbed);
 };
 
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["ng"],
+  aliases: ["neko"],
   permLevel: 0
 };
 
 module.exports.help = {
-  name: "nekogif"
+  name: "lewd"
 };
