@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     );
 
   var funEmbed = new Discord.RichEmbed()
-    .setColor("#ff00ff")
+    .setColor("#6600cc")
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "🎉 Fun",
@@ -49,6 +49,16 @@ module.exports.run = async (bot, message, args) => {
       "📛 Modération",
       "``- <prefix [new prefix]``\n``- <kick [@member] [Raison]``\n``- <ban [@member] [Raison]``\n``- <unban [ID]``\n``- <tempban / <tb [@membre] [durée] [raison]``\n``- <mute [@member] [Durée] [raison]``\n``- <unmute / <um [@member]``\n``- <report [@member] [Raison]``\n``- <clear / <purge [Nb msg]``\n``- <cmd / <command [fichier.js]``\n``- <cleanlb / <purgelb``\n``- <addrole / <arole [@member] [role]``\n``- <removerole / <rrole [@member] [role]``\n``- <raidmode / <rm``"
     );
+
+  var nsfwEmbed = new Discord.RichEmbed()
+    .setColor("#ff00ff")
+    .setFooter(
+      "Ce bot a été créé par Spokloo#7791",
+      "https://i.imgur.com/C7cjSEe.png"
+    )
+    .setTimestamp(bot.user.createdAt)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .addField("🔞 Nsfw", "``- <hentaigif / <hg``\n");
 
   if (args[0] === "here") {
     return (
