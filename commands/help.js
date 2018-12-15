@@ -58,7 +58,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL)
-    .addField("🔞 Nsfw", "``- <hentaigif / <hg``\n");
+    .addField("🔞 Nsfw", "``- <hentaigif / <hg``\n``- <pussy``");
 
   if (args[0] === "here") {
     return (
