@@ -3,23 +3,23 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-  const { body } = await superagent.get("https://nekos.life/api/v2/img/boobs");
+  const { body } = await superagent.get("https://nekos.life/api/v2/img/bj");
 
-  const bEmbed = new Discord.RichEmbed()
+  const bjEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setTitle("🍆 Random Boobs")
+    .setTitle("🍆 Blow Jobs")
     .setImage(body.url);
 
-  message.channel.send(bEmbed);
+  message.channel.send(bjEmbed);
 };
 
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["blowjob"],
   permLevel: 0
 };
 
 module.exports.help = {
-  name: "boobs"
+  name: "bj"
 };
