@@ -3,6 +3,10 @@ const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  if (message.channel.nsfw === false) {
+    return message.channel.send("Vous ne pouvez pas utiliser de commandes NSFW dans ce channel ! Il faut qu'il sois défini comme étant NSFW !");
+  }
+
   const { body } = await superagent.get("https://nekos.life/api/v2/img/bj");
 
   const bjEmbed = new Discord.RichEmbed()
