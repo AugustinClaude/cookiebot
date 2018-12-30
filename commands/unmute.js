@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
       .addField("🕑 Unmute le", moment(message.createdAt).format("LLL"))
       .addField("💬 Channel", message.channel);
 
-    const unmuteChannel = message.guild.channels.find("name", "logs");
+    const unmuteChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
 
     if (!unmuteChannel) {
       message.channel

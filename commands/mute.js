@@ -73,7 +73,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("💬 Channel", message.channel)
     .addField("❓ Raison", muteReason);
 
-  const muteChannel = message.guild.channels.find("name", "logs");
+  const muteChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
 
   if (!muteChannel) {
     message.channel

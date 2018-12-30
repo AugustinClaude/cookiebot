@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("🌀 Unban par", `${message.author} (ID: ${message.author.id})`)
     .addField("🕑 Unban le", moment(message.createdAt).format("LLL"));
 
-  const unbanChannel = message.guild.channels.find("name", "logs");
+  const unbanChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
 
   if (!unbanChannel) {
     message.channel

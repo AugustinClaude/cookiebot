@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("💬 Channel", message.channel)
     .addField("❓ Raison", reportedReason);
 
-  const reportChannel = message.guild.channels.find("name", "logs");
+  const reportChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
 
   if (!reportChannel) {
     message.channel

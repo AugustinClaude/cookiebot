@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("💬 Channel", message.channel)
     .addField("❓ Raison", banReason);
 
-  const banChannel = message.guild.channels.find("name", "logs");
+  const banChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
 
   if (!banChannel) {
     message.channel
