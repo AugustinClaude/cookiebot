@@ -61,6 +61,12 @@ module.exports = (bot, message) => {
     cmd.run(bot, message, args, perms);
   }
 
+  //MESSAGES PERSONNALISES
+  if (message.content === "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?") return message.channel.send("Je l'aime pas avec son air supérieur là ! Sal mosh :(");
+
+
+
+
   //JUSTEPRIX (commande)
   if (command === "justeprix" || command === "jp") {
     if (!args[0])
