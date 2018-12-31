@@ -62,6 +62,7 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
+  if (message.content === "<@488022471048691713>") return message.channel.send("Kwa ?");
   if (message.content === "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?") return message.channel.send("Je l'aime pas avec son air supérieur là ! Sal mosh :(");
 
 
