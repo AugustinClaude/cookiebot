@@ -52,6 +52,7 @@ exports.run = (bot, message, args) => {
         .addBlankField()
         .addField("🚀 Developer", results.otherData.developer, true)
         .addField("📜 Publisher", results.otherData.publisher, true)
+        .addField("🔗 Link", `https://store.steampowered.com/app/${result[0].id}`, true)
         .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL);
 
       message.channel.send(embed).catch(e => {
