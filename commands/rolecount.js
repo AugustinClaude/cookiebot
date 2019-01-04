@@ -7,7 +7,8 @@ module.exports.run = async (bot, message, args) => {
       `Syntaxe incorrecte ! Vous devez marquer \`<rolecount [nom d'un role]\``
     );
 
-  const role = message.guild.roles.get(args[0].id).members;
+  const roleID = "530733089442365446";
+  const role = message.guild.roles.get(roleID).members;
 
   if (!role) return message.reply("Vous avez donné un rôle qui n'existe pas !");
   else {
