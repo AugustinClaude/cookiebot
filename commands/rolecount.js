@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     );
 
   const roleID = args[0].slice(3, -1);
-  const role = message.guild.roles.get(roleID).member;
+  const role = message.guild.roles.get(roleID).members;
   return message.channel.send(
     `Le rôle \`${role.name}\` comprend \`${role.size} membres\``
   );
