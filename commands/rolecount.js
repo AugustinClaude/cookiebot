@@ -19,10 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp()
     .addField(`${message.guild.roles.get(roleID)}`, role.size + "membres");
 
-  return message.channel.send(
-    `Le rôle \`${message.guild.roles.get(roleID)}\` comprend \`${role.size} membres\``
-  );
-
+  return message.channel.send(servEmbed);
 };
 
 module.exports.conf = {
