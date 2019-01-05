@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
       everyoneCount + 1;
   });*/
 
-  //const noRole = message.guild.roles.get(defaultRole).members;
+  const noRole = message.guild.roles.get(message.guild.id).members;
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
@@ -58,7 +58,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `${defaultRole.size} | Bugué.`, true)
+    .addField("👻 Membres sans rôle(s)", `${noRole.size} | Bugué.`, true)
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
