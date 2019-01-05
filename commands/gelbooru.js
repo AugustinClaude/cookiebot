@@ -8,13 +8,13 @@ module.exports.run = async (bot, message, args) => {
   }
   const args2 = message.content.split(" ");
   args2.shift();
-  
+
 
   try {
     const gbEmbed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle(`🍆 Gelbooru Tag:  ${args2.join(" ")}`)
-      .setImage(`https://www.gelbooru.com/index.php?page=post&s=list&tags=${args2.join("+")}`);
+      .setDescription(`https://www.gelbooru.com/index.php?page=post&s=list&tags=${args2.join("+")}`);
 
     await message.channel.send(gbEmbed);
   } catch (e) {
