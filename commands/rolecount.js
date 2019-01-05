@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
-    .addField("Rôle", `**__${message.guild.roles.get(roleID).members}__**`)
+    .addField("Rôle", `**__${message.guild.roles.get(roleID)}__**`)
     .addField("Membres", `**${role.size}**`);
 
   return message.channel.send(servEmbed);
