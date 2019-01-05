@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   const roleStep = `\\${args[0]}`;
   //message.channel.send(roleStep);
   const roleID = args[0].slice(3, -1);
-  const roleOther = roleStep.slice(3, -1);
+  const roleOther = roleStep.slice(4, -1);
   message.channel.send(roleID);
   message.channel.send(roleOther);
   const role = message.guild.roles.get(roleID).members;
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
-    .addField("Rôle", `**__${message.guild.roles.get(roleID)}__**`)
+    .addField("Rôle", `**${message.guild.roles.get(roleID)}**`)
     .addField("Membres", `**${role.size}**`);
 
   return message.channel.send(servEmbed);
