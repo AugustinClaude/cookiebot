@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
       everyoneCount + 1;
   });*/
 
-  const noRole = message.guild.roles.get(message.guild.id).members;
+  const noRole = message.guild.roles.get(role => role.id == message.guild.id).members;
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
