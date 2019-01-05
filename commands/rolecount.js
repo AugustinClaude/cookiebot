@@ -10,13 +10,13 @@ module.exports.run = async (bot, message, args) => {
   const roleStep = `\\${args[0]}`;
   message.channel.send(roleStep);
   const roleID = roleStep.slice(3, -1);
-  const role = message.guild.roles.get("491250927710371860").members;
+  const role = message.guild.roles.get(roleStep).members;
 
   const servEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
-    .addField("Rôle", `**__${message.guild.roles.get(roleID)}__**`)
+    .addField("Rôle", `**__${message.guild.roles.get(roleStep)}__**`)
     .addField("Membres", `**${role.size}**`);
 
   return message.channel.send(servEmbed);
