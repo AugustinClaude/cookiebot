@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🌐 Nom du serveur", servName, true)
-    .addField("🏆 Fondateur", message.guild.owner, true)
+    .addField("🏆 Propriétaire", message.guild.owner, true)
     .addBlankField()
     .addField(
       "🥝 Membres",
