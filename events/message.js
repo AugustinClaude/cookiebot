@@ -12,7 +12,7 @@ module.exports = (bot, message) => {
       points: 0,
       level: 1
     });
-h
+
     bot.points.inc(key, "points");
 
     const curLevel = Math.floor(0.1 * Math.sqrt(bot.points.get(key, "points")));
