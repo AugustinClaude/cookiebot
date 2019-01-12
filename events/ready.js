@@ -24,7 +24,7 @@ module.exports = async bot => {
 
     try {
       await bot.user.setPresence({
-        game: {f
+        game: {
           name: `${statuslist[random]}`,
           type: "PLAYING"
           //url: 'https://www.twitch.tv/spokloo'
