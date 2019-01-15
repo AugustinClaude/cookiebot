@@ -77,6 +77,8 @@ const applyText = (canvas, text) => {
   return ctx.font;
 };
 
+bot.on("error", console.error);
+
 bot.on("guildMemberAdd", async member => {
   //CHANNEL => USERCOUNT : 0 etc...
 
