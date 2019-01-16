@@ -64,8 +64,8 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(funEmbed),
       message.channel.send(musicEmbed),
       message.channel.send(imageEmbed),
-      message.channel.send(modEmbed),
-      message.channel.send(nsfwEmbed)
+      message.channel.send(modEmbed)
+      //message.channel.send(nsfwEmbed)
     );
   }
 
@@ -75,7 +75,7 @@ module.exports.run = async (bot, message, args) => {
     await message.author.send(musicEmbed);
     await message.author.send(imageEmbed);
     await message.author.send(modEmbed);
-    await message.author.send(nsfwEmbed);
+    //await message.author.send(nsfwEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
   } catch (e) {
     message.reply(
@@ -86,7 +86,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(musicEmbed);
     message.channel.send(imageEmbed);
     message.channel.send(modEmbed);
-    message.channel.send(nsfwEmbed);
+    //message.channel.send(nsfwEmbed);
   }
 };
 
