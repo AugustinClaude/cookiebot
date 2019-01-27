@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   if (message.author.id !== "302901933419790347") return message.reply(":x: Vous n'êtes pas le créateur du bot, vous ne pouvez donc pas utiliser cette commande !");
   else {
     const m = await message.channel.send("⚙ Redémarrage en cours...");
@@ -8,7 +9,9 @@ module.exports.run = async (bot, message, args) => {
     bot.destroy();
     bot.login(process.env.BOT_TOKEN);
 
-    m.edit("⚙ Redémarrage terminé avec succès !");
+    setTimeout(() => {
+      m.edit("⚙ Redémarrage terminé avec succès !");
+    }, 3000);
   }
 };
 
