@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "📛 Modération",
-      "``- <prefix [new prefix]``\n``- <kick [@member] [Raison]``\n``- <ban [@member] [Raison]``\n``- <unban [ID]``\n``- <tempban / <tb [@membre] [durée] [raison]``\n``- <mute [@member] [Durée] [raison]``\n``- <unmute / <um [@member]``\n``- <report [@member] [Raison]``\n``- <clear / <purge [Nb msg]``\n``- <cmd / <command [fichier.js]``\n``- <cleanlb / <purgelb``\n``- <addrole / <arole [@member] [role]``\n``- <removerole / <rrole [@member] [role]``\n``- <raidmode / <rm``"
+      "``- <prefix [new prefix]``\n``- <kick [@member] [Raison]``\n``- <ban [@member] [Raison]``\n``- <unban [ID]``\n``- <tempban / <tb [@membre] [durée] [raison]``\n``- <mute [@member] [Durée] [raison]``\n``- <unmute / <um [@member]``\n``- <report [@member] [Raison]``\n``- <clear / <purge [Nb msg]``\n``- <cmd / <command [fichier.js]``\n``- <cleanlb / <purgelb``\n``- <addrole / <arole [@member] [role]``\n``- <removerole / <rrole [@member] [role]``\n``- <raidmode / <rm``\n``- <shutdown / <sd / <stop / <reload``"
     );
 
   var nsfwEmbed = new Discord.RichEmbed()
