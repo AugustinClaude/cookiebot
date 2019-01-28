@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
 
   const reminderTime = args[0];
-  if (!reminderTime)
+  if (isNaN(reminderTime))
     return message.channel.send(
       "**Please specify a time for me to remind you.\nUsage: <todo 15min [thing to remind]**"
     );
