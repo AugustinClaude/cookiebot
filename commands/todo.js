@@ -22,10 +22,8 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(remindEmbed);
 
   setTimeout(function() {
-    message.channel.send(
-      `Hey ${
-        message.author
-      } :D, you wanted me to remind you this ! :\n\`${reminder}\``
+    message.author.send(
+      `__**Your reminder :**__\n\`${reminder}\``
     );
   }, ms(reminderTime));
 };
@@ -33,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["remind"],
+  aliases: ["remind", "reminder", "remindme"],
   permLevel: 0
 };
 
