@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
 
   setTimeout(function() {
     message.author.send(
-      `__**Your reminder :**__\n\`${reminder}\``
+      `__**✅ Your reminder :**__\n\`${reminder}\``
     );
   }, ms(reminderTime));
 };
