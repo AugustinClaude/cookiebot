@@ -26,12 +26,12 @@ module.exports = (bot, message) => {
   if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 
   if (message.channel.type === "dm") {
-    var error_embed = new Discord.RichEmbed()
+    var errorEmbed = new Discord.RichEmbed()
       .setColor("#AD0003")
       .setDescription(
         "⛔️ Cette commande n'est utilisable que sur serveur! ⛔️"
       );
-    message.author.send(error_embed);
+    message.author.send(errorEmbed);
     return;
   }
 
@@ -54,19 +54,23 @@ module.exports = (bot, message) => {
       "log",
       ` ${message.guild.name} | #${message.channel.name}:
         ${message.author.username}#${message.author.discriminator} (${
-        message.author.id
-      }) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
+  message.author.id
+}) ran command ${process.env.PREFIX}${cmd.help.name} ${args.join(" ")}`,
       "CMD"
     );
     cmd.run(bot, message, args, perms);
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "<@488022471048691713>") return message.channel.send("Kwa ?");
-  if (message.content === "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?") return message.channel.send("Je l'aime pas avec son air supérieur là ! Sal mosh :(");
-
-
-
+  if (message.content === "<@488022471048691713>")
+    return message.channel.send("Kwa ?");
+  if (
+    message.content ===
+    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?"
+  )
+    return message.channel.send(
+      "Je l'aime pas avec son air supérieur là ! Sal mosh :("
+    );
 
   //JUSTEPRIX (commande)
   if (command === "justeprix" || command === "jp") {
