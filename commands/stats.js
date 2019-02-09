@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
   const duration = moment
     .duration(bot.uptime)
-    .format(" D [days], H [hours], m [minutes], s [seconds]");
+    .format(" D [days], H [hrs], m [mins], s [secs]");
 
   const statsEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
