@@ -16,14 +16,18 @@ module.exports.run = async (bot, message, args) => {
   const file = `\`\`<${args[0].slice(0, -3)}\`\``;
 
   try {
-    const cmd = fs.readFileSync(`./commands/${args[0]}`);
+    var cmd = fs.readFileSync(`./commands/${args[0]}`);
     await message.channel.send(
       `📥 Voici la nouvelle commande ${file} !\n\`\`\`js\n${cmd}\n\`\`\``
     );
     message.delete(500);
   } catch (e) {
+    cmd.slice(1992);
     message.reply(
       "Une erreur est survenue ! Sois le nom du fichier en .js est incorrect, sois le fichier est trop volumineux, sois la syntaxe est incorrecte !\n **Syntaxe :** <cmd [fichier.js]"
+    );
+    await message.channel.send(
+      `📥 Voici la nouvelle commande ${file} !\n\`\`\`js\n${cmd}\n\`\`\``
     );
   }
 };
