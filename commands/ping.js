@@ -21,20 +21,6 @@ module.exports.run = async (bot, message, args) => {
       "💾 Latence de l'API",
       `\`\`\`js\n${Math.round(bot.ping)} ms\n\`\`\``,
       true
-    )
-    .addField(
-      "🥝 Latence totale",
-      `\`\`\`js\n${m.createdTimestamp -
-        message.createdTimestamp +
-        Math.round(bot.ping)} ms\n\`\`\``,
-      true
-    )
-    .addField(
-      "🌐 Mémoire utilisée",
-      `\`\`\`js\n${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(
-        2
-      )} MB\n\`\`\``,
-      true
     );
 
   m.edit(pingEmbed);
