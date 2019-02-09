@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
@@ -8,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#0059F2")
     .addField("🍪 **Nom**", `\`\`\`js\n${bot.user.username}\n\`\`\``)
     .addBlankField()
-    .addField("📁 **Version**", `\`\`\`js\n1.4.7 | Alpha / Beta\n\`\`\``)
+    .addField("📁 **Version**", `\`\`\`js\n2.1.4 | Alpha / Beta\n\`\`\``)
     .addBlankField()
     .addField("👤 **Auteur**", `\`\`\`js\nSpokloo#7791\n\`\`\``)
     .addBlankField()
