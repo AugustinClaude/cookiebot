@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     );
     message.delete(500);
   } catch (e) {
-    cmd.slice(1992);
+    cmd.slice(2000);
     message.reply(
       "Une erreur est survenue ! Sois le nom du fichier en .js est incorrect, sois le fichier est trop volumineux, sois la syntaxe est incorrecte !\n **Syntaxe :** <cmd [fichier.js]"
     );
