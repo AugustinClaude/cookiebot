@@ -62,7 +62,7 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "tg <@488022471048691713>".toLowerCase())
+  if (message.content === "tg <@488022471048691713>")
     return message.reply(
       "tu nous paies la Tournée Générale ? Merci beaucoup à toi, ça me va droit dans le coeur !"
     );
@@ -70,7 +70,7 @@ module.exports = (bot, message) => {
     return message.channel.send("Kwa ?");
   if (
     message.content ===
-    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?".toLowerCase()
+    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?"
   )
     return message.channel.send(
       "Je l'aime pas avec son air supérieur là ! Sal mosh :("
