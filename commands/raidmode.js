@@ -1,7 +1,7 @@
 var raidmode = true;
 
 module.exports.run = async (bot, message, args) => {
-  if (message.author.id !== "302901933419790347") return;
+  if (message.author.id !== "302901933419790347") return message.channel.send(":x: Commande en maintenance ! Seul le créateur du bot peut l'utiliser !");
 
   bot.setMaxListeners(Infinity);
 
