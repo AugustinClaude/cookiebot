@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
+  if (message.author.id !== "302901933419790347")
+    return message.channel.send(
+      ":x: Cette commande est réservée au créateur du bot !"
+    );
+
   if (!message.member.hasPermission("MANAGE_GUILD")) {
     return message.reply(
       "Vous n'avez pas les permissions pour exécuter cette commande !"
