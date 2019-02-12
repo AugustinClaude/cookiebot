@@ -39,6 +39,7 @@ module.exports.run = async (bot, message, args) => {
   if (raidmode == true) {
     await message.guild.members.forEach(members => {
       members.addRoles(muteRole.id);
+      await wait(1000);
     });
 
     message.channel.send("🔇 ⛔ RaidMode Activé ⛔ 🔇");
