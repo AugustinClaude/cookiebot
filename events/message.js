@@ -62,7 +62,7 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "tg <@488022471048691713>")
+  if (message.content === "<@488022471048691713> tg")
     return message.reply(
       "tu nous paies la Tournée Générale ? Merci beaucoup à toi, ça me va droit dans le coeur !"
     );
