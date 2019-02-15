@@ -16,6 +16,7 @@
     "events": "^3.0.0",
     "google": "^2.1.0",
     "got": "^9.2.2",
+    "kaori": "^1.2.0",
     "kawaii-kitsune": "^1.0.2",
     "mal-api": "^2.0.0",
     "mal-scraper": "^2.4.5",

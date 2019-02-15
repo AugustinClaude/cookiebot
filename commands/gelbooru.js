@@ -1,26 +1,29 @@
 const Discord = require("discord.js");
-const superagent = require("superagent");
+const Kaori = require("kaori");
+const kaori = new Kaori();
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
   if (message.channel.nsfw === false) {
-    return message.channel.send("Vous ne pouvez pas utiliser de commandes NSFW dans ce channel ! Il faut qu'il sois défini comme étant NSFW !");
+    return message.channel.send(
+      "Vous ne pouvez pas utiliser de commandes NSFW dans ce channel ! Il faut qu'il sois défini comme étant NSFW !"
+    );
   }
-  const args2 = message.content.split(" ");
-  args2.shift();
-
 
   try {
-    const gbEmbed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle(`🍆 Gelbooru Tag:  ${args2.join(" ")}`)
-      .setDescription(`https://www.gelbooru.com/index.php?page=post&s=list&tags=${args2.join("+")}`);
-
-    await message.channel.send(gbEmbed);
+    kaori
+      .search("gelbooru", { tags: [args.join(" ")], limit: 1, random: true })
+      .then(async images => {
+        const image = images[0].common.fileURL;
+        const gbEmbed = new Discord.RichEmbed()
+          .setColor("RANDOM")
+          .setTitle(`🍆 Gelbooru Tag:  ${args.join(" ")}`)
+          .setImage(image);
+        await message.channel.send(gbEmbed);
+      });
   } catch (e) {
-    message.channel.send(`Je n'ai rien trouvé pour le tag ${args2.join(" ")}`);
+    message.channel.send(`Je n'ai rien trouvé pour le tag ${args.join(" ")}`);
   }
-
 };
 
 module.exports.conf = {
