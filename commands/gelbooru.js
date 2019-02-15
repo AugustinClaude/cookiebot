@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["gelb", "gb"],
   permLevel: 0
 };
 
