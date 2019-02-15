@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
   try {
     kaori
-      .search("gelbooru", { tags: [args.join(" ")], limit: 1, random: true })
+      .search("rule34", { tags: [args.join(" ")], limit: 1, random: true })
       .then(async images => {
         const image = images[0].common.fileURL;
         const gbEmbed = new Discord.RichEmbed()
