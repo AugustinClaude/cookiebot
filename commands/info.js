@@ -58,7 +58,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["infoserv", "is"],
+  aliases: ["infoserv", "is", "si"],
   permLevel: 0
 };
 

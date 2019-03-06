@@ -4,7 +4,7 @@ var partyLaunch = false;
 
 module.exports = (bot, message) => {
   if (message.author.bot) return;
-  if (message.guild) {
+  /*if (message.guild) {
     const key = `${message.guild.id}-${message.author.id}`;
     bot.points.ensure(`${message.guild.id}-${message.author.id}`, {
       user: message.author.id,
@@ -21,7 +21,7 @@ module.exports = (bot, message) => {
       message.reply(`Bravo, tu es passé niveau **${curLevel}**! :wink:`);
       bot.points.set(key, curLevel, "level");
     }
-  }
+  }*/
 
   if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 

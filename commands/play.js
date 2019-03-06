@@ -24,8 +24,7 @@ module.exports.run = async (bot, message, args) => {
 
   var artist = info.media.artist;
 
-  if (!artist)
-    var artist = "I couldn't find any artist for this song, sorry :(";
+  if (!artist) artist = "I couldn't find any artist for this song, sorry :(";
 
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
@@ -33,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${
       info.length_seconds
     } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
-      info.view_count
+      info.player_response.videoDetails.viewCount
     } views\n\`\`\`\n📅 **Published** : \`\`\`js\n${moment(
       info.published
     ).format("LLL")}\n\`\`\`\n👤 **Video Author** : \`\`\`css\n${
