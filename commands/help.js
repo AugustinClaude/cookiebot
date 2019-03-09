@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "🎵 Musique",
-      "``- <play [URL YouTube]``\n``- <stop / <leave``\n``- <join``\n``- <pause``\n``- <resume``\n``- <nowplaying / <np``\n``- <skip / <next``"
+      "``- <play [URL YouTube]``\n``- <stop / <leave``\n``- <join``\n``- <pause (not working)``\n``- <resume (not working)``\n``- <nowplaying / <np (not working)``\n``- <skip / <next (not working)``"
     );
 
   var imageEmbed = new Discord.RichEmbed()
