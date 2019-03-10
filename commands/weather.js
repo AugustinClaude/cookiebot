@@ -17,9 +17,8 @@ module.exports.run = (bot, message, args) => {
     var location = result[0].location;
     var UTC;
 
-    if (location.timezone.startsWith("-"))
-      var UTC = `UTC${location.timezone}:00`;
-    else var UTC = `UTC+${location.timezone}:00`;
+    if (location.timezone.startsWith("-")) UTC = `UTC${location.timezone}:00`;
+    else UTC = `UTC+${location.timezone}:00`;
 
     const weatherEmbed = new Discord.RichEmbed()
       .setDescription(`**${current.skytext}**`)
