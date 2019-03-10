@@ -49,19 +49,6 @@ module.exports.run = async (bot, message, args) => {
       "https://i.imgur.com/C7cjSEe.png"
     );
 
-  var nsfwEmbed = new Discord.RichEmbed()
-    .setColor("#ff00ff")
-    .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
-    )
-    .setTimestamp(bot.user.createdAt)
-    .setThumbnail(bot.user.displayAvatarURL)
-    .addField(
-      "🔞 Nsfw",
-      "``- <hentaigif / <hg``\n``- <pussy``\n``- <nekogif / <ng``\n``- <lewd / <neko``\n``- <lesbian``\n``- <cuni / <kuni``\n``- <cum``\n``- <classic``\n``- <boobs``\n``- <blowjob / <bj``\n``- <anal``\n``- <gelbooru / <gelb / <gb [tags]``"
-    );
-
   if (args[0] === "here") {
     return (
       message.channel.send(useEmbed),
@@ -69,7 +56,6 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(musicEmbed),
       message.channel.send(imageEmbed),
       message.channel.send(modEmbed)
-      //message.channel.send(nsfwEmbed)
     );
   }
 
@@ -79,7 +65,6 @@ module.exports.run = async (bot, message, args) => {
     await message.author.send(musicEmbed);
     await message.author.send(imageEmbed);
     await message.author.send(modEmbed);
-    //await message.author.send(nsfwEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
   } catch (e) {
     message.reply(
@@ -90,7 +75,6 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(musicEmbed);
     message.channel.send(imageEmbed);
     message.channel.send(modEmbed);
-    //message.channel.send(nsfwEmbed);
   }
 };
 
