@@ -5,6 +5,8 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
   moment.locale("fr");
 
+  if (message.guild.id === "264445053596991498") return;
+
   const servIcon = message.guild.iconURL;
   const servName = message.guild.name;
   const lastmember = Array.from(message.channel.guild.members.values())
