@@ -148,7 +148,7 @@ bot.on("guildMemberAdd", async member => {
       ch.name === "🚪-bienvenue-🚪" ||
       ch.name === "arrivées-départs" ||
       ch.name === "🛬arrivées-départs🛫" ||
-      ch.name === "🌈arrivées-départs🌈"
+      ch.name === "🌈arrivées-départs"
   );
 
   if (!channel) return;
@@ -248,20 +248,20 @@ bot.on("guildMemberRemove", async member => {
     }
   }
 
-  if (member.guild.id == RPServerStats.guild_id) {
+  if (member.guild.id == CaillouServerStats.guild_id) {
     try {
       bot.channels
-        .get(RPServerStats.membercount_id)
-        .setName(`Population : ${member.guild.memberCount}`);
+        .get(CaillouServerStats.membercount_id)
+        .setName(`🥝 Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(RPServerStats.usercount_id)
+        .get(CaillouServerStats.usercount_id)
         .setName(
-          `Citoyen : ${member.guild.members.filter(m => !m.user.bot).size}`
+          `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(RPServerStats.botcount_id)
+        .get(CaillouServerStats.botcount_id)
         .setName(
-          `Robots : ${member.guild.members.filter(m => m.user.bot).size}`
+          `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
@@ -276,7 +276,7 @@ bot.on("guildMemberRemove", async member => {
       ch.name === "🚪-bienvenue-🚪" ||
       ch.name === "arrivées-départs" ||
       ch.name === "🛬arrivées-départs🛫" ||
-      ch.name === "🌈arrivées-départs🌈"
+      ch.name === "🌈arrivées-départs"
   );
 
   if (!channel) return;
