@@ -18,11 +18,11 @@ const ParoxServerStats = {
   IDuserCount: "518475939274031105",
   IDbotCount: "518475940012228615"
 };
-const RPServerStats = {
-  guild_id: "520569053476028427",
-  membercount_id: "520577102068842497",
-  usercount_id: "520575385671565322",
-  botcount_id: "520575479150018560"
+const CaillouServerStats = {
+  guild_id: "551813196927991841",
+  membercount_id: "556164777026650132",
+  usercount_id: "556164826255327232",
+  botcount_id: "556164863773245455"
 };
 
 const http = require("http");
@@ -120,20 +120,20 @@ bot.on("guildMemberAdd", async member => {
     }
   }
 
-  if (member.guild.id == RPServerStats.guild_id) {
+  if (member.guild.id == CaillouServerStats.guild_id) {
     try {
       bot.channels
-        .get(RPServerStats.membercount_id)
-        .setName(`Population : ${member.guild.memberCount}`);
+        .get(CaillouServerStats.membercount_id)
+        .setName(`🥝 Membres : ${member.guild.memberCount}`);
       bot.channels
-        .get(RPServerStats.usercount_id)
+        .get(CaillouServerStats.usercount_id)
         .setName(
-          `Citoyen : ${member.guild.members.filter(m => !m.user.bot).size}`
+          `🧑 Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
         );
       bot.channels
-        .get(RPServerStats.botcount_id)
+        .get(CaillouServerStats.botcount_id)
         .setName(
-          `Robots : ${member.guild.members.filter(m => m.user.bot).size}`
+          `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
     } catch (e) {
       return;
@@ -147,7 +147,8 @@ bot.on("guildMemberAdd", async member => {
       ch.name === "bienvenue" ||
       ch.name === "🚪-bienvenue-🚪" ||
       ch.name === "arrivées-départs" ||
-      ch.name === "🛬arrivées-départs🛫"
+      ch.name === "🛬arrivées-départs🛫" ||
+      ch.name === "🌈arrivées-départs🌈"
   );
 
   if (!channel) return;
@@ -274,7 +275,8 @@ bot.on("guildMemberRemove", async member => {
       ch.name === "bienvenue" ||
       ch.name === "🚪-bienvenue-🚪" ||
       ch.name === "arrivées-départs" ||
-      ch.name === "🛬arrivées-départs🛫"
+      ch.name === "🛬arrivées-départs🛫" ||
+      ch.name === "🌈arrivées-départs🌈"
   );
 
   if (!channel) return;
