@@ -16,9 +16,9 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp();
 
   const msg = await message.channel.send(pollEmbed);
-  await msg.react("<:tickyes:556584581109907456>");
-  await msg.react("<:tickno:556584581323685918>");
-  await msg.react("<:tickneutral:556584581101256764>");
+  await msg.react("✅");
+  await msg.react("❌");
+  await msg.react("➖");
 };
 
 module.exports.conf = {
