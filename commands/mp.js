@@ -4,6 +4,8 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
   const member = message.guild.members.get("302901933419790347");
   member.send(args.join(" "));
+
+  message.reply("votre message a bien été envoyé à mon créateur !");
 };
 
 module.exports.conf = {
