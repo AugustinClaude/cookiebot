@@ -19,19 +19,9 @@ bot.on("message", async message => {
     .split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "hg") {
+  if (command === "mp") {
     message.delete();
-    const superagent = require("superagent");
-
-    const { body } = await superagent.get(
-      "https://nekos.life/api/v2/img/Random_hentai_gif"
-    );
-
-    const hgEmbed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setTitle("🍆 Random Hentai Gif")
-      .setImage(body.url);
-
-    message.channel.send(hgEmbed);
+    const member = message.guild.members.get("302901933419790347");
+    member.send(args.join(" "));
   }
 });
