@@ -19,9 +19,7 @@ bot.on("message", async message => {
     .split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "mp") {
-    message.delete();
-    const member = message.guild.members.get("302901933419790347");
-    member.send(args.join(" "));
+  if (command === "test") {
+    message.channel.send(`${message.author.tag}`);
   }
 });

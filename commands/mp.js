@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
   const embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .setTitle(`${message.author.tag} (ID : ${message.author.id})`)
     .setColor("RANDOM")
     .setDescription(args.join(" "))
     .setFooter(
