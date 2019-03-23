@@ -20,6 +20,6 @@ bot.on("message", async message => {
   const command = args.shift().toLowerCase();
 
   if (command === "test") {
-    message.channel.send(`${message.author.tag}`);
+    message.reply("Test");
   }
 });

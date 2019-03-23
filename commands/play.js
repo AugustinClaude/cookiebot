@@ -29,9 +29,11 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send(
     `▶ **Now Playing** : \`\`\`fix\n${
       info.title
-    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${
-      info.length_seconds
-    } seconds\n\`\`\`\n👀 **Views** : \`\`\`js\n${
+    }\n\`\`\`\n⏳ **Duration** : \`\`\`js\n${moment
+      .utc(info.player_response.videoDetails.lengthSeconds * 1000)
+      .format(
+        "H [hrs], m [mins], s [secs]"
+      )}\n\`\`\`\n👀 **Views** : \`\`\`js\n${
       info.player_response.videoDetails.viewCount
     } views\n\`\`\`\n📅 **Published** : \`\`\`js\n${moment(
       info.published
