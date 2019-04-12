@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  if (!message.member.hasPermission("MANAGE_MESSAGES"))
+  if (message.member.hasPermission("MANAGE_MESSAGES") && message.guild.id == "497490880807305237")
     return message.reply(
       "Vous n'avez pas la permission d'exécuter cette commande !"
     );
