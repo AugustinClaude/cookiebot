@@ -12,12 +12,6 @@ const MyServerStats = {
   userCountID: "513671473139810308",
   botCountID: "513671575791206421"
 };
-const ParoxServerStats = {
-  IDguild: "497490880807305237",
-  IDmemberCount: "518475938485501962",
-  IDuserCount: "518475939274031105",
-  IDbotCount: "518475940012228615"
-};
 const CaillouServerStats = {
   guild_id: "551813196927991841",
   membercount_id: "556164777026650132",
@@ -97,24 +91,6 @@ bot.on("guildMemberAdd", async member => {
         .setName(
           `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
-    } catch (e) {
-      return;
-    }
-  }
-
-  if (member.guild.id == ParoxServerStats.IDguild) {
-    try {
-      bot.channels
-        .get(ParoxServerStats.IDmemberCount)
-        .setName(`Membres : ${member.guild.memberCount}`);
-      bot.channels
-        .get(ParoxServerStats.IDuserCount)
-        .setName(
-          `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
-        );
-      bot.channels
-        .get(ParoxServerStats.IDbotCount)
-        .setName(`Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
     } catch (e) {
       return;
     }
@@ -225,24 +201,6 @@ bot.on("guildMemberRemove", async member => {
         .setName(
           `🤖 Bots : ${member.guild.members.filter(m => m.user.bot).size}`
         );
-    } catch (e) {
-      return;
-    }
-  }
-
-  if (member.guild.id == ParoxServerStats.IDguild) {
-    try {
-      bot.channels
-        .get(ParoxServerStats.IDmemberCount)
-        .setName(`Membres : ${member.guild.memberCount}`);
-      bot.channels
-        .get(ParoxServerStats.IDuserCount)
-        .setName(
-          `Humains : ${member.guild.members.filter(m => !m.user.bot).size}`
-        );
-      bot.channels
-        .get(ParoxServerStats.IDbotCount)
-        .setName(`Bots : ${member.guild.members.filter(m => m.user.bot).size}`);
     } catch (e) {
       return;
     }
