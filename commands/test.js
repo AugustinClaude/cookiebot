@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     message.mentions.users.first() || message.guild.members.get(args[0])
   );
 
-  mentionned.user.setUsername(`${args[1]}`);
+  mentionned.setUsername(`${args[1]}`);
 };
 
 module.exports.conf = {
