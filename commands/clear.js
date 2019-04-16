@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   if (
-    !message.member.hasPermission("MANAGE_MESSAGES") ||
+    !message.member.hasPermission("MANAGE_MESSAGES") &&
     message.member.id !== "302901933419790347"
   )
     return message.reply(
