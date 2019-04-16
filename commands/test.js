@@ -1,7 +1,12 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  message.channel.send("Ceci est un test.");
+  message.delete();
+  const mentionned = message.guild.member(
+    message.mentions.users.first() || message.guild.members.get(args[0])
+  );
+
+  mentionned.user.setUsername(`${args[1]}`);
 };
 
 module.exports.conf = {
