@@ -13,15 +13,16 @@ module.exports.run = async (bot, message, args) => {
   var getvalueof;
 
   if (mentionnedbot) {
-    var getvalueof = mentionnedbot;
+    getvalueof = mentionnedbot;
   } else {
-    var getvalueof = message.author;
+    getvalueof = message.author;
   }
 
+  var checkbot;
   if (getvalueof.bot == true) {
-    var checkbot = "🤖 Bot";
+    checkbot = "🤖 Bot";
   } else {
-    var checkbot = "😁 Humain";
+    checkbot = "😁 Humain";
   }
 
   if (!mentionned) {
@@ -30,22 +31,24 @@ module.exports.run = async (bot, message, args) => {
     );
   }
 
+  var status;
   if (mentionned.presence.status == "online") {
-    var status = "<:online:492774463398477834> En ligne";
+    status = "<:online:492774463398477834> En ligne";
   } else if (mentionned.presence.status == "offline") {
-    var status = "<:offline:492994318072807424> Hors ligne";
+    status = "<:offline:492994318072807424> Hors ligne";
   } else if (mentionned.presence.status == "idle") {
-    var status = "<:idle:492993972277608448> Inactif";
+    status = "<:idle:492993972277608448> Inactif";
   } else if (mentionned.presence.status == "dnd") {
-    var status = "<:dnd:492774462400364556> Ne pas déranger";
+    status = "<:dnd:492774462400364556> Ne pas déranger";
   } else if (mentionned.presence.status == "streaming") {
-    var status = "<:streaming:492994618942685214> Streaming";
+    status = "<:streaming:492994618942685214> Streaming";
   }
 
+  var roles;
   if (mentionned.roles.size == 1) {
-    var roles = ":x: Aucun rôles";
+    roles = ":x: Aucun rôles";
   } else {
-    var roles = `- ${mentionned.roles
+    roles = `- ${mentionned.roles
       .filter(role => role.id !== message.guild.id)
       .array()
       .map(g => g)
@@ -111,7 +114,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(userEmbed);
   } catch (e) {
     return message.channel.send(
-      `Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Il est possible que vous ayez trop de rôles par rapport au nombre de caractères maximum que demande un embed (\`\`<google / <ggl Qu'est ce qu'un embed Discord ?\`\`). Attention, cela peut aussi être lié à un autre problème dont je ne connais pas forcément l'existence !`
+      "Une erreur est survenue et il m'est impossible d'exécuter cette commande ! Il est possible que vous ayez trop de rôles par rapport au nombre de caractères maximum que demande un embed (``<google / <ggl Qu'est ce qu'un embed Discord ?``). Attention, cela peut aussi être lié à un autre problème dont je ne connais pas forcément l'existence !"
     );
   }
 };
