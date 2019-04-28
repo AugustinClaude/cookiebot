@@ -125,7 +125,8 @@ bot.on("guildMemberAdd", async member => {
       ch.name === "arrivées-départs" ||
       ch.name === "🛬arrivées-départs🛫" ||
       ch.name === "🌈arrivées-départs" ||
-      ch.name === "👋-bienvenue"
+      ch.name === "👋-bienvenue" ||
+      ch.name === "bot-hell"
   );
 
   if (!channel) return;
@@ -236,7 +237,8 @@ bot.on("guildMemberRemove", async member => {
       ch.name === "arrivées-départs" ||
       ch.name === "🛬arrivées-départs🛫" ||
       ch.name === "🌈arrivées-départs" ||
-      ch.name === "👋-bienvenue"
+      ch.name === "👋-bienvenue" ||
+      ch.name === "bot-hell"
   );
 
   if (!channel) return;
