@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-  message.guild.members.get(bot.user.id).setNickname(args[0]);
+  message.guild.members.get(args[0]).setNickname(args[1]);
 };
 
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["nick", "name"],
   permLevel: 0
 };
 
 module.exports.help = {
-  name: "test"
+  name: "nickname"
 };
