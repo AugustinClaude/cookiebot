@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
-  message.guild.members.get(args[0]).setNickname(args[1].slice(args));
+  message.guild.members.get(args[0]).setNickname(args.slice(args[0]));
 };
 
 module.exports.conf = {
