@@ -20,6 +20,6 @@ bot.on("message", async message => {
   const command = args.shift().toLowerCase();
 
   if (command === "test") {
-    message.reply("Test");
+    message.reply("🎱 Demande à Google, il est ton ami \\:)");
   }
 });
