@@ -8,8 +8,14 @@ module.exports.run = async (bot, message, args) => {
       return console.error(error);
     }
     const vdm = regex.exec(body);
-    message.reply(`${vdm[1]} VDM.`);
-  });};
+
+    try {
+      message.reply(`${vdm[1]} VDM.`);
+    } catch (e) {
+      message.channel.send(e);
+    }
+  });
+};
 
 module.exports.conf = {
   enabled: true,
