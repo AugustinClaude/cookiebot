@@ -8,6 +8,9 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#ffcc00")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTitle("🔧 Voici la liste des catégories de commandes !")
+    .setDescription(
+      "``<help`` fait apparaître ce menu. Rajouter l'argument `here` tout à la fin (que ce sois après la commande help toute seule ou après la précision sur la catégorie) permet d'envoyer les menus d'aide dans le channel où vous exécutez cette commande."
+    )
     .addField("⚙️ Utile", "``<help use``", true)
     .addField("🎉 Fun", "``<help fun``", true)
     .addField("🎵 Musique", "``<help music``", true)
@@ -111,7 +114,7 @@ module.exports.run = async (bot, message, args) => {
     );
     message.channel.send(menuEmbed);
 
-    if (args[0] === "here") {
+    if (args[0] === "here" || args[1] === "here") {
       return message.channel.send(menuEmbed);
     }
     if (args[0] === "use") {
