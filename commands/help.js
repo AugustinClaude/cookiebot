@@ -8,11 +8,13 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#ffcc00")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTitle("🔧 Voici la liste des catégories de commandes !")
-    .addField("⚙️ Utile", "``<help use``")
-    .addField("🎉 Fun", "``<help fun``")
-    .addField("🎵 Musique", "``<help music``")
-    .addField("🖼 Images", "``<help image``")
-    .addField("📛 Modération", "``<help mod``")
+    .addField("⚙️ Utile", "``<help use``", true)
+    .addField("🎉 Fun", "``<help fun``", true)
+    .addBlankField()
+    .addField("🎵 Musique", "``<help music``", true)
+    .addField("🖼 Images", "``<help image``", true)
+    .addBlankField()
+    .addField("📛 Modération", "``<help mod``", true)
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
       "https://i.imgur.com/C7cjSEe.png"
