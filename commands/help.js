@@ -86,13 +86,14 @@ module.exports.run = async (bot, message, args) => {
       "https://i.imgur.com/C7cjSEe.png"
     );
 
+  if (args[0] === "here" || args[1] === "here") {
+    return message.channel.send(menuEmbed);
+  }
+
   try {
     await message.author.send(menuEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
 
-    if (args[0] === "here") {
-      return message.author.send(menuEmbed);
-    }
     if (args[0] === "use") {
       return message.author.send(useEmbed);
     }
@@ -114,9 +115,6 @@ module.exports.run = async (bot, message, args) => {
     );
     message.channel.send(menuEmbed);
 
-    if (args[0] === "here" || args[1] === "here") {
-      return message.channel.send(menuEmbed);
-    }
     if (args[0] === "use") {
       return message.channel.send(useEmbed);
     }
