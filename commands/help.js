@@ -83,33 +83,52 @@ module.exports.run = async (bot, message, args) => {
       "https://i.imgur.com/C7cjSEe.png"
     );
 
-  if (args[0] === "here") {
-    return message.channel.send(menuEmbed);
-  }
-  if (args[0] === "use") {
-    return message.channel.send(useEmbed);
-  }
-  if (args[0] === "fun") {
-    return message.channel.send(funEmbed);
-  }
-  if (args[0] === "music") {
-    return message.channel.send(musicEmbed);
-  }
-  if (args[0] === "image") {
-    return message.channel.send(imageEmbed);
-  }
-  if (args[0] === "mod") {
-    return message.channel.send(modEmbed);
-  }
-
   try {
     await message.author.send(menuEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
+
+    if (args[0] === "here") {
+      return message.author.send(menuEmbed);
+    }
+    if (args[0] === "use") {
+      return message.author.send(useEmbed);
+    }
+    if (args[0] === "fun") {
+      return message.author.send(funEmbed);
+    }
+    if (args[0] === "music") {
+      return message.author.send(musicEmbed);
+    }
+    if (args[0] === "image") {
+      return message.author.send(imageEmbed);
+    }
+    if (args[0] === "mod") {
+      return message.author.send(modEmbed);
+    }
   } catch (e) {
     message.reply(
       "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
     );
     message.channel.send(menuEmbed);
+
+    if (args[0] === "here") {
+      return message.channel.send(menuEmbed);
+    }
+    if (args[0] === "use") {
+      return message.channel.send(useEmbed);
+    }
+    if (args[0] === "fun") {
+      return message.channel.send(funEmbed);
+    }
+    if (args[0] === "music") {
+      return message.channel.send(musicEmbed);
+    }
+    if (args[0] === "image") {
+      return message.channel.send(imageEmbed);
+    }
+    if (args[0] === "mod") {
+      return message.channel.send(modEmbed);
+    }
   }
 };
 
