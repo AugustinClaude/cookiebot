@@ -10,10 +10,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("🔧 Voici la liste des catégories de commandes !")
     .addField("⚙️ Utile", "``<help use``", true)
     .addField("🎉 Fun", "``<help fun``", true)
-    .addBlankField()
     .addField("🎵 Musique", "``<help music``", true)
     .addField("🖼 Images", "``<help image``", true)
-    .addBlankField()
     .addField("📛 Modération", "``<help mod``", true)
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
