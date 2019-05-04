@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .setTitle("🔧 Voici la liste des catégories de commandes !")
     .setDescription(
-      "``<help`` fait apparaître ce menu. Rajouter l'argument `here` tout à la fin (que ce sois après la commande help toute seule ou après la précision sur la catégorie) permet d'envoyer les menus d'aide dans le channel où vous exécutez cette commande."
+      "``<help`` fait apparaître ce menu. Vous pouvez rajouter l'argument `here` tout à la fin pour afficher les menus d'aide sur le channel actuel."
     )
     .addField("⚙️ Utile", "``<help use``", true)
     .addField("🎉 Fun", "``<help fun``", true)
