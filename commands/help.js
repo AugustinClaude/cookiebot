@@ -90,6 +90,57 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send(menuEmbed);
   }
 
+  if (args[0] === "use") {
+    try {
+      await message.author.send(useEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      message.channel.send(useEmbed);
+    }
+  }
+  if (args[0] === "fun") {
+    try {
+      await message.author.send(funEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      message.channel.send(funEmbed);
+    }
+  }
+  if (args[0] === "music") {
+    try {
+      await message.author.send(musicEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      message.channel.send(musicEmbed);
+    }
+  }
+  if (args[0] === "image") {
+    try {
+      await message.author.send(imageEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      message.channel.send(imageEmbed);
+    }
+  }
+  if (args[0] === "mod") {
+    try {
+      await message.author.send(modEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      message.channel.send(modEmbed);
+    }
+  }
+
   try {
     await message.author.send(menuEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
@@ -98,43 +149,6 @@ module.exports.run = async (bot, message, args) => {
       "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
     );
     message.channel.send(menuEmbed);
-  }
-
-  try {
-    if (args[0] === "use") {
-      return message.author.send(useEmbed);
-    }
-    if (args[0] === "fun") {
-      return message.author.send(funEmbed);
-    }
-    if (args[0] === "music") {
-      return message.author.send(musicEmbed);
-    }
-    if (args[0] === "image") {
-      return message.author.send(imageEmbed);
-    }
-    if (args[0] === "mod") {
-      return message.author.send(modEmbed);
-    }
-  } catch (e) {
-    message.reply(
-      "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-    );
-    if (args[0] === "use") {
-      return message.channel.send(useEmbed);
-    }
-    if (args[0] === "fun") {
-      return message.channel.send(funEmbed);
-    }
-    if (args[0] === "music") {
-      return message.channel.send(musicEmbed);
-    }
-    if (args[0] === "image") {
-      return message.channel.send(imageEmbed);
-    }
-    if (args[0] === "mod") {
-      return message.channel.send(modEmbed);
-    }
   }
 };
 
