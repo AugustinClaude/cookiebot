@@ -93,7 +93,14 @@ module.exports.run = async (bot, message, args) => {
   try {
     await message.author.send(menuEmbed);
     message.reply("La liste des commandes vous a été envoyée en privé !");
+  } catch (e) {
+    message.reply(
+      "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+    );
+    message.channel.send(menuEmbed);
+  }
 
+  try {
     if (args[0] === "use") {
       return message.author.send(useEmbed);
     }
@@ -113,8 +120,6 @@ module.exports.run = async (bot, message, args) => {
     message.reply(
       "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
     );
-    message.channel.send(menuEmbed);
-
     if (args[0] === "use") {
       return message.channel.send(useEmbed);
     }
