@@ -94,11 +94,11 @@ module.exports.run = async (bot, message, args) => {
     try {
       await message.author.send(useEmbed);
       return message.reply(
-        "La liste des commandes vous a été envoyée en privé !"
+        "La catégorie des commandes utiles vous a été envoyée en privé !"
       );
     } catch (e) {
       message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la catégorie des commandes utiles dans ce channel !"
       );
       return message.channel.send(useEmbed);
     }
@@ -107,11 +107,11 @@ module.exports.run = async (bot, message, args) => {
     try {
       await message.author.send(funEmbed);
       return message.reply(
-        "La liste des commandes vous a été envoyée en privé !"
+        "La catégorie des commandes fun vous a été envoyée en privé !"
       );
     } catch (e) {
       message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la catégorie des commandes fun dans ce channel !"
       );
       return message.channel.send(funEmbed);
     }
@@ -120,11 +120,11 @@ module.exports.run = async (bot, message, args) => {
     try {
       await message.author.send(musicEmbed);
       return message.reply(
-        "La liste des commandes vous a été envoyée en privé !"
+        "La catégorie des commandes de musique vous a été envoyée en privé !"
       );
     } catch (e) {
       message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la catégorie des commandes de musique dans ce channel !"
       );
       return message.channel.send(musicEmbed);
     }
@@ -133,11 +133,11 @@ module.exports.run = async (bot, message, args) => {
     try {
       await message.author.send(imageEmbed);
       return message.reply(
-        "La liste des commandes vous a été envoyée en privé !"
+        "La catégorie des commandes d'images vous a été envoyée en privé !"
       );
     } catch (e) {
       message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la catégorie des commandes d'images dans ce channel !"
       );
       return message.channel.send(imageEmbed);
     }
@@ -146,11 +146,11 @@ module.exports.run = async (bot, message, args) => {
     try {
       await message.author.send(modEmbed);
       return message.reply(
-        "La liste des commandes vous a été envoyée en privé !"
+        "La catégorie des commandes de modération vous a été envoyée en privé !"
       );
     } catch (e) {
       message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la catégorie des commandes de modération dans ce channel !"
       );
       return message.channel.send(modEmbed);
     }
