@@ -86,59 +86,23 @@ module.exports.run = async (bot, message, args) => {
       "https://i.imgur.com/C7cjSEe.png"
     );
 
-  if (args[0] === "here" || args[1] === "here") {
+  if (args[0] === "here") {
     return message.channel.send(menuEmbed);
   }
-
   if (args[0] === "use") {
-    try {
-      await message.author.send(useEmbed);
-    } catch (e) {
-      message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-      );
-      message.channel.send(useEmbed);
-    }
+    message.author.send(useEmbed);
   }
   if (args[0] === "fun") {
-    try {
-      await message.author.send(funEmbed);
-    } catch (e) {
-      message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-      );
-      message.channel.send(funEmbed);
-    }
+    message.author.send(funEmbed);
   }
   if (args[0] === "music") {
-    try {
-      await message.author.send(musicEmbed);
-    } catch (e) {
-      message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-      );
-      message.channel.send(musicEmbed);
-    }
+    message.author.send(musicEmbed);
   }
   if (args[0] === "image") {
-    try {
-      await message.author.send(imageEmbed);
-    } catch (e) {
-      message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-      );
-      message.channel.send(imageEmbed);
-    }
+    message.author.send(imageEmbed);
   }
   if (args[0] === "mod") {
-    try {
-      await message.author.send(modEmbed);
-    } catch (e) {
-      message.reply(
-        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
-      );
-      message.channel.send(modEmbed);
-    }
+    message.author.send(modEmbed);
   }
 
   try {
