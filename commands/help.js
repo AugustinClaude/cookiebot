@@ -102,7 +102,10 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(useEmbed);
     }
+  } else if (args.join(" ") === "use here") {
+    return message.channel.send(useEmbed);
   }
+
   if (args[0] === "fun") {
     try {
       await message.author.send(funEmbed);
@@ -115,7 +118,10 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(funEmbed);
     }
+  } else if (args.join(" ") === "fun here") {
+    return message.channel.send(funEmbed);
   }
+
   if (args[0] === "music") {
     try {
       await message.author.send(musicEmbed);
@@ -128,7 +134,10 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(musicEmbed);
     }
+  } else if (args.join(" ") === "music here") {
+    return message.channel.send(musicEmbed);
   }
+
   if (args[0] === "image") {
     try {
       await message.author.send(imageEmbed);
@@ -141,7 +150,10 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(imageEmbed);
     }
+  } else if (args.join(" ") === "image here") {
+    return message.channel.send(imageEmbed);
   }
+
   if (args[0] === "mod") {
     try {
       await message.author.send(modEmbed);
@@ -154,6 +166,8 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(modEmbed);
     }
+  } else if (args.join(" ") === "mod here") {
+    return message.channel.send(modEmbed);
   }
 
   try {
