@@ -92,7 +92,10 @@ module.exports.run = async (bot, message, args) => {
 
   if (args[0] === "use") {
     try {
-      return await message.author.send(useEmbed);
+      await message.author.send(useEmbed);
+      return message.reply(
+        "La liste des commandes vous a été envoyée en privé !"
+      );
     } catch (e) {
       message.reply(
         "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
@@ -102,7 +105,10 @@ module.exports.run = async (bot, message, args) => {
   }
   if (args[0] === "fun") {
     try {
-      return await message.author.send(funEmbed);
+      await message.author.send(funEmbed);
+      return message.reply(
+        "La liste des commandes vous a été envoyée en privé !"
+      );
     } catch (e) {
       message.reply(
         "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
@@ -112,7 +118,10 @@ module.exports.run = async (bot, message, args) => {
   }
   if (args[0] === "music") {
     try {
-      return await message.author.send(musicEmbed);
+      await message.author.send(musicEmbed);
+      return message.reply(
+        "La liste des commandes vous a été envoyée en privé !"
+      );
     } catch (e) {
       message.reply(
         "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
@@ -122,7 +131,10 @@ module.exports.run = async (bot, message, args) => {
   }
   if (args[0] === "image") {
     try {
-      return await message.author.send(imageEmbed);
+      await message.author.send(imageEmbed);
+      return message.reply(
+        "La liste des commandes vous a été envoyée en privé !"
+      );
     } catch (e) {
       message.reply(
         "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
@@ -132,7 +144,10 @@ module.exports.run = async (bot, message, args) => {
   }
   if (args[0] === "mod") {
     try {
-      return await message.author.send(modEmbed);
+      await message.author.send(modEmbed);
+      return message.reply(
+        "La liste des commandes vous a été envoyée en privé !"
+      );
     } catch (e) {
       message.reply(
         "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
