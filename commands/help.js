@@ -90,7 +90,9 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send(menuEmbed);
   }
 
-  if (args[0] === "use") {
+  if (args.join(" ") === "use here") {
+    return message.channel.send(useEmbed);
+  } else if (args[0] === "use") {
     try {
       await message.author.send(useEmbed);
       return message.reply(
@@ -102,11 +104,11 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(useEmbed);
     }
-  } else if (args.join(" ") === "use here") {
-    return message.channel.send(useEmbed);
   }
 
-  if (args[0] === "fun") {
+  if (args.join(" ") === "fun here") {
+    return message.channel.send(funEmbed);
+  } else if (args[0] === "fun") {
     try {
       await message.author.send(funEmbed);
       return message.reply(
@@ -118,11 +120,11 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(funEmbed);
     }
-  } else if (args.join(" ") === "fun here") {
-    return message.channel.send(funEmbed);
   }
 
-  if (args[0] === "music") {
+  if (args.join(" ") === "music here") {
+    return message.channel.send(musicEmbed);
+  } else if (args[0] === "music") {
     try {
       await message.author.send(musicEmbed);
       return message.reply(
@@ -134,11 +136,11 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(musicEmbed);
     }
-  } else if (args.join(" ") === "music here") {
-    return message.channel.send(musicEmbed);
   }
 
-  if (args[0] === "image") {
+  if (args.join(" ") === "image here") {
+    return message.channel.send(imageEmbed);
+  } else if (args[0] === "image") {
     try {
       await message.author.send(imageEmbed);
       return message.reply(
@@ -150,11 +152,11 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(imageEmbed);
     }
-  } else if (args.join(" ") === "image here") {
-    return message.channel.send(imageEmbed);
   }
 
-  if (args[0] === "mod") {
+  if (args.join(" ") === "mod here") {
+    return message.channel.send(modEmbed);
+  } else if (args[0] === "mod") {
     try {
       await message.author.send(modEmbed);
       return message.reply(
@@ -166,8 +168,6 @@ module.exports.run = async (bot, message, args) => {
       );
       return message.channel.send(modEmbed);
     }
-  } else if (args.join(" ") === "mod here") {
-    return message.channel.send(modEmbed);
   }
 
   try {
