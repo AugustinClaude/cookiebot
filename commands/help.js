@@ -89,20 +89,56 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === "here") {
     return message.channel.send(menuEmbed);
   }
+
   if (args[0] === "use") {
-    message.author.send(useEmbed);
+    try {
+      return await message.author.send(useEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      return message.channel.send(useEmbed);
+    }
   }
   if (args[0] === "fun") {
-    message.author.send(funEmbed);
+    try {
+      return await message.author.send(funEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      return message.channel.send(funEmbed);
+    }
   }
   if (args[0] === "music") {
-    message.author.send(musicEmbed);
+    try {
+      return await message.author.send(musicEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      return message.channel.send(musicEmbed);
+    }
   }
   if (args[0] === "image") {
-    message.author.send(imageEmbed);
+    try {
+      return await message.author.send(imageEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      return message.channel.send(imageEmbed);
+    }
   }
   if (args[0] === "mod") {
-    message.author.send(modEmbed);
+    try {
+      return await message.author.send(modEmbed);
+    } catch (e) {
+      message.reply(
+        "Vous avez désactivé vos messages privé, je me vois dans l'obligation de poster la liste des commandes dans ce channel !"
+      );
+      return message.channel.send(modEmbed);
+    }
   }
 
   try {
