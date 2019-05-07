@@ -7,12 +7,6 @@ module.exports.run = async (bot, message, args) => {
       ":x: Cette commande est réservée au créateur du bot !"
     );
 
-  if (!message.member.hasPermission("MANAGE_GUILD")) {
-    return message.reply(
-      "Vous n'avez pas les permissions pour exécuter cette commande !"
-    );
-  }
-
   if (!args[0])
     return message.reply(
       "Veuillez préciser le nom d'une commande en **.js**. Exemple : <cmd [fichier.js]"
