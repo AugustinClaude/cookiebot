@@ -21,12 +21,8 @@ module.exports.run = async (bot, message, args) => {
     );
     message.delete(500);
   } catch (e) {
-    cmd.split(1900);
     message.reply(
       "Une erreur est survenue ! Sois le nom du fichier en .js est incorrect, sois le fichier est trop volumineux, sois la syntaxe est incorrecte !\n **Syntaxe :** <cmd [fichier.js]"
-    );
-    await message.channel.send(
-      `📥 Voici la nouvelle commande ${file} !\n\`\`\`js\n${cmd}\n\`\`\``
     );
   }
 };
