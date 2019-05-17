@@ -1,3 +1,5 @@
+const colors = require("colors");
+
 module.exports = async bot => {
   await wait(1000);
 
