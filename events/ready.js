@@ -1,3 +1,5 @@
+var colors = require("colors");
+
 module.exports = async bot => {
   await wait(1000);
 
@@ -12,6 +14,19 @@ module.exports = async bot => {
       .map(g => g)
       .join("\n - ")}`,
     "Prêt!"
+  );
+
+  colors.setTheme({
+    silly: "rainbow"
+  });
+
+  console.log(
+    `_________                __   .__        
+    \\_   ___ \\  ____   ____ |  | _|__| ____  
+    /    \\  \\/ /  _ \\ /  _ \\|  |/ /  |/ __ \\ 
+    \\     \\___(  <_> |  <_> )    <|  \\  ___/ 
+     \\______  /\\____/ \\____/|__|_ \\__|\\___  >
+            \\/                   \\/       \\/ `.silly
   );
 
   setInterval(async () => {
