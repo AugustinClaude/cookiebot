@@ -29,7 +29,7 @@ module.exports = async bot => {
             \\/                   \\/       \\/ `.silly
   );
 
-  setInterval(async () => {
+  /*setInterval(async () => {
     const statuslist = [
       `<help | ${bot.guilds.size} guilds`,
       `<help | ${bot.channels.size} channels`,
@@ -49,5 +49,17 @@ module.exports = async bot => {
     } catch (error) {
       console.error(error);
     }
-  }, 10000);
+  }, 10000);*/
+  try {
+    await bot.user.setPresence({
+      game: {
+        name: "<help",
+        type: "PLAYING"
+        //url: 'https://www.twitch.tv/spokloo'
+      },
+      status: "online"
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };

@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   if (message.author.id !== "302901933419790347") {
     return message.reply(
       ":x: Seul le créateur du bot peut utiliser cette commande !"
@@ -9,50 +10,39 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]) {
     return message.channel.send(
-      "Syntaxe incorrecte !\nUtilisez : <gamestatus [] | [] | []"
+      "Syntaxe incorrecte !\nUtilisez : <gamestatus [status]"
     );
   }
 
   if (args[0] === "default") {
-    setInterval(async () => {
-      const statuslist = [
-        `<help | ${bot.guilds.size} guilds`,
-        `<help | ${bot.channels.size} channels`,
-        `<help | ${bot.users.size} users`
-      ];
-      const random = Math.floor(Math.random() * statuslist.length);
-
-      try {
-        await bot.user.setPresence({
-          game: {
-            name: `${statuslist[random]}`,
-            type: "PLAYING"
-            //url: 'https://www.twitch.tv/spokloo'
-          },
-          status: "online"
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    }, 10000);
+    try {
+      await bot.user.setPresence({
+        game: {
+          name: "<help",
+          type: "PLAYING"
+          //url: 'https://www.twitch.tv/spokloo'
+        },
+        status: "online"
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    return message.channel.send(
+      "Le message de jeu a été changé en `default` avec succès !"
+    );
   } else {
     try {
       await bot.user.setPresence({
         game: {
-          name: `${args
-            .join(" ")
-            .split(" | ")
-            .slice(0, 1)}`,
-          type: `${args
-            .join(" ")
-            .split(" | ")
-            .slice(1)}`
+          name: `${args.join(" ")}`,
+          type: "PLAYING"
         },
-        status: `${args
-          .join(" ")
-          .split(" | ")
-          .slice(2)}`
+        status: "online"
       });
+
+      return message.channel.send(
+        `Le message de jeu a été changé en \`${args.join(" ")}\` avec succès !`
+      );
     } catch (e) {
       console.error(e);
       return message.channel.send(
