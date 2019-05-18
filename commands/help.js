@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "⚙️ Utile",
-      "``<help / <aide``\n``<invite / <support / <infobot / <ib``\n``<math / <maths / <calcul [expression]``\n``<gamestatus / <game [status]``\n``<exembed / <embedex``\n``<mp / <message / <msg [message]``\n``<random / <rdm``\n``<id``\n``<realname / <rname / <rn [@member]``\n``<avatar / <a [@member]``\n``<icon / <i``\n``<steam [name of a steam game]``\n``<todo / <remind / <reminder / <remindme [temps] [chose à se rappeler]``\n``<emoji / <emojis / <e``\n``<level / <lvl / <rank``\n``<leaderboard / <lead / <lb``\n``<ping``\n``<stats / <stat``\n``<userinfo / <ui``\n``<info / <infoserv / <is / <si``\n``<membercount / <mc``\n``<rolecount / <rcount / <rc [nom de rôle]``\n``<poll / <sondage [Question]``\n``<anime [recherche]``\n``<manga [recherche]``\n``<weather [Ville]``\n``<doc / <discord.js [recherche]``\n``<google / <ggl [recherche]``\n``<youtube / <yt [recherche]``"
+      "``<help / <aide``\n``<invite / <support / <infobot / <ib``\n``<math / <maths / <calcul [expression]``\n``<exembed / <embedex``\n``<mp / <message / <msg [message]``\n``<random / <rdm``\n``<id``\n``<realname / <rname / <rn [@member]``\n``<avatar / <a [@member]``\n``<icon / <i``\n``<steam [name of a steam game]``\n``<todo / <remind / <reminder / <remindme [temps] [chose à se rappeler]``\n``<emoji / <emojis / <e``\n``<level / <lvl / <rank``\n``<leaderboard / <lead / <lb``\n``<ping``\n``<stats / <stat``\n``<userinfo / <ui``\n``<info / <infoserv / <is / <si``\n``<membercount / <mc``\n``<rolecount / <rcount / <rc [nom de rôle]``\n``<poll / <sondage [Question]``\n``<anime [recherche]``\n``<manga [recherche]``\n``<weather [Ville]``\n``<doc / <discord.js [recherche]``\n``<google / <ggl [recherche]``\n``<youtube / <yt [recherche]``"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
@@ -79,7 +79,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "📛 Modération",
-      "``<prefix [new prefix]``\n``<kick [@member] [Raison]``\n``<ban [@member] [Raison]``\n``<unban [ID]``\n``<tempban / <tb [@member] [durée] [raison]``\n``<mute [@member] [Durée] [raison]``\n``<unmute / <um [@member]``\n``<report [@member] [Raison]``\n``<clear / <purge [Nb msg]``\n``<cmd / <command [fichier.js]``\n``<cleanlb / <purgelb``\n``<addrole / <arole [@member] [role]``\n``<removerole / <rrole [@member] [role]``\n``<raidmode / <rm (WIP)``\n``<shutdown / <sd / <stop / <reload``"
+      "``<prefix [new prefix]``\n``<kick [@member] [Raison]``\n``<ban [@member] [Raison]``\n``<unban [ID]``\n``<tempban / <tb [@member] [durée] [raison]``\n``<mute [@member] [Durée] [raison]``\n``<unmute / <um [@member]``\n``<report [@member] [Raison]``\n``<clear / <purge [Nb msg]``\n``<cmd / <command [fichier.js]``\n``<gamestatus / <game [status]``\n``<cleanlb / <purgelb``\n``<addrole / <arole [@member] [role]``\n``<removerole / <rrole [@member] [role]``\n``<raidmode / <rm (WIP)``\n``<shutdown / <sd / <stop / <reload``"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
