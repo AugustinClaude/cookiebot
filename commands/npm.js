@@ -1,5 +1,3 @@
-/* eslint-disable no-inner-declarations */
-const Command = require("../../modules/Command.js");
 const Discord = require("discord.js");
 const snek = require("snekfetch");
 const moment = require("moment");
