@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const { body } = await superagent.get("http://random.dog/woof.json");
 
   const dogEmbed = new Discord.RichEmbed()

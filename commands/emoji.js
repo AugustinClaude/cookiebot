@@ -1,6 +1,4 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.delete();
 
   const emojis = message.guild.emojis.map(e => e).join(" ");
@@ -9,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
   var noEmoji;
 
   if (emojisSize == 0)
-    var noEmoji = ":x: Ce serveur n'a pas d'emojis personnalisés !";
+    noEmoji = ":x: Ce serveur n'a pas d'emojis personnalisés !";
   else
-    var noEmoji = `📜 Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n\n**------------------------------------------------------**\n\n${emojis}\n\n**------------------------------------------------------**`;
+    noEmoji = `📜 Ce serveur à ${emojisSize} emojis personnalisés, les voici :\n\n**------------------------------------------------------**\n\n${emojis}\n\n**------------------------------------------------------**`;
 
   message.channel.send(`${noEmoji}`);
 };

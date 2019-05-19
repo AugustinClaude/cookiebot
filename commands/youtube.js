@@ -1,9 +1,9 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const args2 = message.content.split(" ");
   args2.shift();
-  message.reply("https://www.youtube.com/results?search_query=" + args2.join("+"));
+  message.reply(
+    "https://www.youtube.com/results?search_query=" + args2.join("+")
+  );
 };
 
 module.exports.conf = {

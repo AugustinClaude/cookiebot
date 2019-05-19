@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
-const google = require("google");
+//const google = require("google");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const args2 = message.content.split(" ");
   args2.shift();
   message.reply("https://www.google.fr/#q=" + args2.join("%20"));
@@ -38,7 +37,6 @@ module.exports.run = async (bot, message, args) => {
         }
 
     });*/
-
 };
 
 module.exports.conf = {

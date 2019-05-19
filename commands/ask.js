@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports.run = async (bot, message, args) => {
   if (!args[0]) return message.reply("🎱 Vous ne m'avez pas posé question !");
   if (args.join(" ") === "Quel est la réponse de la vie ?") {

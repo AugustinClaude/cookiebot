@@ -3,7 +3,7 @@ const { version } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.delete();
   const duration = moment
     .duration(bot.uptime)

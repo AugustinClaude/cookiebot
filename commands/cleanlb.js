@@ -1,6 +1,4 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.delete();
 
   if (!message.member.hasPermission("MANAGE_MESSAGES")) {

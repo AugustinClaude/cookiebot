@@ -1,4 +1,4 @@
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   if (!message.member.voiceChannel)
     return message.channel.send("You're not connect to a voice channel !");
 

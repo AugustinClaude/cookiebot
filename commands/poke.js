@@ -15,8 +15,8 @@ module.exports.run = async (bot, message, args) => {
     );
 
   if (args[0] === "random") {
-    var random = message.guild.members.random().user.username;
-  } else if (pokeUser) var random = pokeUser.user.username;
+    random = message.guild.members.random().user.username;
+  } else if (pokeUser) random = pokeUser.user.username;
 
   if (args[0] !== "random" && !pokeUser)
     return message.channel.send(

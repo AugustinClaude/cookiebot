@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const moment = require("moment");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.delete();
   moment.locale("fr");
 

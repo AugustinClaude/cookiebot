@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
   );
   var value;
 
-  if (!mentionned) var value = message.author;
-  else var value = message.mentions.users.first();
+  if (!mentionned) value = message.author;
+  else value = message.mentions.users.first();
 
   const avatarEmbed = new Discord.RichEmbed()
     .setTitle(`Avatar de **${value.username}**`)

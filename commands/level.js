@@ -1,6 +1,4 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.delete();
   const key = `${message.guild.id}-${message.author.id}`;
   return message.reply(

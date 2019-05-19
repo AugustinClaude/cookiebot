@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
 var randnum;
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   random();
 
   if (randnum == 1) {
@@ -17,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   function random(min, max) {
     min = Math.floor(1);
     max = Math.ceil(2);
-    randnum = Math.floor(Math.random() * (max - min +1) + min);
+    randnum = Math.floor(Math.random() * (max - min + 1) + min);
   }
 };
 

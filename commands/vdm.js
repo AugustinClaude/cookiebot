@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
 const request = require("request");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const regex = /<p class=\"block hidden-xs\">\n<a href=\".*\">\n(.*) VDM/;
   request("https://www.viedemerde.fr/aleatoire", (error, response, body) => {
     if (error) {

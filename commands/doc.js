@@ -1,9 +1,8 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const args2 = message.content.split(" ");
   args2.shift();
-  const doc = ("https://discord.js.org/#/docs/main/stable/search?q=" + args2.join("%20"));
+  const doc =
+    "https://discord.js.org/#/docs/main/stable/search?q=" + args2.join("%20");
   message.reply(doc);
 };
 

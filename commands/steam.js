@@ -17,19 +17,19 @@ exports.run = (bot, message, args) => {
   provider.search(game).then(result => {
     provider.detail(result[0].id, "french", "fr").then(results => {
       var initial_price = `${results.priceData.initialPrice}€`;
-      if (initial_price == "0.0€") var initial_price = "Free";
+      if (initial_price == "0.0€") initial_price = "Free";
 
       var final_price = `${results.priceData.finalPrice}€`;
-      if (final_price == "0.0€") var final_price = "Free";
+      if (final_price == "0.0€") final_price = "Free";
 
       if (final_price !== initial_price)
-        var initial_price = `~~${results.priceData.initialPrice}€~~`;
+        initial_price = `~~${results.priceData.initialPrice}€~~`;
 
-      if (final_price == initial_price) var final_price = ":x:";
+      if (final_price == initial_price) final_price = ":x:";
 
       var metacritic_score = `${results.otherData.metacriticScore}%`;
       if (metacritic_score == "null%")
-        var metacritic_score = ":x: No Metacritic Score";
+        metacritic_score = ":x: No Metacritic Score";
 
       const embed = new Discord.RichEmbed()
         .setAuthor("Steam Store", steampng)
@@ -53,13 +53,18 @@ exports.run = (bot, message, args) => {
         .addField("🚀 Developer", results.otherData.developer, true)
         .addField("📜 Publisher", results.otherData.publisher, true)
         .addBlankField()
-        .addField("🔗 Link", `https://store.steampowered.com/app/${result[0].id}`, true)
+        .addField(
+          "🔗 Link",
+          `https://store.steampowered.com/app/${result[0].id}`,
+          true
+        )
         .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL);
 
       message.channel.send(embed).catch(e => {
         message.reply(
           "An error has occured :\n `" + game + "` was not found !"
         );
+        console.error(e);
       });
     });
   });

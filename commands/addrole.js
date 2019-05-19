@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports.run = async (bot, message, args) => {
   if (!message.member.hasPermission("MANAGE_ROLES")) {
     return message.reply(
@@ -29,9 +27,10 @@ module.exports.run = async (bot, message, args) => {
   /*if (mentionned.hasRole(r => r.name === role))
     return message.channel.send(
       `${mentionned} a déjà ce rôle, on ne peux pas le lui ajouter`
-    );*/ 
-  else {
-    const roleChannel = message.guild.channels.find(c => c.name === "logs" || c.name === "👮rapport");
+    );*/ else {
+    const roleChannel = message.guild.channels.find(
+      c => c.name === "logs" || c.name === "👮rapport"
+    );
 
     if (!roleChannel) {
       message.channel

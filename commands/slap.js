@@ -15,8 +15,8 @@ module.exports.run = async (bot, message, args) => {
     );
 
   if (args[0] === "random") {
-    var random = message.guild.members.random().user.username;
-  } else if (slapUser) var random = slapUser.user.username;
+    random = message.guild.members.random().user.username;
+  } else if (slapUser) random = slapUser.user.username;
 
   if (args[0] !== "random" && !slapUser)
     return message.channel.send(

@@ -1,10 +1,8 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   const args2 = message.content.split(" ");
   args2.shift();
-  const manga = ("https://kitsu.io/manga?sort=recent&text=" + args2.join("%20"));
-    
+  const manga = "https://kitsu.io/manga?sort=recent&text=" + args2.join("%20");
+
   message.reply(manga);
 };
 

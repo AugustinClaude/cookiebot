@@ -1,6 +1,4 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message) => {
   message.channel.send("**Je fume**").then(async msg => {
     setTimeout(() => {
       msg.edit("🚬");
@@ -26,7 +24,9 @@ module.exports.run = async (bot, message, args) => {
     setTimeout(() => {
       msg.edit("J'ai terminé ma clope ;)");
     }, 4000);
-    console.log(`• ${message.author.username} à exécuté la commande : "<smoke"`);
+    console.log(
+      `• ${message.author.username} à exécuté la commande : "<smoke"`
+    );
   });
 };
 
