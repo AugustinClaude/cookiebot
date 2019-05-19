@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   message.delete();
   const member = message.guild.members.get("302901933419790347");
-  if (!args.length < 0) return message.reply("vous devez écrire un message !");
+  if (args.length < 0) return message.reply("vous devez écrire un message !");
 
   const embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
