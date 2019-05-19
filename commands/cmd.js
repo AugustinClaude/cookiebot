@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   if (message.author.id !== "302901933419790347")
     return message.channel.send(
       ":x: Cette commande est réservée au créateur du bot !"
