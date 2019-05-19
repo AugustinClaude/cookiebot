@@ -27,7 +27,7 @@ module.exports = (bot, message) => {
 
   if (
     message.channel.type === "dm" &&
-    message.member.id !== "302901933419790347"
+    message.author.id !== "302901933419790347"
   ) {
     var errorEmbed = new Discord.RichEmbed()
       .setColor("#AD0003")
