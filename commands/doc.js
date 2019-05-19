@@ -9,7 +9,7 @@ module.exports.run = async (bot, message) => {
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["discord.js"],
+  aliases: ["discord.js", "discjs"],
   permLevel: 0
 };
 
