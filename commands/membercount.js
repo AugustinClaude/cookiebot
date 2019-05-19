@@ -51,7 +51,7 @@ module.exports.run = async (bot, message) => {
   var noRole;
   var hasRoles = 0;
   message.guild.members.forEach(member => {
-    if (member.roles.size >= 2) hasRoles + 1;
+    if (member.roles.size > 1) hasRoles + 1;
   });
   noRole = nbMember - hasRoles;
 
