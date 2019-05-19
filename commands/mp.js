@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setTimestamp();
   member.send(embed);
+  message.author.send(embed);
 
   message.reply("votre message a bien été envoyé à mon créateur !");
 };

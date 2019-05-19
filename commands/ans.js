@@ -3,12 +3,17 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   message.delete();
   const member = message.guild.members.get(args[0]);
+
+  if (message.author.id !== "302901933419790347")
+    return message.channel.send(
+      ":x: Seul le créateur du bot peut utiliser cette commande !"
+    );
   if (!args[0]) return message.reply("vous devez préciser une ID !");
   if (isNaN(args[0])) return message.reply("l'ID est invalide. ");
 
   const embed = new Discord.RichEmbed()
-    .setAuthor(member.username, member.displayAvatarURL)
-    .setTitle(`${member.tag} (ID : ${member})`)
+    .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .setTitle(`${message.author.tag} (ID : ${message.author.id})`)
     .setColor("RANDOM")
     .setDescription(args.join(" ").slice(19))
     .setFooter(
@@ -19,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
 
   try {
     await member.send(embed);
-    message.author.send("Le message a bien été envoyé au correspondant !");
+    message.author.send(embed);
   } catch (e) {
     message.author.send(
       "L'utilisateur a désactivé ses messages privés, le message ne lui a donc pas été envoyé."

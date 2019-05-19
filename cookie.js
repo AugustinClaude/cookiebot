@@ -22,6 +22,11 @@ bot.on("message", async message => {
   if (command === "ans") {
     message.delete();
     const member = message.guild.members.get(args[0]);
+
+    if (message.author.id !== "302901933419790347")
+      return message.channel.send(
+        ":x: Seul le créateur du bot peut utiliser cette commande !"
+      );
     if (!args[0]) return message.reply("vous devez préciser une ID !");
     if (isNaN(args[0])) return message.reply("l'ID est invalide. ");
 
@@ -38,7 +43,7 @@ bot.on("message", async message => {
 
     try {
       await member.send(embed);
-      message.author.send("Le message a bien été envoyé au correspondant !");
+      message.author.send(embed);
     } catch (e) {
       message.author.send(
         "L'utilisateur a désactivé ses messages privés, le message ne lui a donc pas été envoyé."
