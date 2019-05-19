@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports.run = async (bot, message, args) => {
   message.delete();
   if (message.author.id !== "302901933419790347") {
@@ -27,9 +25,9 @@ module.exports.run = async (bot, message, args) => {
     } catch (error) {
       console.error(error);
     }
-    return message.channel.send(
-      "Le message de jeu a été changé en `default` avec succès !"
-    );
+    return message.channel
+      .send("Le message de jeu a été changé en `default` avec succès !")
+      .then(msg => msg.delete(5000));
   } else {
     try {
       await bot.user.setPresence({
@@ -40,9 +38,13 @@ module.exports.run = async (bot, message, args) => {
         status: "online"
       });
 
-      return message.channel.send(
-        `Le message de jeu a été changé en \`${args.join(" ")}\` avec succès !`
-      );
+      return message.channel
+        .send(
+          `Le message de jeu a été changé en \`${args.join(
+            " "
+          )}\` avec succès !`
+        )
+        .then(msg => msg.delete(5000));
     } catch (e) {
       console.error(e);
       return message.channel.send(
