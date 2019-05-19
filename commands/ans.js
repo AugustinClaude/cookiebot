@@ -8,13 +8,16 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send(
       ":x: Seul le créateur du bot peut utiliser cette commande !"
     );
-  if (!args[0]) return message.reply("vous devez préciser une ID !");
+  if (!args[0])
+    return message.reply(
+      "vous devez préciser une ID ! Syntaxe : <ans [id] [message]"
+    );
   if (isNaN(args[0])) return message.reply("l'ID est invalide. ");
 
   const embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setTitle(`${message.author.tag} (ID : ${message.author.id})`)
-    .setColor("RANDOM")
+    .setColor("#0099ff")
     .setDescription(args.join(" ").slice(19))
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
