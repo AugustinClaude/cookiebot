@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(args.join(" "))
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     )
     .setTimestamp();
   member.send(embed);

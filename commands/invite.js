@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     )
     .setTimestamp(bot.user.createdAt)
     .setThumbnail(bot.user.displayAvatarURL);

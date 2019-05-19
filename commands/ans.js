@@ -7,13 +7,13 @@ module.exports.run = async (bot, message, args) => {
   if (isNaN(args[0])) return message.reply("l'ID est invalide. ");
 
   const embed = new Discord.RichEmbed()
-    .setAuthor(message.author.username, message.author.displayAvatarURL)
-    .setTitle(`${message.author.tag} (ID : ${message.author.id})`)
+    .setAuthor(member.username, member.displayAvatarURL)
+    .setTitle(`${member.tag} (ID : ${member})`)
     .setColor("RANDOM")
     .setDescription(args.join(" ").slice(19))
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     )
     .setTimestamp();
 

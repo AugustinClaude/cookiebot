@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("📛 Modération", "``<help mod``", true)
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   var useEmbed = new Discord.RichEmbed()
@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   var funEmbed = new Discord.RichEmbed()
@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   var musicEmbed = new Discord.RichEmbed()
@@ -57,7 +57,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   var imageEmbed = new Discord.RichEmbed()
@@ -70,7 +70,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   var modEmbed = new Discord.RichEmbed()
@@ -83,7 +83,7 @@ module.exports.run = async (bot, message, args) => {
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/C7cjSEe.png"
+      "https://i.imgur.com/UP15eCd.png"
     );
 
   if (args[0] === "here") {
