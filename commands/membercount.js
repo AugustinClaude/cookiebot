@@ -74,7 +74,7 @@ module.exports.run = async (bot, message) => {
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
-  const servEmbed = new Discord.RichEmbed()
+  const servEmbed = new Discord.MessageEmbed()
     .setAuthor(servName, servIcon)
     .setColor("#8815DF")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
