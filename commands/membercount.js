@@ -55,12 +55,13 @@ module.exports.run = async (bot, message) => {
     if (member.roles.size >= 2) {
       hasRoles = true;
       roles1 = roles1 + 1;
-      console.log(roles1 + hasRoles);
+      console.log("FIRST" + roles1);
+      console.log("SEC" + hasRoles);
     } else hasRoles = false;
   });
   if (hasRoles == true) {
     noRole = nbMember - roles1;
-    console.log(noRole);
+    console.log("THIRD" + noRole);
   }
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
