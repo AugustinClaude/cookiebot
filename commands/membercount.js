@@ -48,10 +48,10 @@ module.exports.run = async (bot, message) => {
       everyoneCount + 1;
   });
   const noRole = message.guild.roles.get(message.guild.id).members;*/
-  var noRole;
-  var hasRoles = false;
-  var roles1 = 0;
-  message.guild.members.forEach(member => {
+  //var noRole;
+  //var hasRoles = false;
+  //var roles1 = 0;
+  /*message.guild.members.forEach(member => {
     if (member.roles.size >= 2) {
       hasRoles = true;
       roles1 = roles1 + 1;
@@ -62,7 +62,14 @@ module.exports.run = async (bot, message) => {
   if (hasRoles == true) {
     noRole = nbMember - roles1;
     console.log("THIRD" + noRole);
+  }*/
+
+  for (let member in nbMember) {
+    if (member.roles.size >= 2) {
+      member++;
+    }
   }
+  const noRole = nbMember - member;
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
