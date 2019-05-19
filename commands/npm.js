@@ -5,6 +5,7 @@ require("moment-duration-format");
 
 module.exports.run = async (bot, message, args) => {
   moment.locale("fr");
+  message.delete();
 
   if (!args[0]) return message.channel.send("Vous devez indiquer un module !");
   const query = args.join(" ");
