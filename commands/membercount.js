@@ -52,13 +52,16 @@ module.exports.run = async (bot, message) => {
   var hasRoles = false;
   var roles1 = 0;
   message.guild.members.forEach(member => {
+    console.log();
     if (member.roles.size >= 2) {
       hasRoles = true;
       roles1 + 1;
+      console.log();
     } else hasRoles = false;
   });
   if (hasRoles == true) {
     noRole = nbMember - roles1;
+    console.log();
   }
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
