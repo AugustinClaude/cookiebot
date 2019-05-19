@@ -16,9 +16,15 @@ module.exports.run = async (bot, message, args) => {
       "https://i.imgur.com/C7cjSEe.png"
     )
     .setTimestamp();
-  member.send(embed);
 
-  message.reply("votre message a bien été envoyé à mon créateur !");
+  try {
+    await member.send(embed);
+    message.author.send("Le message a bien été envoyé au correspondant !");
+  } catch (e) {
+    message.author.send(
+      "L'utilisateur a désactivé ses messages privés, le message ne lui a donc pas été envoyé."
+    );
+  }
 };
 
 module.exports.conf = {
