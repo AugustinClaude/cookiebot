@@ -51,7 +51,7 @@ module.exports.run = async (bot, message) => {
   var noRole;
   var hasRoles = false;
   var roles1 = 0;
-  message.guild.members.forEach(member => {
+  message.guild.members.each(member => {
     if (member.roles.size > 1) {
       hasRoles = true;
       roles1 = roles1 + 1;
@@ -63,6 +63,7 @@ module.exports.run = async (bot, message) => {
     noRole = nbMember - roles1;
     console.log("THIRD" + noRole);
   }
+
   /*let member;
   for (member in nbMember) {
     if (member.roles.size >= 2) {
@@ -79,7 +80,11 @@ module.exports.run = async (bot, message) => {
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setTimestamp()
     .addField("🥝 Membres", nbMember, true)
-    .addField("👻 Membres sans rôle(s)", `${noRole} | Bugué.`, true)
+    .addField(
+      "👻 Membres sans rôle(s)",
+      `${noRole} | Bugué si + de 64 membres`,
+      true
+    )
     .addBlankField()
     .addField("😄 Humains", humains, true)
     .addField("🤖 Bots", bots, true)
