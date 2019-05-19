@@ -25,10 +25,7 @@ module.exports = (bot, message) => {
 
   if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 
-  if (
-    message.channel.type === "dm" &&
-    message.author.id !== "302901933419790347"
-  ) {
+  if (message.channel.type === "dm") {
     var errorEmbed = new Discord.RichEmbed()
       .setColor("#AD0003")
       .setDescription(
