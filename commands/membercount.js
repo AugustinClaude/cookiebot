@@ -63,8 +63,8 @@ module.exports.run = async (bot, message) => {
     noRole = nbMember - roles1;
     console.log("THIRD" + noRole);
   }*/
-
-  for (let member in nbMember) {
+  let member;
+  for (member in nbMember) {
     if (member.roles.size >= 2) {
       member++;
     }
