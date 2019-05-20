@@ -52,6 +52,7 @@ module.exports.run = async (bot, message) => {
   var hasRoles = false;
   var roles1 = 0;
   message.guild.members.forEach(member => {
+    // A REMPLACER PAR .each EN V12
     if (member.roles.size > 1) {
       hasRoles = true;
       roles1 = roles1 + 1;
