@@ -51,7 +51,7 @@ module.exports.run = async (bot, message) => {
   var noRole;
   var hasRoles = false;
   var roles1 = 0;
-  message.guild.members.each(member => {
+  message.guild.members.forEach(member => {
     if (member.roles.size > 1) {
       hasRoles = true;
       roles1 = roles1 + 1;
@@ -74,7 +74,7 @@ module.exports.run = async (bot, message) => {
 
   if (botoffline == 0) botoffline = ":x: Aucun bots offline";
 
-  const servEmbed = new Discord.MessageEmbed()
+  const servEmbed = new Discord.RichEmbed()
     .setAuthor(servName, servIcon)
     .setColor("#8815DF")
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
