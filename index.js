@@ -288,10 +288,14 @@ bot.on("guildMemberRemove", async member => {
 
     channel.send(attachment);
   } catch (e) {
-    channel.send(
-      `Goodbye <@${member.id}> ! You can come back in \`${
-        member.guild.name
-      }\` at anytime !`
-    );
+    try {
+      channel.send(
+        `Goodbye <@${member.id}> ! You can come back in \`${
+          member.guild.name
+        }\` at anytime !`
+      );
+    } catch (e) {
+      return;
+    }
   }
 });

@@ -20,7 +20,11 @@ module.exports = bot => {
       );
     }
 
-    if (message.author.id === message.guild.owner.id) permlvl = 4;
+    if (
+      message.author.id === message.guild.owner.id &&
+      message.guild.id !== "264445053596991498"
+    )
+      permlvl = 4;
 
     return permlvl;
   };
