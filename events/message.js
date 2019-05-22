@@ -64,7 +64,7 @@ module.exports = (bot, message) => {
   //MESSAGES PERSONNALISES
   if (message.content === "feur".toLowerCase())
     return message.channel.send("PAS DRÔLE <:9846_xD:518893011695042590>");
-  if (message.content === "tg <@488022471048691713>")
+  if (message.content === "tg <@488022471048691713>".toLowerCase())
     return message.channel.send(
       "Nan mais oh ! La politesse ! C'est pas bien, t'auras pas de cadeaux à Noël !"
     );
@@ -72,7 +72,7 @@ module.exports = (bot, message) => {
     return message.channel.send("Kwa ?");
   if (
     message.content ===
-    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?"
+    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?".toLowerCase()
   )
     return message.channel.send(
       "Je l'aime pas avec son air supérieur là ! Sal mosh :("
