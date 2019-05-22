@@ -2,7 +2,7 @@ module.exports = bot => {
   bot.permlevel = message => {
     let permlvl = 0;
 
-    if (message.author.id === process.env.OWNER) return 10;
+    //if (message.author.id === process.env.OWNER) return 10;
     if (!message.guild || !message.member) return 0;
 
     try {
@@ -20,7 +20,7 @@ module.exports = bot => {
       );
     }
 
-    if (message.author.id === message.guild.owner.id) permlvl = 4;
+    //if (message.author.id === message.guild.owner.id) permlvl = 4;
 
     return permlvl;
   };
