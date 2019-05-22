@@ -62,12 +62,6 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "feur".toLowerCase())
-    return message.channel.send("PAS DRÔLE <:9846_xD:518893011695042590>");
-  if (message.content === "tg <@488022471048691713>".toLowerCase())
-    return message.channel.send(
-      "Nan mais oh ! La politesse ! C'est pas bien, t'auras pas de cadeaux à Noël !"
-    );
   if (message.content === "<@488022471048691713>")
     return message.channel.send("Kwa ?");
   if (
