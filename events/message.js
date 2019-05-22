@@ -62,7 +62,7 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "feur")
+  if (message.content === "feur".toLowerCase())
     return message.channel.send("PAS DRÔLE <:9846_xD:518893011695042590>");
   if (message.content === "tg <@488022471048691713>")
     return message.channel.send(
