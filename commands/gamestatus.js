@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]) {
     return message.channel.send(
-      "Syntaxe incorrecte !\nUtilisez : <gamestatus [status]"
+      "**Syntaxe incorrecte !**\n__Utilisez :__ <gamestatus [status]"
     );
   }
 
