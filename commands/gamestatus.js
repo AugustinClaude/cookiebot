@@ -33,10 +33,14 @@ module.exports.run = async (bot, message, args) => {
   } else {
     if (args[0] === "true") {
       game = "<help | ";
-      return;
+      return message.channel.send(
+        "Le \"<help | \" devant le status de jeu a été activé !"
+      );
     } else if (args[0] === "false") {
       game = "";
-      return;
+      return message.channel.send(
+        "Le \"<help | \" devant le status de jeu a été désactivé !"
+      );
     }
 
     try {
