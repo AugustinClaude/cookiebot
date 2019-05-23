@@ -23,7 +23,7 @@ module.exports = (bot, message) => {
     }
   }*/
 
-  if (message.content.indexOf(process.env.PREFIX) || message.content.indexOf(process.env.PREF_MENTION) !== 0) return;
+  if (message.content.indexOf(process.env.PREFIX) !== 0) return;
 
   if (message.channel.type === "dm") {
     var errorEmbed = new Discord.RichEmbed()
@@ -36,7 +36,7 @@ module.exports = (bot, message) => {
   }
 
   const args = message.content
-    .slice(process.env.PREFIX.length || process.env.PREF_MENTION.length)
+    .slice(process.env.PREFIX.length)
     .trim()
     .split(/ +/g);
   const command = args.shift().toLowerCase();
