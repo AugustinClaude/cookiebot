@@ -29,27 +29,37 @@ module.exports.run = async (bot, message, args) => {
       .send("Le message de jeu a été changé en `default` avec succès !")
       .then(msg => msg.delete(5000));
   } else {
-    try {
-      await bot.user.setPresence({
-        game: {
-          name: `${args.join(" ")}`,
-          type: "PLAYING"
-        },
-        status: "online"
-      });
+    var game;
+    const state = true;
+    if (args[0] === "true" || state == true) {
+      state = true;
+      game = "<help | ";
+    } else if (args[0] === "false") {
+      state = false;
+      game = "";
+    } else {
+      try {
+        await bot.user.setPresence({
+          game: {
+            name: `${game}${args.join(" ")}`,
+            type: "PLAYING"
+          },
+          status: "online"
+        });
 
-      return message.channel
-        .send(
-          `Le message de jeu a été changé en \`${args.join(
-            " "
-          )}\` avec succès !`
-        )
-        .then(msg => msg.delete(5000));
-    } catch (e) {
-      console.error(e);
-      return message.channel.send(
-        "Une erreur s'est produite, veuillez réessayer !"
-      );
+        return message.channel
+          .send(
+            `Le message de jeu a été changé en \`${game}${args.join(
+              " "
+            )}\` avec succès !`
+          )
+          .then(msg => msg.delete(5000));
+      } catch (e) {
+        console.error(e);
+        return message.channel.send(
+          "Une erreur s'est produite, veuillez réessayer !"
+        );
+      }
     }
   }
 };
