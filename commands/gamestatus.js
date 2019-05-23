@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
       .send("Le message de jeu a été changé en `default` avec succès !")
       .then(msg => msg.delete(5000));
   } else {
-    var game;
+    var game = "<help | ";
     if (args[0] === "true") {
       game = "<help | ";
       return;
