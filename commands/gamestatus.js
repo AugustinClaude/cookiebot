@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
       .then(msg => msg.delete(5000));
   } else {
     var game;
-    const state = true;
+    var state = true;
     if (args[0] === "true" || state == true) {
       state = true;
       game = "<help | ";
