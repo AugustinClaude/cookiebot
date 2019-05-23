@@ -35,10 +35,12 @@ module.exports.run = async (bot, message, args) => {
     if (args[0] === "true" || state == true) {
       state = true;
       game = "<help | ";
+      return;
       console.log(state + " " + game);
-    } else if (args[0] === "false") {
+    } else if (args[0] === "false" || state == false) {
       state = false;
       game = "";
+      return;
       console.log(state + " ok " + game);
     }
 
