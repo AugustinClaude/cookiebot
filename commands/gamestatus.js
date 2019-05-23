@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]) {
     return message.channel.send(
-      "**Syntaxe incorrecte !**\n__Utilisez :__ **<gamestatus [status]** ou **<gamestatus default** pour remettre le status de base. Vous pouvez aussi mettre **<gamestatus [true / false]** pour activer ou désactiver le **\"<help | \"**"
+      "__**Syntaxe incorrecte !**__\n\n__Utilisez :__ **<gamestatus [status]** ou **<gamestatus default** pour remettre le status de base. Vous pouvez aussi mettre **<gamestatus [true / false]** pour activer ou désactiver le **\"<help | \"**"
     );
   }
 
