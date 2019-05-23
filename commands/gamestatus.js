@@ -31,12 +31,15 @@ module.exports.run = async (bot, message, args) => {
   } else {
     var game;
     var state = true;
+    console.log(state);
     if (args[0] === "true" || state == true) {
       state = true;
       game = "<help | ";
+      console.log(state + " " + game);
     } else if (args[0] === "false") {
       state = false;
       game = "";
+      console.log(state + " ok " + game);
     } else {
       try {
         await bot.user.setPresence({
