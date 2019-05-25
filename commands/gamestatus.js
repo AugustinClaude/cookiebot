@@ -2,6 +2,8 @@ var game = "<help | ";
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
+  var status = `${args.join(" ")}`;
+
   if (message.author.id !== "302901933419790347") {
     return message.reply(
       ":x: Seul le créateur du bot peut utiliser cette commande !"
@@ -41,12 +43,18 @@ module.exports.run = async (bot, message, args) => {
       return message.channel.send(
         "Le \"<help | \" devant le status de jeu a été désactivé !"
       );
+    } else if (args[0] === "users") {
+      status = `${bot.users.size}`;
+    } else if (args[0] === "channels") {
+      status = `${bot.channels.size}`;
+    } else if (args[0] === "guilds") {
+      status = `${bot.guilds.size}`;
     }
 
     try {
       await bot.user.setPresence({
         game: {
-          name: `${game}${args.join(" ")}`,
+          name: `${game}${status}`,
           type: "PLAYING"
         },
         status: "online"
@@ -54,9 +62,7 @@ module.exports.run = async (bot, message, args) => {
 
       return message.channel
         .send(
-          `Le message de jeu a été changé en \`${game}${args.join(
-            " "
-          )}\` avec succès !`
+          `Le message de jeu a été changé en \`${game}${status}\` avec succès !`
         )
         .then(msg => msg.delete(5000));
     } catch (e) {
