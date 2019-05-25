@@ -36,12 +36,12 @@ module.exports.run = async (bot, message, args) => {
     if (args[0] === "true") {
       game = "<help | ";
       return message.channel.send(
-        "Le \"<help | \" devant le status de jeu a été activé !"
+        "Le `\"<help | \"` devant le status de jeu a été activé !"
       );
     } else if (args[0] === "false") {
       game = "";
       return message.channel.send(
-        "Le \"<help | \" devant le status de jeu a été désactivé !"
+        "Le `\"<help | \"` devant le status de jeu a été désactivé !"
       );
     } else if (args[0] === "users") {
       status = `${bot.users.size}`;
