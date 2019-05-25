@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]) {
     return message.channel.send(
-      "__**Syntaxe incorrecte !**__\n\n__Utilisez :__ **<gamestatus [status]** ou **<gamestatus default** pour remettre le status de base. Vous pouvez aussi mettre **<gamestatus [true / false]** pour activer ou désactiver le **\"<help | \"** devant le status"
+      "__**Syntaxe incorrecte !**__\n\n__Utilisez :__ **<gamestatus [status]** ou **<gamestatus default** pour remettre le status de base. Vous pouvez aussi mettre **<gamestatus [true / false]** pour activer ou désactiver le **\"<help | \"** devant le status. Il y a aussi la possibilité de mettre le nombre d'utilisateurs / de channels / et de guilds avec **<gamestatus [users / channels / guilds]**"
     );
   }
 
