@@ -44,11 +44,11 @@ module.exports.run = async (bot, message, args) => {
         .send("Le `\"<help | \"` devant le status de jeu a été désactivé !")
         .then(msg => msg.delete(5000));
     } else if (args[0] === "users") {
-      status = `${bot.users.size}`;
+      status = `${bot.users.size} users`;
     } else if (args[0] === "channels") {
-      status = `${bot.channels.size}`;
+      status = `${bot.channels.size} channels`;
     } else if (args[0] === "guilds") {
-      status = `${bot.guilds.size}`;
+      status = `${bot.guilds.size} guilds`;
     }
 
     try {
