@@ -11,8 +11,8 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#ff6600")
     .setDescription(args.join(" "))
     .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/UP15eCd.png"
+      `Message envoyé à ${member.user.tag}`,
+      `${member.user.displayAvatarURL}`
     )
     .setTimestamp();
   member.send(embed);
