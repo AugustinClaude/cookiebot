@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   message.delete();
   const member = message.guild.members.get(args[0]);
+  console.log(member);
 
   if (message.author.id !== "302901933419790347")
     return message.channel.send(
@@ -20,8 +21,8 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#0099ff")
     .setDescription(args.join(" ").slice(19))
     .setFooter(
-      "Ce bot a été créé par Spokloo#7791",
-      "https://i.imgur.com/UP15eCd.png"
+      `Message envoyé à ${member.user.tag}`,
+      `${member.user.displayAvatarURL}`
     )
     .setTimestamp();
 
