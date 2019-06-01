@@ -11,8 +11,7 @@ module.exports.run = async (bot, message, args) => {
     try {
       message.reply(`${vdm[1]} VDM.`);
     } catch (e) {
-      const cons = console.error(e);
-      message.channel.send(cons);
+      message.channel.send(":x: Une erreur s'est produite !");
     }
   });
 };
