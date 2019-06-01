@@ -5,7 +5,7 @@ module.exports = async bot => {
 
   const member = bot.users.get("302901933419790347");
   member.send(
-    "Une cause non connue m'a fait redémarrer. Je suis maintenant re-opérationnel !"
+    "🛠 Une cause non connue m'a fait redémarrer. Je suis maintenant re-opérationnel ! 📝"
   );
 
   bot.log(
