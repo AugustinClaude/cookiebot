@@ -3,7 +3,7 @@ var colors = require("colors");
 module.exports = async bot => {
   await wait(1000);
 
-  const member = message.guild.members.get("302901933419790347");
+  const member = bot.users.get("302901933419790347");
   member.send(
     "Une cause non connue m'a fait redémarrer. Je suis maintenant re-opérationnel !"
   );
