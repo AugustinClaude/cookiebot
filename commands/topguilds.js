@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  const filtered = bot.guilds.array();
+  const filtered = bot.guilds.fetchAllMembers.array();
   console.log(filtered + "\n----------------------\n");
   const sorted = filtered.sort((a, b) => a.guilds - b.guilds);
   console.log(sorted + "\n----------------------\n");
