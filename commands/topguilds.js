@@ -3,13 +3,12 @@ const arraySort = require("array-sort");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  let serv = await bot.guilds.fetchMembers();
-  serv = serv.array();
+
+  const filtered = bot.guilds.array();
+  console.log(filtered + "\n----------------------\n");
+  const sorted = filtered.sort((a, b) => a.points - b.points);
   const arraySorT = arraySort(serv, "users", { reverse: true });
   console.log(arraySorT);
-  //const filtered = bot.guilds.fetchAllMembers.array();
-  console.log(serv + "\n----------------------\n");
-  const sorted = serv.sort((a, b) => a.guilds - b.guilds);
   console.log(sorted + "\n----------------------\n");
   const top10 = sorted.splice(0, 10).reverse();
   console.log(top10 + "\n----------------------\n");
