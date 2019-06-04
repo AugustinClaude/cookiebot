@@ -1,10 +1,15 @@
 const Discord = require("discord.js");
+const arraySort = require("array-sort");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  const filtered = bot.guilds.fetchAllMembers.array();
-  console.log(filtered + "\n----------------------\n");
-  const sorted = filtered.sort((a, b) => a.guilds - b.guilds);
+  let serv = await bot.guilds.fetchMembers();
+  serv = serv.array();
+  const arraySorT = arraySort(serv, "users", { reverse: true });
+  console.log(arraySorT);
+  //const filtered = bot.guilds.fetchAllMembers.array();
+  console.log(serv + "\n----------------------\n");
+  const sorted = serv.sort((a, b) => a.guilds - b.guilds);
   console.log(sorted + "\n----------------------\n");
   const top10 = sorted.splice(0, 10).reverse();
   console.log(top10 + "\n----------------------\n");
