@@ -21,12 +21,9 @@ bot.on("message", async message => {
 
   if (command === "top") {
     message.delete();
-    const filtered = bot.guilds
-      .filter(p => p.guild == bot.guilds.id)
-      .array()
-      .map(g => g);
+    const filtered = bot.guilds.array();
     console.log(filtered + "\n----------------------\n");
-    const sorted = filtered.sort((a, b) => a.points - b.points);
+    const sorted = filtered.sort((a, b) => a.guilds - b.guilds);
     console.log(sorted + "\n----------------------\n");
     const top10 = sorted.splice(0, 10).reverse();
     console.log(top10 + "\n----------------------\n");
