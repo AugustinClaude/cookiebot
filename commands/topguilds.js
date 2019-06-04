@@ -2,7 +2,10 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  const filtered = bot.guilds.array();
+  const filtered = bot.guilds
+    .filter(p => p.guild == bot.guilds.id)
+    .array()
+    .map(g => g);
   console.log(filtered + "\n----------------------\n");
   const sorted = filtered.sort((a, b) => a.points - b.points);
   console.log(sorted + "\n----------------------\n");
@@ -18,8 +21,8 @@ module.exports.run = async (bot, message) => {
     .setColor("RANDOM");
   for (const data of top10) {
     embed.addField(
-      bot.guilds.get(data.user),
-      `${data.guild} => **${data.users} users**`
+      bot.guilds.get(data.guild),
+      `**${data.channels}** channels ║ **${data.users}** users`
     );
   }
   return message.channel.send(embed);

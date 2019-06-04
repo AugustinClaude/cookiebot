@@ -29,7 +29,7 @@
     "moment-timezone": "^0.5.21",
     "ms": "^2.1.1",
     "myanimelists": "^1.0.1",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.19.1",
     "opus": "0.0.0",
     "opusscript": "0.0.6",
     "random-anime-wallpapers": "^1.1.0",
