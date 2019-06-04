@@ -7,8 +7,6 @@ module.exports.run = async (bot, message) => {
   const filtered = bot.guilds.array();
   console.log(filtered + "\n----------------------\n");
   const sorted = filtered.sort((a, b) => a.points - b.points);
-  const arraySorT = arraySort(filtered, "users", { reverse: true });
-  console.log(arraySorT);
   console.log(sorted + "\n----------------------\n");
   const top10 = sorted.splice(0, 10).reverse();
   console.log(top10 + "\n----------------------\n");
