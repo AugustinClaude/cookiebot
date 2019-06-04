@@ -4,7 +4,7 @@ const arraySort = require("array-sort");
 module.exports.run = async (bot, message) => {
   message.delete();
   bot.guilds.forEach(guild => {
-    console.log(guild.memberCount());
+    console.log(guild.memberCount);
   });
 
   /*const filtered = bot.guilds.array();
