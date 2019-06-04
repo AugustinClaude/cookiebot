@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
-const bot = new Discord.Client();
+const bot = new Discord.Client({fetchAllMembers: true});
 require("dotenv").config();
 
 const Canvas = require("canvas");
