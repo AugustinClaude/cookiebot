@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  const filtered = bot.guilds.array().map(g => g);
-  console.log(filtered + "OK DAKO");
+  const filtered = bot.guilds.filter(p => p.guild === message.guild.id).array();
+  console.log(filtered + "\n----------------------\n");
   const sorted = filtered.sort((a, b) => a.points - b.points);
-  console.log(sorted + "OK DAKO");
+  console.log(sorted + "\n----------------------\n");
   const top10 = sorted.splice(0, 10).reverse();
-  console.log(top10 + "OK DAKO");
+  console.log(top10 + "\n----------------------\n");
   const embed = new Discord.RichEmbed()
     .setTitle("Leaderboard")
     .setAuthor(message.guild.name, message.guild.iconURL)
@@ -18,8 +18,8 @@ module.exports.run = async (bot, message) => {
     .setColor("RANDOM");
   for (const data of top10) {
     embed.addField(
-      bot.users.get(data.user).tag,
-      `Niveau ${data.level} (${data.points} points)`
+      bot.guilds.get(data.user),
+      `${data.guild} => **${data.users} users**`
     );
   }
   return message.channel.send(embed);
