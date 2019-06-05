@@ -22,29 +22,36 @@ bot.on("message", async message => {
   if (command === "top") {
     message.delete();
 
-    const array = [];
+    /*const array = [];
     bot.guilds.forEach(guild => {
       array.push(guild.memberCount);
-    });
-    console.log(array + "\n----------------------\n");
+    });*/
+
+    const servers = bot.guilds
+      .map(g => "● " + g.name + " ║ " + g.memberCount + " users")
+      //.join("\n\n")
+      .sort((a, b) => a - b)
+      .splice(0, 10);
+
+    /*console.log(array + "\n----------------------\n");
     const sorted = array.sort((a, b) => a.points - b.points);
     console.log(sorted + "\n----------------------\n");
     const top10 = sorted.splice(0, 10).reverse();
-    console.log(top10 + "\n----------------------\n");
+    console.log(top10 + "\n----------------------\n");*/
     const embed = new Discord.RichEmbed()
-      .setTitle("Leaderboard")
-      .setAuthor(message.guild.name, message.guild.iconURL)
-      .setDescription(
+      .setTitle(
         "Top 10 des serveurs avec le plus d'utilisateurs sur lesquels je me trouve !"
       )
+      .setAuthor(message.guild.name, message.guild.iconURL)
+      .setDescription(servers)
       .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
       .setColor("RANDOM");
-    for (const data of top10) {
+    /*for (const data of top10) {
       embed.addField(
         bot.guilds.get(data.guild),
         `**${data.channels}** channels ║ **${data.users}** users`
       );
-    }
+    }*/
     return message.channel.send(embed);
   }
 });
