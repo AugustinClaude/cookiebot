@@ -3,10 +3,11 @@ const arraySort = require("array-sort");
 
 module.exports.run = async (bot, message) => {
   message.delete();
-  const array = bot.guilds.forEach(guild => {
-    console.log(guild.memberCount);
+
+  const array = [];
+  bot.guilds.forEach(guild => {
+    array.push(guild.memberCount);
   });
-  //const filtered = bot.guilds.array();
   console.log(array + "\n----------------------\n");
   const sorted = array.sort((a, b) => a.points - b.points);
   console.log(sorted + "\n----------------------\n");

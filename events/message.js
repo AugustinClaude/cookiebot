@@ -62,15 +62,18 @@ module.exports = (bot, message) => {
   }
 
   //MESSAGES PERSONNALISES
-  if (message.content === "<@488022471048691713>")
-    return message.channel.send("Kwa ?");
-  if (
-    message.content ===
-    "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?".toLowerCase()
-  )
-    return message.channel.send(
-      "Je l'aime pas avec son air supérieur là ! Sal mosh :("
-    );
+  if (message.guild.id == "264445053596991498") return;
+  else {
+    if (message.content === "<@488022471048691713>")
+      return message.channel.send("Kwa ?");
+    if (
+      message.content ===
+      "<@488022471048691713> Tu penses quoi de <@159985870458322944> ?".toLowerCase()
+    )
+      return message.channel.send(
+        "Je l'aime pas avec son air supérieur là ! Sal mosh :("
+      );
+  }
 
   //JUSTEPRIX (commande)
   if (command === "justeprix" || command === "jp") {
