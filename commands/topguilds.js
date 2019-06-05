@@ -10,16 +10,17 @@ module.exports.run = async (bot, message) => {
 
   const servers = bot.guilds
     .map(
-      g =>
+      (g, longest) =>
         "● " +
         g.name +
-        " ".repeat(g.name - g.name.length) +
+        " ".repeat(longest - g.name.length) +
         "║" +
         g.memberCount +
-        " users"
+        " users",
+      g.name.reduce((long, str) => Math.max(long, str.length), 0)
     )
     //.join("\n\n")
-    .sort((a, b) => a.memberCount - b.memberCount)
+    .sort((a, b) => b.memberCount - a.memberCount)
     .splice(0, 10)
     .reverse();
 

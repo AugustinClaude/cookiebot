@@ -58,7 +58,7 @@ module.exports = async bot => {
   try {
     await bot.user.setPresence({
       game: {
-        name: "<help",
+        name: `<help | ${bot.users.size} users`,
         type: "PLAYING"
         //url: 'https://www.twitch.tv/spokloo'
       },
