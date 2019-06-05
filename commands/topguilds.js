@@ -9,7 +9,7 @@ module.exports.run = async (bot, message) => {
     array.push(guild.memberCount);
   });
   console.log(array + "\n----------------------\n");
-  const sorted = array.sort((a, b) => a.points - b.points);
+  const sorted = array.sort((a, b) => a.array - b.array);
   console.log(sorted + "\n----------------------\n");
   const top10 = sorted.splice(0, 10).reverse();
   console.log(top10 + "\n----------------------\n");
