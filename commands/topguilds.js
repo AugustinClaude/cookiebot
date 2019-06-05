@@ -13,10 +13,7 @@ module.exports.run = async (bot, message) => {
       g =>
         "● " +
         g.name +
-        " ".repeat(
-          g.name.reduce((long, str) => Math.max(long, str.length), 0) -
-            g.name.length
-        ) +
+        " ".repeat(g.name - g.name.length) +
         "║" +
         g.memberCount +
         " users"
