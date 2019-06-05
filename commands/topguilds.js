@@ -7,14 +7,16 @@ module.exports.run = async (bot, message) => {
     bot.guilds.forEach(guild => {
       array.push(guild.memberCount);
     });*/
-  let longest;
+
   const servers = bot.guilds
     .map(
-      (g,g) =>
-        (longest = g.name.reduce((long, str) => Math.max(long, str.length), 0)),
-      "● " +
+      g =>
+        "● " +
         g.name +
-        " ".repeat(longest - g.name.length) +
+        " ".repeat(
+          g.name.reduce((long, str) => Math.max(long, str.length), 0) -
+            g.name.length
+        ) +
         "║" +
         g.memberCount +
         " users"
