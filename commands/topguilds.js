@@ -24,7 +24,7 @@ module.exports.run = async (bot, message) => {
     .setTitle(
       "Top 10 des serveurs avec le plus d'utilisateurs sur lesquels je me trouve !"
     )
-    .setAuthor(message.guild.name, message.guild.iconURL)
+    .setAuthor(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setDescription(servers)
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
