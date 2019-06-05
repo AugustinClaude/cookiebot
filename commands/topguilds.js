@@ -9,7 +9,7 @@ module.exports.run = async (bot, message) => {
   });
 
   const servers = bot.guilds
-    .map(g => "● **" + g.name + "**\n  =>**" + g.memberCount + "** users\n")
+    .map(g => "● **" + g.name + "**\n  => **" + g.memberCount + "** users\n")
     //.join("\n\n")
     .sort((a, b) => b.array - a.array)
     .splice(0, 10)
