@@ -10,7 +10,7 @@ module.exports.run = async (bot, message) => {
   let longest;
   const servers = bot.guilds
     .map(
-      g =>
+      (g,g) =>
         (longest = g.name.reduce((long, str) => Math.max(long, str.length), 0)),
       "● " +
         g.name +
