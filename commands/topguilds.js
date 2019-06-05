@@ -19,7 +19,7 @@ module.exports.run = async (bot, message) => {
         " users"
     )
     //.join("\n\n")
-    .sort((a, b) => a.memberCount > b.memberCount)
+    .sort((a, b) => (a.memberCount > b.memberCount ? 1 : -1))
     .splice(0, 10)
     .reverse();
 
