@@ -9,10 +9,22 @@ module.exports.run = async (bot, message) => {
     });*/
 
   const servers = bot.guilds
-    .map(g => "● " + g.name + " ║ " + g.memberCount + " users")
+    .map(
+      g =>
+        "● " +
+        g.name +
+        " ".repeat(
+          g.name.reduce((long, str) => Math.max(long, str.length), 0) -
+            g.name.length
+        ) +
+        "║" +
+        g.memberCount +
+        " users"
+    )
     //.join("\n\n")
-    .sort((a, b) => a - b)
-    .splice(0, 10);
+    .sort((a, b) => a.memberCount > b.memberCount)
+    .splice(0, 10)
+    .reverse();
 
   /*console.log(array + "\n----------------------\n");
     const sorted = array.sort((a, b) => a.points - b.points);
