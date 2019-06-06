@@ -25,7 +25,7 @@ module.exports.run = async (bot, message) => {
     )
     .setAuthor(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setDescription(
-      `● **${top[0].name}**\n  => **${top[0].memberCount}** users\n● **${
+      `● **${top[0].name}**\n  => **${top[0].memberCount}** users\n\n● **${
         top[1].name
       }**\n  => **${top[1].memberCount}** users\n\n● **${
         top[2].name
