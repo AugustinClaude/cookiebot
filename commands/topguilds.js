@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message) => {
   message.delete();
 
-  const array = [];
+  /*const array = [];
   bot.guilds.forEach(guild => {
     array.push(guild.memberCount);
   });
@@ -12,6 +12,10 @@ module.exports.run = async (bot, message) => {
     .map(g => "● **" + g.name + "**\n  => **" + g.memberCount + "** users\n")
     .sort((a, b) => b.memberCount - a.memberCount)
     .splice(0, 10)
+    .reverse();*/
+  const top = bot.guilds
+    .sort((a, b) => a.memberCount - b.memberCount)
+    .array()
     .reverse();
 
   /*console.log(array + "\n----------------------\n");
@@ -24,7 +28,7 @@ module.exports.run = async (bot, message) => {
       "Top 10 des serveurs avec le plus d'utilisateurs sur lesquels je me trouve !"
     )
     .setAuthor(bot.user.username + " ©", bot.user.displayAvatarURL)
-    .setDescription(servers)
+    .setDescription(top[0].name)
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
   /*for (const data of top10) {
