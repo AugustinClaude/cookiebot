@@ -11,7 +11,7 @@ module.exports.run = async (bot, message) => {
   const servers = bot.guilds
     .map(g => "● **" + g.name + "**\n  => **" + g.memberCount + "** users\n")
     .sort((a, b) => b.memberCount - a.memberCount)
-    .splice(0, 10)
+    //.splice(0, 10)
     .reverse();
 
   /*console.log(array + "\n----------------------\n");
@@ -24,7 +24,18 @@ module.exports.run = async (bot, message) => {
       "Top 10 des serveurs avec le plus d'utilisateurs sur lesquels je me trouve !"
     )
     .setAuthor(bot.user.username + " ©", bot.user.displayAvatarURL)
-    .setDescription(servers)
+    .setDescription(
+      servers[0] +
+        servers[1] +
+        servers[2] +
+        servers[3] +
+        servers[4] +
+        servers[5] +
+        servers[6] +
+        servers[7] +
+        servers[8] +
+        servers[9]
+    )
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
   /*for (const data of top10) {
