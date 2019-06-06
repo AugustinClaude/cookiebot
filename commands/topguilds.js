@@ -10,19 +10,15 @@ module.exports.run = async (bot, message) => {
 
   const servers = bot.guilds
     .map(g => "● **" + g.name + "**\n  => **" + g.memberCount + "** users\n")
-    .sort((a, b) => b.memberCount - a.memberCount)
+    .sort((a, b) => a.memberCount - b.memberCount)
     .splice(0, 10)
     .reverse();*/
+
   const top = bot.guilds
     .sort((a, b) => a.memberCount - b.memberCount)
     .array()
     .reverse();
 
-  /*console.log(array + "\n----------------------\n");
-    const sorted = array.sort((a, b) => a.points - b.points);
-    console.log(sorted + "\n----------------------\n");
-    const top10 = sorted.splice(0, 10).reverse();
-    console.log(top10 + "\n----------------------\n");*/
   const embed = new Discord.RichEmbed()
     .setTitle(
       "Top 10 des serveurs avec le plus d'utilisateurs sur lesquels je me trouve !"
@@ -51,12 +47,7 @@ module.exports.run = async (bot, message) => {
     )
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
-  /*for (const data of top10) {
-      embed.addField(
-        bot.guilds.get(data.guild),
-        `**${data.channels}** channels ║ **${data.users}** users`
-      );
-    }*/
+
   return message.channel.send(embed);
 };
 
