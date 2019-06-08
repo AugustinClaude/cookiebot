@@ -4,11 +4,11 @@ module.exports = async bot => {
   await wait(1000);
 
   const channel = bot.channels.get("586883785073623043");
-  if (channel)
+  if (channel) {
     return channel.send(
       "🛠 Une cause non connue m'a fait redémarrer. Je suis maintenant re-opérationnel ! 📝"
     );
-  else return;
+  }
 
   bot.log(
     "log",
