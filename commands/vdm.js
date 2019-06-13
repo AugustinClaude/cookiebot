@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args) => {
       return console.error(error);
     }
     const vdm = regex.exec(body);
+    console.log(vdm);
 
     try {
       message.reply(`${vdm} VDM.`);
