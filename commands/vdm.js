@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     const vdm = regex.exec(body);
 
     try {
-      message.reply(`${vdm[0]} VDM.`);
+      message.reply(`${vdm} VDM.`);
     } catch (e) {
       message.channel.send(":x: Une erreur s'est produite !");
       console.log(e);
