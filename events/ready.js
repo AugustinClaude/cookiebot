@@ -5,7 +5,7 @@ module.exports = async bot => {
 
   const channel = bot.channels.get("586883785073623043");
   if (channel) {
-    return channel.send(
+    channel.send(
       "🛠 Une cause non connue m'a fait redémarrer. Je suis maintenant re-opérationnel ! 📝"
     );
   }
@@ -57,7 +57,7 @@ module.exports = async bot => {
       console.error(error);
     }
   }, 10000);*/
-  /*try {
+  try {
     await bot.user.setPresence({
       game: {
         name: `<help | ${bot.users.size} users`,
@@ -68,5 +68,5 @@ module.exports = async bot => {
     });
   } catch (error) {
     console.error(error);
-  }*/
+  }
 };
