@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 var numberRandom = 0;
 var partyLaunch = false;
 
-module.exports = (bot, message) => {
+module.exports = async (bot, message) => {
   if (message.author.bot) return;
   /*if (message.guild) {
     const key = `${message.guild.id}-${message.author.id}`;
@@ -133,7 +133,7 @@ module.exports = (bot, message) => {
       }
     }
   }
-  
+
   if (partyLaunch == true) {
     while (partyLaunch == true) {
       if (!isNaN(message.content)) {
