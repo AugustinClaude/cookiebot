@@ -5,7 +5,7 @@ var partyLaunch = false;
 module.exports.run = async (bot, message, args) => {
   if (!args[0])
     return message.reply(
-      "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, tapez la commande : <justeprix stop"
+      "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, écrivez `stop`"
     );
 
   if (args[1])
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === "start") {
     await message.channel.send(
       message.author +
-        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 2 minutes pour trouver le prix !"
+        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 2 minutes pour trouver le prix ! Écris `stop` pour arrêter la partie"
     );
     const replies = [
       "💰 Combien coûte ce vélo ?",
