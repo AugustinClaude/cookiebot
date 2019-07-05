@@ -62,6 +62,7 @@ module.exports.run = async (bot, message, args) => {
             }** à deviné le prix de cet objet ! 🎊`
           );
           partyLaunch = false;
+          collector.stop();
         }
       }
 
@@ -77,6 +78,7 @@ module.exports.run = async (bot, message, args) => {
           `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
         );
         partyLaunch = false;
+        collector.stop();
       }
     });
   }
