@@ -83,14 +83,13 @@ module.exports.run = async (bot, message, args) => {
         return;
       }
 
-      if (time == 120000) {
-        message.channel.send(
-          `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
-        );
+      setTimeout(() => {
         partyLaunch = false;
         collector.stop();
-        return;
-      }
+        return message.channel.send(
+          `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
+        );
+      }, 120000);
     });
   }
 };
