@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .addField(
       "🎉 Fun",
-      "``<cookie [@member]``\n``<fight / <combat``\n``<justeprix / <jp``\n``<roulette / <rr``\n``<vdm``\n``<coinflip / <cf``\n``<ask / <8ball / <8b``\n``<say``"
+      "``<cookie [@member]``\n``<smoke``\n``<fight / <combat``\n``<justeprix / <jp``\n``<roulette / <rr``\n``<vdm``\n``<coinflip / <cf``\n``<ask / <8ball / <8b``\n``<say``"
     )
     .setFooter(
       "Ce bot a été créé par Spokloo#7791",
