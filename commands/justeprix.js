@@ -80,6 +80,16 @@ module.exports.run = async (bot, message, args) => {
         partyLaunch = false;
         collector.stop();
       }
+
+      setTimeout(() => {
+        message.channel.send("Il te reste 1 minute !");
+      }, 60000);
+      setTimeout(() => {
+        message.channel.send(
+          `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
+        );
+        collector.stop();
+      }, 60000);
     });
   }
 };
