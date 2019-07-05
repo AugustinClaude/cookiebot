@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
     console.log(
       `• ${
         message.author.username
-      } à démarré une partie de JUSTE PRIX*\nLe nombre est : ${numberRandom}`
+      } a démarré une partie de JUSTE PRIX*\nLe nombre est : ${numberRandom}`
     );
   }
 
@@ -59,7 +59,7 @@ module.exports.run = async (bot, message, args) => {
           message.channel.send(
             `🎉 BRAVO ! 🎉 **${
               message.author.username
-            }** à deviné le prix de cet objet ! 🎊`
+            }** a deviné le prix de cet objet ! 🎊`
           );
           partyLaunch = false;
           collector.stop();
@@ -76,7 +76,7 @@ module.exports.run = async (bot, message, args) => {
           message.author + " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
         );
         console.log(
-          `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
+          `• ${message.author.username} a stoppé la partie de JUSTE PRIX`
         );
         partyLaunch = false;
         collector.stop();
