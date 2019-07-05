@@ -3,17 +3,6 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message) => {
   message.delete();
 
-  /*const array = [];
-  bot.guilds.forEach(guild => {
-    array.push(guild.memberCount);
-  });
-
-  const servers = bot.guilds
-    .map(g => "● **" + g.name + "**\n  => **" + g.memberCount + "** users\n")
-    .sort((a, b) => a.memberCount - b.memberCount)
-    .splice(0, 10)
-    .reverse();*/
-
   const top = bot.guilds
     .sort((a, b) => a.memberCount - b.memberCount)
     .array()

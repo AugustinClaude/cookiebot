@@ -46,6 +46,14 @@ module.exports.run = async (bot, message, args) => {
       { time: 120000 }
     );
     collector.on("collect", async message => {
+      /*setTimeout(() => {
+        partyLaunch = false;
+        collector.stop();
+        return message.channel.send(
+          `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
+        );
+      }, 120000);*/
+
       if (!isNaN(message.content)) {
         if (message.content > numberRandom) {
           message.reply(
@@ -82,14 +90,6 @@ module.exports.run = async (bot, message, args) => {
         collector.stop();
         return;
       }
-
-      /*setTimeout(() => {
-        partyLaunch = false;
-        collector.stop();
-        return message.channel.send(
-          `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
-        );
-      }, 120000);*/
     });
   }
 };
