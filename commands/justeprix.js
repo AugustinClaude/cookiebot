@@ -83,13 +83,13 @@ module.exports.run = async (bot, message, args) => {
         return;
       }
 
-      setTimeout(() => {
+      /*setTimeout(() => {
         partyLaunch = false;
         collector.stop();
         return message.channel.send(
           `Les 2 minutes sont écoulées ! Tu as perdu :x:\nLe nombre était : \`${numberRandom}\``
         );
-      }, 120000);
+      }, 120000);*/
     });
   }
 };
