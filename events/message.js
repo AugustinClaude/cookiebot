@@ -135,7 +135,7 @@ module.exports = (bot, message) => {
   }
 
   //NOMBRE A DEVINER (justeprix)
-  if (partyLaunch == true) {
+  while (partyLaunch == true) {
     if (!isNaN(message.content)) {
       if (message.content > numberRandom) {
         message.reply(
