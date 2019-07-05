@@ -83,7 +83,7 @@ module.exports.run = async (bot, message, args) => {
         return;
       }
 
-      setTimeout(() => {
+      /*setTimeout(() => {
         message.channel.send("Il te reste 1 minute !");
       }, 60000);
       setTimeout(() => {
@@ -93,7 +93,7 @@ module.exports.run = async (bot, message, args) => {
         partyLaunch = false;
         collector.stop();
         return;
-      }, 120000);
+      }, 120000);*/
     });
   }
 };
