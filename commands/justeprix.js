@@ -63,6 +63,7 @@ module.exports.run = async (bot, message, args) => {
           );
           partyLaunch = false;
           collector.stop();
+          return;
         }
       }
 
@@ -79,6 +80,7 @@ module.exports.run = async (bot, message, args) => {
         );
         partyLaunch = false;
         collector.stop();
+        return;
       }
 
       setTimeout(() => {
@@ -90,6 +92,7 @@ module.exports.run = async (bot, message, args) => {
         );
         partyLaunch = false;
         collector.stop();
+        return;
       }, 120000);
     });
   }
