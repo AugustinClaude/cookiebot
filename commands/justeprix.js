@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === "start") {
     await message.channel.send(
       message.author +
-        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 2 minutes pour trouver le prix ! Écris `stop` pour arrêter la partie"
+        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 2 minutes pour trouver le prix ! Écris `stop`, `cancel` ou `c` pour arrêter la partie"
     );
     const replies = [
       "💰 Combien coûte ce vélo ?",
@@ -65,7 +65,11 @@ module.exports.run = async (bot, message, args) => {
         }
       }
 
-      if (message.content === "stop") {
+      if (
+        message.content === "stop" ||
+        message.content === "cancel" ||
+        message.content === "c"
+      ) {
         await message.channel.send(
           message.author + " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
         );
