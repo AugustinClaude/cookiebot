@@ -116,44 +116,44 @@ module.exports = async (bot, message) => {
       );
     }
 
-    //STOP
-    if (args[0] === "stop") {
-      if (partyLaunch == true) {
-        await message.channel.send(
-          message.author + " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
-        );
-        console.log(
-          `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
-        );
-        partyLaunch = false;
-      } else {
-        await message.reply(
-          ":x: Aucune partie n'a été commencée ! Utilisez <justeprix start pour commencer une partie !"
-        );
-      }
-    }
-  }
+    if (partyLaunch == true) {
+      while (partyLaunch == true) {
+        if (!isNaN(message.content)) {
+          if (message.content > numberRandom) {
+            message.reply(
+              ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **PETIT** ⬇ !\nEssaie encore 😉"
+            );
+          } else if (message.content < numberRandom) {
+            message.reply(
+              ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **GRAND** ⬆ !\nEssaie encore 😉"
+            );
+          } else {
+            message.channel.send(
+              `🎉 BRAVO ! 🎉 **${
+                message.author.username
+              }** à deviné le prix de cet objet ! 🎊`
+            );
+            partyLaunch = false;
+          }
+        }
 
-  if (partyLaunch == true) {
-    while (partyLaunch == true) {
-      if (!isNaN(message.content)) {
-        if (message.content > numberRandom) {
-          message.reply(
-            ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **PETIT** ⬇ !\nEssaie encore 😉"
+        if (args[0] === "stop") {
+          await message.channel.send(
+            message.author +
+              " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
           );
-        } else if (message.content < numberRandom) {
-          message.reply(
-            ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **GRAND** ⬆ !\nEssaie encore 😉"
-          );
-        } else {
-          message.channel.send(
-            `🎉 BRAVO ! 🎉 **${
-              message.author.username
-            }** à deviné le prix de cet objet ! 🎊`
+          console.log(
+            `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
           );
           partyLaunch = false;
         }
       }
+    }
+
+    if (args[0] === "stop") {
+      await message.reply(
+        ":x: Aucune partie n'a été commencée ! Utilisez <justeprix start pour commencer une partie !"
+      );
     }
   }
 };
