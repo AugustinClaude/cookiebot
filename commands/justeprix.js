@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-var numberRandom = 0;
-var partyLaunch = false;
+let numberRandom = 0;
+let partyLaunch = false;
 
 module.exports.run = async (bot, message, args) => {
   if (!args[0])
