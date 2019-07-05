@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === "start") {
     await message.channel.send(
       message.author +
-        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 3 minutes pour trouver le prix !"
+        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 2 minutes pour trouver le prix !"
     );
     const replies = [
       "💰 Combien coûte ce vélo ?",
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
     const collector = new Discord.MessageCollector(
       message.channel,
       m => m.author.id === message.author.id,
-      { time: 180000 }
+      { time: 120000 }
     );
     collector.on("collect", async message => {
       if (!isNaN(message.content)) {
@@ -62,6 +62,7 @@ module.exports.run = async (bot, message, args) => {
             }** à deviné le prix de cet objet ! 🎊`
           );
           partyLaunch = false;
+          break;
         }
       }
 
@@ -73,6 +74,7 @@ module.exports.run = async (bot, message, args) => {
           `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
         );
         partyLaunch = false;
+        break;
       }
     });
   } else if (partyLaunch == false) {
