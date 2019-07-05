@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-let numberRandom = 0;
-let partyLaunch = false;
+var numberRandom = 0;
+var partyLaunch = false;
 
 module.exports.run = async (bot, message, args) => {
   if (!args[0])
@@ -15,7 +15,8 @@ module.exports.run = async (bot, message, args) => {
 
   if (args[0] === "start") {
     await message.channel.send(
-      message.author + " a démarré une partie de **JUSTE PRIX** 💰 Tu as 3 minutes pour trouver le prix !"
+      message.author +
+        " a démarré une partie de **JUSTE PRIX** 💰 Tu as 3 minutes pour trouver le prix !"
     );
     const replies = [
       "💰 Combien coûte ce vélo ?",
@@ -44,7 +45,7 @@ module.exports.run = async (bot, message, args) => {
       m => m.author.id === message.author.id,
       { time: 180000 }
     );
-    collector.on("collect", message => {
+    collector.on("collect", async message => {
       if (!isNaN(message.content)) {
         if (message.content > numberRandom) {
           message.reply(
