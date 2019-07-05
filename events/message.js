@@ -99,11 +99,12 @@ module.exports = async (bot, message) => {
       const replies = [
         "💰 Combien coûte ce vélo ?",
         "💰 Combien coûte, à ton avis, cette magnifique balle de tennis ?",
-        "💰 Juste, O.M.G... c'est un minerais de diamant ? Un vrai ?! Il doit coûter cher ! A ton avis, combien coûte-t-il ?",
+        "💰 ... Un minerais de diamant ?! Un vrai ? Il doit coûter cher ! A ton avis, combien coûte-t-il ?",
         "💰 Combien doit coûter ce PC gamer de qualité ? C'est cher c'te merde !",
         "💰 Wahou, quel beau clavier LED, combien il coûte à ton avis ?",
-        "💰 Quel belle manette de PS4 ! Elle coûte combien à ton avis ?",
-        "💰 Oh mon dieu ! Incroyable ! As-tu vu ce gravier d'une qualité extraordinaire ? Ce gravier doit coûter combien pour toi ?"
+        "💰 Quelle belle manette de PS4 ! Elle coûte combien à ton avis ?",
+        "💰 Oh mon dieu ! Incroyable ! As-tu vu ce gravier d'une qualité extraordinaire ? Ce gravier doit coûter combien pour toi ?",
+        "💰 Un nouveau téléphone ICookie est sorti ! Combien coûte-t-il ?"
       ];
       const result = Math.floor(Math.random() * replies.length);
       await message.channel.send(replies[result]);
