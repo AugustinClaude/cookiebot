@@ -64,8 +64,10 @@ module.exports = (bot, message) => {
   //MESSAGES PERSONNALISES
   if (message.guild.id == "264445053596991498") return;
   else {
-    if (message.content === "<@488022471048691713> help")
-      message.channel.send("pas d'aide dispo");
+    if (message.content === "<@488022471048691713> tg".toLowerCase())
+      message.channel.send(
+        "Nan mais oh ! Tu m'insultes pas comme ça, tu t'es cru chez ta grand-mère ou quoi ?"
+      );
     if (message.content === "<@488022471048691713>")
       message.channel.send("Kwa ?");
     if (
