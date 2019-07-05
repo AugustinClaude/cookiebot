@@ -114,9 +114,7 @@ module.exports = async (bot, message) => {
           message.author.username
         } à démarré une partie de JUSTE PRIX*\nLe nombre est : ${numberRandom}`
       );
-    }
 
-    if (partyLaunch == true) {
       while (partyLaunch == true) {
         if (!isNaN(message.content)) {
           if (message.content > numberRandom) {
