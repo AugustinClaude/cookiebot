@@ -93,7 +93,7 @@ module.exports = (bot, message) => {
 
     //START
     if (args[0] === "start") {
-      message.channel.send(
+      await message.channel.send(
         message.author + " a démarré une partie de **JUSTE PRIX** 💰"
       );
       const replies = [
@@ -106,7 +106,7 @@ module.exports = (bot, message) => {
         "💰 Oh mon dieu ! Incroyable ! As-tu vu ce gravier d'une qualité extraordinaire ? Ce gravier doit coûter combien pour toi ?"
       ];
       const result = Math.floor(Math.random() * replies.length);
-      message.channel.send(replies[result]);
+      await message.channel.send(replies[result]);
       partyLaunch = true;
       numberRandom = Math.floor(Math.random() * (50000 - 0) + 0);
       console.log(
@@ -119,7 +119,7 @@ module.exports = (bot, message) => {
     //STOP
     if (args[0] === "stop") {
       if (partyLaunch == true) {
-        message.channel.send(
+        await message.channel.send(
           message.author + " a stoppé la partie de **JUSTE PRIX** en cours ! 💰"
         );
         console.log(
@@ -127,12 +127,13 @@ module.exports = (bot, message) => {
         );
         partyLaunch = false;
       } else {
-        message.reply(
+        await message.reply(
           ":x: Aucune partie n'a été commencée ! Utilisez <justeprix start pour commencer une partie !"
         );
       }
     }
   }
+  
   if (partyLaunch == true) {
     while (partyLaunch == true) {
       if (!isNaN(message.content)) {
