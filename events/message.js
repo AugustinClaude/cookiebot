@@ -114,27 +114,6 @@ module.exports = (bot, message) => {
           message.author.username
         } à démarré une partie de JUSTE PRIX*\nLe nombre est : ${numberRandom}`
       );
-
-      while (partyLaunch == true) {
-        if (!isNaN(message.content)) {
-          if (message.content > numberRandom) {
-            message.reply(
-              ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **PETIT** ⬇ !\nEssaie encore 😉"
-            );
-          } else if (message.content < numberRandom) {
-            message.reply(
-              ":x: Non ! Mauvaise réponse !\nLe vrai prix est plus **GRAND** ⬆ !\nEssaie encore 😉"
-            );
-          } else {
-            message.channel.send(
-              `🎉 BRAVO ! 🎉 **${
-                message.author.username
-              }** à deviné le prix de cet objet ! 🎊`
-            );
-            partyLaunch = false;
-          }
-        }
-      }
     }
 
     //STOP
