@@ -5,7 +5,7 @@ var partyLaunch = false;
 module.exports.run = async (bot, message, args) => {
   if (!args[0])
     return message.reply(
-      "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, écrivez `stop`"
+      "Pour commencer une partie de **JUSTE PRIX**, tapez la commande : <justeprix start | Pour stopper la partie, écrivez `stop`, `cancel` ou `c`"
     );
 
   if (args[1])
