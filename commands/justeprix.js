@@ -62,7 +62,6 @@ module.exports.run = async (bot, message, args) => {
             }** à deviné le prix de cet objet ! 🎊`
           );
           partyLaunch = false;
-          break;
         }
       }
 
@@ -74,15 +73,8 @@ module.exports.run = async (bot, message, args) => {
           `• ${message.author.username} à stoppé la partie de JUSTE PRIX`
         );
         partyLaunch = false;
-        break;
       }
     });
-  } else if (partyLaunch == false) {
-    if (args[0] === "stop") {
-      await message.reply(
-        ":x: Aucune partie n'a été commencée ! Utilisez <justeprix start pour commencer une partie !"
-      );
-    }
   }
 };
 
