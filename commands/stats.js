@@ -15,9 +15,8 @@ module.exports.run = async (bot, message) => {
   });
 
   for (var i = 0; i < users.length; i++) {
-    const test = parseFloat(users[i]);
+    console.log(parseFloat(users[i]));
   }
-  console.log(test);
 
   const statsEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
