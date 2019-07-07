@@ -14,8 +14,8 @@ module.exports.run = async (bot, message) => {
     users.push(guild.memberCount);
   });
 
-  for (var i = 0; i < users.length; i++) {
-    console.log(parseFloat(users[i]));
+  for (var [i, number] = 0; i < users.length; i++) {
+    number += parseFloat(users[i]);
   }
 
   const statsEmbed = new Discord.RichEmbed()
