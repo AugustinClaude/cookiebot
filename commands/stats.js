@@ -9,6 +9,11 @@ module.exports.run = async (bot, message) => {
     .duration(bot.uptime)
     .format(" D [days], H [hrs], m [mins], s [secs]");
 
+  const users = [];
+  bot.guilds.array().forEach(guild => {
+    console.log(guild.memberCount);
+  });
+
   const statsEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle("🗂 Statistiques")
@@ -24,7 +29,7 @@ module.exports.run = async (bot, message) => {
     .addField("⬆ Uptime", `\`\`\`js\n${duration}\n\`\`\``, true)
     .addField(
       "🍪 Users",
-      `\`\`\`js\n${bot.users.size}\n\`\`\``,
+      `\`\`\`js\n${bot.users.size.toLocaleString()}\n\`\`\``,
       true
     )
     .addField(
