@@ -27,11 +27,7 @@ module.exports.run = async (bot, message) => {
       true
     )
     .addField("⬆ Uptime", `\`\`\`js\n${duration}\n\`\`\``, true)
-    .addField(
-      "🍪 Users",
-      `\`\`\`js\n${bot.guilds.memberCount.toLocaleString()}\n\`\`\``,
-      true
-    )
+    .addField("🍪 Users", `\`\`\`js\n${bot.guilds.memberCount}\n\`\`\``, true)
     .addField(
       "💬 Channels",
       `\`\`\`js\n${bot.channels.size.toLocaleString()}\n\`\`\``,
