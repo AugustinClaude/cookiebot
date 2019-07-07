@@ -11,7 +11,8 @@ module.exports.run = async (bot, message) => {
 
   const users = [];
   bot.guilds.array().forEach(guild => {
-    console.log(guild.memberCount);
+    users.push(guild.memberCount);
+    console.log(users);
   });
 
   const statsEmbed = new Discord.RichEmbed()
