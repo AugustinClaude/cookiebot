@@ -12,8 +12,8 @@ module.exports.run = async (bot, message) => {
   const users = [];
   bot.guilds.array().forEach(guild => {
     users.push(guild.memberCount);
-    console.log(users);
   });
+  console.log(users);
 
   const statsEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
