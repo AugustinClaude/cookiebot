@@ -26,7 +26,9 @@ module.exports.run = async (bot, message) => {
     const invite = await channel.createInvite(options);
     code.push(invite.code);
   });
-  console.log(code);
+  setTimeout(() => {
+    console.log(code);
+  }, 10000);
 
   const embed = new Discord.RichEmbed()
     .setTitle(
