@@ -10,9 +10,14 @@ module.exports.run = async (bot, message) => {
     .format(" D [days], H [hrs], m [mins], s [secs]");
 
   const users = [];
+  var nb = 0;
   bot.guilds.array().forEach(guild => {
     users.push(guild.memberCount);
   });
+  bot.guilds.array().forEach(n => {
+    nb += n
+  });
+  console.log(nb);
 
   const statsEmbed = new Discord.RichEmbed()
     .setColor("RANDOM")
