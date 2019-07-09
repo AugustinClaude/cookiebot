@@ -20,7 +20,7 @@ module.exports.run = async (bot, message) => {
     var index = 0;
     guild.channels.forEach(chan => {
       if (chan.type != "text") return;
-      channel = chan.defaultChannel;
+      channel = chan;
       return;
     });
     const invite = await channel.createInvite(options);
