@@ -14,25 +14,33 @@ module.exports.run = async (bot, message) => {
     )
     .setAuthor(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setDescription(
-      `● **${top[0].name}**\n  => **${top[0].memberCount}** users \n[[Rejoindre]](${console.log(top[0].createInvite())})\n\n● **${
-        top[1].name
-      }**\n  => **${top[1].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
-        top[2].name
-      }**\n  => **${top[2].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      `● **${top[0].name}**\n  => **${
+        top[0].memberCount
+      }** users \n[[Rejoindre]]| (${console.log(
+        top[0].createInvite()
+      )})\n\n● **${top[1].name}**\n  => **${
+        top[1].memberCount
+      }** users \n[[Rejoindre]]| (${console.log(
+        top[0].createInvite().code
+      )})\n\n● **${top[2].name}**\n  => **${
+        top[2].memberCount
+      }** users \n[[Rejoindre]]| (${top[0]
+        .createInvite()
+        .then(invite => console.log(invite.code))})\n\n● **${
         top[3].name
-      }**\n  => **${top[3].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[3].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[4].name
-      }**\n  => **${top[4].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[4].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[5].name
-      }**\n  => **${top[5].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[5].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[6].name
-      }**\n  => **${top[6].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[6].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[7].name
-      }**\n  => **${top[7].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[7].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[8].name
-      }**\n  => **${top[8].memberCount}** users \n[[Rejoindre]](${})\n\n● **${
+      }**\n  => **${top[8].memberCount}** users \n[[Rejoindre]]| ()\n\n● **${
         top[9].name
-      }**\n  => **${top[9].memberCount}** users \n[[Rejoindre]](${})\n`
+      }**\n  => **${top[9].memberCount}** users \n[[Rejoindre]]| ()\n`
     )
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
