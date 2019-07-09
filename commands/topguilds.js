@@ -22,7 +22,7 @@ module.exports.run = async (bot, message) => {
       return;
     });
     const invite = await channel.createInvite(options);
-    console.log(invite.code);
+    message.author.send(`https://discord.gg/${invite.code}`);
   });
 
   const embed = new Discord.RichEmbed()
