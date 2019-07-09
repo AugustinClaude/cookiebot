@@ -8,8 +8,16 @@ module.exports.run = async (bot, message) => {
     .array()
     .reverse();
 
-  top.forEach(async channel => {
-    const invite = await channel.createInvite();
+  top.forEach(async guild => {
+    const invite = await guild
+      .fetchInvites()
+      .then(invites =>
+        console.log(
+          `Fetched ${invites.size} invites | ${invites} | ${invites.map(
+            g => g
+          )}`
+        )
+      );
     console.log(invite);
   });
 

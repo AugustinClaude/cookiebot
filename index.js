@@ -120,15 +120,15 @@ bot.on("guildMemberAdd", async member => {
   //CANVAS
   const channel = member.guild.channels.find(
     ch =>
-      ch.name === "welcome" ||
-      ch.name === "bienvenue" ||
-      ch.name === "🚪-bienvenue-🚪" ||
-      ch.name === "arrivées-départs" ||
-      ch.name === "🛬arrivées-départs🛫" ||
-      ch.name === "🌈arrivées-départs" ||
-      ch.name === "👋-bienvenue" ||
-      ch.name === "bot-hell" ||
-      ch.name === "🎈welcome"
+      ch.name == "welcome" ||
+      ch.name == "bienvenue" ||
+      ch.name == "🚪-bienvenue-🚪" ||
+      ch.name == "arrivées-départs" ||
+      ch.name == "🛬arrivées-départs🛫" ||
+      ch.name == "🌈arrivées-départs" ||
+      ch.name == "👋-bienvenue" ||
+      ch.name == "bot-hell" ||
+      ch.name == "🎈welcome"
   );
 
   if (!channel) return;
@@ -233,15 +233,15 @@ bot.on("guildMemberRemove", async member => {
   //CANVAS
   const channel = member.guild.channels.find(
     ch =>
-      ch.name === "welcome" ||
-      ch.name === "bienvenue" ||
-      ch.name === "🚪-bienvenue-🚪" ||
-      ch.name === "arrivées-départs" ||
-      ch.name === "🛬arrivées-départs🛫" ||
-      ch.name === "🌈arrivées-départs" ||
-      ch.name === "👋-bienvenue" ||
-      ch.name === "bot-hell" ||
-      ch.name === "🎈welcome"
+      ch.name == "welcome" ||
+      ch.name == "bienvenue" ||
+      ch.name == "🚪-bienvenue-🚪" ||
+      ch.name == "arrivées-départs" ||
+      ch.name == "🛬arrivées-départs🛫" ||
+      ch.name == "🌈arrivées-départs" ||
+      ch.name == "👋-bienvenue" ||
+      ch.name == "bot-hell" ||
+      ch.name == "🎈welcome"
   );
 
   if (!channel) return;
