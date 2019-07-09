@@ -6,7 +6,8 @@ module.exports.run = async (bot, message) => {
   const top = bot.guilds
     .sort((a, b) => a.memberCount - b.memberCount)
     .array()
-    .reverse();
+    .reverse()
+    .splice(0, 10);
 
   var options = {
     maxAge: 3600,
