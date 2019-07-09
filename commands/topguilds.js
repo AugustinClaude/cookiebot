@@ -9,16 +9,11 @@ module.exports.run = async (bot, message) => {
     .reverse();
 
   top.forEach(async guild => {
-    const invite = await guild
+    guild
       .fetchInvites()
       .then(invites =>
-        console.log(
-          `Fetched ${invites.size} invites | ${invites} | ${invites.map(
-            g => g
-          )}`
-        )
+        console.log(`Fetched ${invites.size} invites | ${invites.map(g => g)}`)
       );
-    console.log(invite);
   });
 
   const embed = new Discord.RichEmbed()
