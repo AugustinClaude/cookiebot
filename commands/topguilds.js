@@ -16,15 +16,13 @@ module.exports.run = async (bot, message) => {
     .setDescription(
       `● **${top[0].name}**\n  => **${
         top[0].memberCount
-      }** users \n[[Rejoindre]]| (${console.log(
-        top[0].createInvite()
-      )})\n\n● **${top[1].name}**\n  => **${
-        top[1].memberCount
-      }** users \n[[Rejoindre]]| (${console.log(
-        top[0].createInvite().code
+      }** users \n[[Rejoindre]]| (${console.log(top.createInvite())})\n\n● **${
+        top[1].name
+      }**\n  => **${top[1].memberCount}** users \n[[Rejoindre]]| (${console.log(
+        top.createInvite().code
       )})\n\n● **${top[2].name}**\n  => **${
         top[2].memberCount
-      }** users \n[[Rejoindre]]| (${top[0]
+      }** users \n[[Rejoindre]]| (${top
         .createInvite()
         .then(invite => console.log(invite.code))})\n\n● **${
         top[3].name
