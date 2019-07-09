@@ -14,23 +14,19 @@ module.exports.run = async (bot, message) => {
     maxUses: 1
   };
 
-  const code = [];
-  top.forEach(async guild => {
-    let channel;
-    var index = 0;
+  const createInvite = (guild) => {
+    let channel
+    let index = 0
     guild.channels.forEach(chan => {
-      if (index > 0) return;
-      if (chan.type != "text") return;
-      channel = chan;
-      index++;
-      return;
-    });
-    const invite = await channel.createInvite(options);
-    code.push(invite.code);
-  });
-  setTimeout(() => {
-    console.log(code);
-  }, 60000);
+      if (index > 0) return
+      if (chan.type != 'text') return
+      channel = chan
+      index++
+      return
+    })
+    const invite = await channel.createInvite(options)
+    return invite.code
+  }
 
   const embed = new Discord.RichEmbed()
     .setTitle(
@@ -40,43 +36,43 @@ module.exports.run = async (bot, message) => {
     .setDescription(
       `● **${top[0].name}**\n  => **${
         top[0].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[0]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[0])})\n\n● **${
         top[1].name
       }**\n  => **${
         top[1].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[1]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[1])})\n\n● **${
         top[2].name
       }**\n  => **${
         top[2].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[2]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[2])})\n\n● **${
         top[3].name
       }**\n  => **${
         top[3].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[3]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[3])})\n\n● **${
         top[4].name
       }**\n  => **${
         top[4].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[4]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[4])})\n\n● **${
         top[5].name
       }**\n  => **${
         top[5].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[5]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[5])})\n\n● **${
         top[6].name
       }**\n  => **${
         top[6].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[6]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[6])})\n\n● **${
         top[7].name
       }**\n  => **${
         top[7].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[7]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[7])})\n\n● **${
         top[8].name
       }**\n  => **${
         top[8].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[8]})\n\n● **${
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[8])})\n\n● **${
         top[9].name
       }**\n  => **${
         top[9].memberCount
-      }** users \n[[Rejoindre]]| (https://discord.gg/${code[9]})\n`
+      }** users \n[[Rejoindre]]| (https://discord.gg/${createInvite(top[9])})\n`
     )
     .setFooter(bot.user.username + " ©", bot.user.displayAvatarURL)
     .setColor("RANDOM");
