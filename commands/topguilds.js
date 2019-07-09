@@ -8,12 +8,17 @@ module.exports.run = async (bot, message) => {
     .array()
     .reverse();
 
-  top.forEach(async guild => {
-    guild
-      .fetchInvites()
-      .then(invites =>
-        console.log(`Fetched ${invites.size} invites | ${invites.map(g => g)}`)
-      );
+  var options = {
+    maxAge: 3600,
+    maxUses: 1
+  };
+  top.forEach(guild => {
+    if (message.author != undefined)
+      var invite = guild.defaultChannel
+        .createInvite(options)
+        .then(function(newInvite) {
+          message.author.send("https://discord.gg/" + newInvite.code);
+        });
   });
 
   const embed = new Discord.RichEmbed()
