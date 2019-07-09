@@ -4,6 +4,15 @@ module.exports.run = async (bot, message, args) => {
   message.delete();
   var status = `${args.join(" ")}`;
 
+  const users = [];
+  var nb = 0;
+  bot.guilds.array().forEach(guild => {
+    users.push(guild.memberCount);
+  });
+  users.forEach(n => {
+    nb += n;
+  });
+
   if (message.author.id !== "302901933419790347") {
     return message.reply(
       ":x: Seul le créateur du bot peut utiliser cette commande !"
@@ -44,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
         .send("Le `\"<help | \"` devant le status de jeu a été désactivé !")
         .then(msg => msg.delete(5000));
     } else if (args[0] === "users") {
-      status = `${bot.users.size} users`;
+      status = `${nb} users`;
     } else if (args[0] === "channels") {
       status = `${bot.channels.size} channels`;
     } else if (args[0] === "guilds") {

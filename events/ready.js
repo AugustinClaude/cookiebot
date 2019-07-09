@@ -10,13 +10,20 @@ module.exports = async bot => {
     );
   }
 
+  const users = [];
+  var nb = 0;
+  bot.guilds.array().forEach(guild => {
+    users.push(guild.memberCount);
+  });
+  users.forEach(n => {
+    nb += n;
+  });
+
   bot.log(
     "log",
-    ` = ${bot.user.username} est en ligne ! =\n= ${
-      bot.users.size
-    } utilisateurs =\n= ${bot.channels.size} channels =\n= ${
-      bot.guilds.size
-    } serveurs :\n - ${bot.guilds
+    ` = ${bot.user.username} est en ligne ! =\n= ${nb} utilisateurs =\n= ${
+      bot.channels.size
+    } channels =\n= ${bot.guilds.size} serveurs :\n - ${bot.guilds
       .array()
       .map(g => g)
       .join("\n - ")}`,
@@ -60,7 +67,7 @@ module.exports = async bot => {
   try {
     await bot.user.setPresence({
       game: {
-        name: `<help | ${bot.users.size} users`,
+        name: `<help | ${nb} users`,
         type: "PLAYING"
         //url: 'https://www.twitch.tv/spokloo'
       },
