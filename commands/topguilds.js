@@ -19,8 +19,10 @@ module.exports.run = async (bot, message) => {
     let channel;
     var index = 0;
     guild.channels.forEach(chan => {
+      if (index > 0) return;
       if (chan.type != "text") return;
       channel = chan;
+      index++;
       return;
     });
     const invite = await channel.createInvite(options);
@@ -28,7 +30,7 @@ module.exports.run = async (bot, message) => {
   });
   setTimeout(() => {
     console.log(code);
-  }, 10000);
+  }, 60000);
 
   const embed = new Discord.RichEmbed()
     .setTitle(
