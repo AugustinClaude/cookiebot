@@ -8,7 +8,17 @@ module.exports.run = async (bot, message) => {
     .array()
     .reverse();
 
-  var options = {
+  top.forEach(async guild => {
+    let channel;
+    guild.channels.forEach(chan => {
+      channel = chan;
+      return;
+    });
+    const invite = await channel.createInvite();
+    console.log(invite);
+  });
+
+  /*var options = {
     maxAge: 3600,
     maxUses: 1
   };
@@ -19,7 +29,7 @@ module.exports.run = async (bot, message) => {
         .then(function(newInvite) {
           message.author.send("https://discord.gg/" + newInvite.code);
         });
-  });
+  });*/
 
   const embed = new Discord.RichEmbed()
     .setTitle(
