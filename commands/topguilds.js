@@ -21,8 +21,8 @@ module.exports.run = async (bot, message) => {
       channel = chan;
       return;
     });
-    const invite = await channel.createInvite();
-    console.log(invite);
+    const invite = await channel.createInvite(options);
+    console.log(invite.code);
   });
 
   const embed = new Discord.RichEmbed()
