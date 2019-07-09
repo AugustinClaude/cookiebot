@@ -14,8 +14,8 @@ module.exports.run = async (bot, message) => {
   bot.guilds.array().forEach(guild => {
     users.push(guild.memberCount);
   });
-  bot.guilds.array().forEach(n => {
-    nb += n
+  users.forEach(n => {
+    nb += n;
   });
   console.log(nb);
 
