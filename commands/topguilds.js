@@ -10,8 +10,8 @@ module.exports.run = async (bot, message) => {
 
   top.forEach(async guild => {
     const invite = await guild.createInvite();
+    console.log(invite);
   });
-  console.log(invite);
 
   const embed = new Discord.RichEmbed()
     .setTitle(
