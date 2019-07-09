@@ -21,12 +21,8 @@ module.exports.run = async (bot, message) => {
       channel = chan;
       return;
     });
-    if (message.author != undefined)
-      var invite = guild.defaultChannel
-        .createInvite(options)
-        .then(function(newInvite) {
-          message.author.send("https://discord.gg/" + newInvite.code);
-        });
+    const invite = await channel.createInvite();
+    console.log(invite);
   });
 
   const embed = new Discord.RichEmbed()
