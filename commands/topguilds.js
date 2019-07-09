@@ -12,9 +12,12 @@ module.exports.run = async (bot, message) => {
     maxAge: 3600,
     maxUses: 1
   };
+
   top.forEach(async guild => {
     let channel;
+    var index = 0;
     guild.channels.forEach(chan => {
+      if (chan.type != "text") return;
       channel = chan;
       return;
     });
