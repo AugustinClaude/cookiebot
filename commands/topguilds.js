@@ -14,7 +14,7 @@ module.exports.run = async (bot, message) => {
     maxUses: 1
   };
 
-  const inviteCreate = async guild => {
+  function inviteCreate(guild) {
     let channel;
     let index = 0;
     guild.channels.forEach(chan => {
