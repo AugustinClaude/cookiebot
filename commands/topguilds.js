@@ -13,9 +13,8 @@ module.exports.run = async (bot, message) => {
     maxAge: 3600,
     maxUses: 1
   };
-  console.log(top + " | " + top[0]);
 
-  /*inviteCreate(guild => {
+  const inviteCreate = (guild) => {
     let channel
     let index = 0
     guild.channels.forEach(chan => {
@@ -27,7 +26,7 @@ module.exports.run = async (bot, message) => {
     })
     const invite = await channel.createInvite(options)
     return invite.code
-  });*/
+  };
 
   const embed = new Discord.RichEmbed()
     .setTitle(
