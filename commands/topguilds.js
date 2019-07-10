@@ -14,7 +14,7 @@ module.exports.run = async (bot, message) => {
     maxUses: 1
   };
 
-  function inviteCreate(guild) {
+  async function inviteCreate(guild) {
     let channel;
     let index = 0;
     guild.channels.forEach(chan => {
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message) => {
     });
     const invite = await channel.createInvite(options);
     return invite.code;
-  };
+  }
   console.log(inviteCreate(top[0]));
 
   const embed = new Discord.RichEmbed()
